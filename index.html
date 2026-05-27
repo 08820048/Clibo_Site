@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clibo - Mac 剪贴板工作台</title>
+    <meta
+      name="description"
+      content="Clibo 是为 macOS 设计的剪贴板工作台，支持快捷面板、悬停预览、Markdown 渲染、代码高亮、敏感内容过滤和 AI 动作。"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Clibo home">
+        <img src="/assets/clibo-icon.png" alt="" />
+        <span>Clibo</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#features">功能</a>
+        <a href="#privacy">隐私</a>
+        <a href="#pricing">价格</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <img class="hero-art" src="/assets/clibo-icon.png" alt="" />
+        <div class="hero-content">
+          <p class="eyebrow">macOS clipboard command center</p>
+          <h1>Clibo</h1>
+          <p class="hero-copy">
+            为高频复制、检索、预览和整理而设计的 Mac 剪贴板工作台。顶部菜单栏即时打开最近内容，Dashboard 适合深度查阅，敏感过滤和 AI 动作保持可控。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#download">下载 Clibo</a>
+            <a class="secondary-action" href="#pricing">查看 Pro</a>
+          </div>
+          <div class="hero-meta">
+            <span>本地优先</span>
+            <span>菜单栏常驻</span>
+            <span>Markdown 与代码预览</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-showcase" aria-labelledby="preview-title">
+        <div class="section-heading product-heading">
+          <p class="eyebrow">00 · preview</p>
+          <h2 id="preview-title">Five clipboard workflows, one workspace.</h2>
+          <p class="section-lede">
+            快捷面板、悬停预览、Dashboard、AI 动作和隐私控制放在同一个原生 Mac 工作台里，每个工作流都有独立入口。
+          </p>
+          <p class="section-versus">
+            覆盖日常在 <b>Paste</b> · <b>Raycast Clipboard</b> · <b>CleanShot</b> · <b>Markdown Preview</b> · <b>AI Chat</b> 之间来回切换的剪贴板任务
+          </p>
+        </div>
+
+        <div class="shot-gallery" data-gallery>
+          <div class="shot-frame" aria-live="polite">
+            <figure class="shot-panel is-active" data-title="Quick panel" data-line="最近内容在菜单栏里就能命中。">
+              <div class="app-shot quick-shot">
+                <div class="shot-toolbar">
+                  <span></span><span></span><span></span>
+                  <strong>Clibo Quick Panel</strong>
+                </div>
+                <div class="quick-layout">
+                  <aside>
+                    <p>Today</p>
+                    <button class="is-active">All Clips</button>
+                    <button>Text</button>
+                    <button>Code</button>
+                    <button>Images</button>
+                  </aside>
+                  <main>
+                    <div class="shot-search">Search clipboard history...</div>
+                    <div class="shot-row is-selected">
+                      <span class="row-icon">#</span>
+                      <div><b>FluxLocus 产品需求文档</b><small>Markdown · 2 分钟前</small></div>
+                      <kbd>⌘1</kbd>
+                    </div>
+                    <div class="shot-row">
+                      <span class="row-icon code">{ }</span>
+                      <div><b>import AppKit...</b><small>Swift · 8 分钟前</small></div>
+                      <kbd>⌘2</kbd>
+                    </div>
+                    <div class="shot-row">
+                      <span class="row-icon image">▧</span>
+                      <div><b>CleanShot preview.png</b><small>Image · 14 分钟前</small></div>
+                      <kbd>⌘3</kbd>
+                    </div>
+                  </main>
+                </div>
+              </div>
+            </figure>
+
+            <figure class="shot-panel" data-title="Hover preview" data-line="Markdown、代码和长文本悬停即读。" aria-hidden="true">
+              <div class="app-shot preview-shot">
+                <div class="shot-toolbar">
+                  <span></span><span></span><span></span>
+                  <strong>Hover Preview</strong>
+                </div>
+                <div class="preview-layout">
+                  <div class="preview-copy">
+                    <p class="shot-label">PRD 摘要</p>
+                    <h3>减少复制后的二次搜索</h3>
+                    <p>Markdown 会直接渲染，链接、图片、代码片段保留对应的阅读形态。长内容在预览区内滚动，不必打开新的窗口。</p>
+                  </div>
+                  <pre><code>let provider = AIProvider.deepSeek
+client.baseURL = "https://api.deepseek.com"</code></pre>
+                </div>
+              </div>
+            </figure>
+
+            <figure class="shot-panel" data-title="Dashboard" data-line="需要深查时再进入完整历史。 " aria-hidden="true">
+              <div class="app-shot dashboard-shot">
+                <div class="shot-toolbar">
+                  <span></span><span></span><span></span>
+                  <strong>Dashboard</strong>
+                </div>
+                <div class="dashboard-layout">
+                  <aside>
+                    <button class="is-active">Inbox</button>
+                    <button>Pinned</button>
+                    <button>Ignored</button>
+                    <button>Rules</button>
+                  </aside>
+                  <main>
+                    <div class="dashboard-head">
+                      <h3>Clipboard History</h3>
+                      <p>1,428 clips indexed locally</p>
+                    </div>
+                    <div class="clip-table">
+                      <span>Title</span><span>Type</span><span>Source</span><span>Time</span>
+                      <b>Landing page copy</b><small>Text</small><small>Safari</small><small>Now</small>
+                      <b>tokenizer.swift</b><small>Code</small><small>Xcode</small><small>8m</small>
+                      <b>hero-screenshot.png</b><small>Image</small><small>Finder</small><small>21m</small>
+                    </div>
+                  </main>
+                </div>
+              </div>
+            </figure>
+
+            <figure class="shot-panel" data-title="AI actions" data-line="选中内容后再主动交给模型处理。" aria-hidden="true">
+              <div class="app-shot ai-shot">
+                <div class="shot-toolbar">
+                  <span></span><span></span><span></span>
+                  <strong>AI Actions</strong>
+                </div>
+                <div class="ai-layout">
+                  <div>
+                    <p class="shot-label">Selected clip</p>
+                    <h3>Release note draft</h3>
+                    <p>Explain what changed, keep it concise, and preserve technical names.</p>
+                  </div>
+                  <div class="action-stack">
+                    <button>Summarize</button>
+                    <button class="is-active">Rewrite in Chinese</button>
+                    <button>Extract tasks</button>
+                  </div>
+                  <div class="ai-result">
+                    <p>已改写为更适合官网发布的中文说明，并保留原始技术名词。</p>
+                  </div>
+                </div>
+              </div>
+            </figure>
+
+            <figure class="shot-panel" data-title="Privacy rules" data-line="敏感内容过滤留在本机执行。" aria-hidden="true">
+              <div class="app-shot privacy-shot">
+                <div class="shot-toolbar">
+                  <span></span><span></span><span></span>
+                  <strong>Privacy Controls</strong>
+                </div>
+                <div class="privacy-layout">
+                  <div class="privacy-card">
+                    <b>Password fields</b>
+                    <span>Never save</span>
+                  </div>
+                  <div class="privacy-card">
+                    <b>One-time codes</b>
+                    <span>Ignore automatically</span>
+                  </div>
+                  <div class="privacy-card">
+                    <b>Regex filters</b>
+                    <span>12 active rules</span>
+                  </div>
+                  <div class="privacy-note">
+                    <h3>Local-first by default</h3>
+                    <p>剪贴板历史、过滤规则和 API Key 都优先留在这台 Mac。AI 请求只在主动触发动作时发生。</p>
+                  </div>
+                </div>
+              </div>
+            </figure>
+          </div>
+
+          <div class="shot-tabs" aria-label="Choose a Clibo screenshot">
+            <button type="button" class="is-active" aria-pressed="true">Quick panel</button>
+            <button type="button" aria-pressed="false">Preview</button>
+            <button type="button" aria-pressed="false">Dashboard</button>
+            <button type="button" aria-pressed="false">AI actions</button>
+            <button type="button" aria-pressed="false">Privacy</button>
+          </div>
+          <div class="shot-caption">
+            <p class="title" data-gallery-title>Quick panel</p>
+            <p class="line" data-gallery-line>最近内容在菜单栏里就能命中。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">built for repeated work</p>
+          <h2>少一次切换，多一次命中。</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-icon">⌘</span>
+            <h3>顶部快捷面板</h3>
+            <p>点击菜单栏图标即可查看最新 20 条复制记录，前 10 条支持快捷键直接复制。</p>
+          </article>
+          <article>
+            <span class="feature-icon">◐</span>
+            <h3>悬停预览</h3>
+            <p>鼠标经过即可查看完整内容。Markdown、代码、图片和链接都有对应预览体验。</p>
+          </article>
+          <article>
+            <span class="feature-icon">AI</span>
+            <h3>AI 动作</h3>
+            <p>接入 OpenAI、DeepSeek、Anthropic、Ollama 等提供商，API Key 存在本机。</p>
+          </article>
+          <article>
+            <span class="feature-icon">∅</span>
+            <h3>敏感过滤</h3>
+            <p>支持剪贴板类型过滤和正则规则，隐藏、临时、自动生成内容默认不会记录。</p>
+          </article>
+          <article>
+            <span class="feature-icon">#</span>
+            <h3>代码友好</h3>
+            <p>自动识别代码片段，预览中保留等宽排版并支持语法高亮。</p>
+          </article>
+          <article>
+            <span class="feature-icon">↵</span>
+            <h3>键盘优先</h3>
+            <p>Dashboard 和快捷面板都支持键盘浏览，常用操作可以脱离鼠标完成。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="privacy" class="section privacy-band">
+        <div>
+          <p class="eyebrow">privacy model</p>
+          <h2>剪贴板历史默认留在这台 Mac。</h2>
+        </div>
+        <div class="privacy-points">
+          <p>Clibo 没有自有后端来上传你的剪贴板历史。AI 功能仅在用户主动配置服务商并触发动作时，把选中内容发送给对应提供商。</p>
+          <p>敏感内容过滤、忽略下一次复制、暂停记录等控制都放在一线操作入口里，减少误记录。</p>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing-section">
+        <div class="section-heading">
+          <p class="eyebrow">direct sales plan</p>
+          <h2>早鸟价，无订阅。</h2>
+        </div>
+        <article class="early-price-card">
+          <p class="price-amount">
+            <span class="price-currency">$</span><span class="price-number">8</span>
+          </p>
+          <a class="primary-action price-action" href="https://xuyi.dev">Buy Clibo for $8</a>
+          <p class="price-vs">早鸟价持续到 2026 年 7 月 1 日。<span class="price-highlight">$13</span> 自 2026 年 7 月 2 日起恢复。</p>
+          <p class="price-value">一次买断，无订阅。解锁无限历史、高级悬停预览、Markdown 与代码高亮、敏感过滤、AI 动作和自动化规则。</p>
+          <p class="price-trial">或先 <a href="#download">下载试用</a></p>
+          <p class="price-terms">
+            Lifetime updates <span class="sep">·</span>
+            3 Macs / license <span class="sep">·</span>
+            License key activation <span class="sep">·</span>
+            官网直售
+          </p>
+        </article>
+      </section>
+
+      <section id="download" class="section download-band">
+        <div>
+          <p class="eyebrow">download</p>
+          <h2>先体验 Clibo 的核心工作流。</h2>
+        </div>
+            <a class="primary-action" href="https://xuyi.dev">下载当前构建</a>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="section-heading">
+          <p class="eyebrow">faq</p>
+          <h2>上线前需要明确的几件事。</h2>
+        </div>
+        <details open>
+          <summary>Clibo 会上传剪贴板历史吗？</summary>
+          <p>不会。剪贴板历史默认存储在本机数据库中。只有用户主动运行 AI 动作时，选中的内容才会发送给用户配置的 AI 服务商。</p>
+        </details>
+        <details>
+          <summary>官网直售如何授权？</summary>
+          <p>计划使用 Dodo Payments 的 License Keys。用户购买后获得 license key，在 Clibo 设置中激活并保存到 Keychain。</p>
+        </details>
+        <details>
+          <summary>会有 Mac App Store 版本吗？</summary>
+          <p>计划后续评估。Mac App Store 对沙盒和自动粘贴类能力要求更严格，官网版本会先跑通完整产品和授权流程。</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Copyright © 2026 <a href="https://xuyi.dev">XuYi</a>. All rights reserved.</span>
+      <a href="https://xuyi.dev">xuyi.dev</a>
+    </footer>
+    <script>
+      (function () {
+        var gallery = document.querySelector("[data-gallery]");
+        if (!gallery) return;
+
+        var frame = gallery.querySelector(".shot-frame");
+        var panels = Array.prototype.slice.call(gallery.querySelectorAll(".shot-panel"));
+        var tabs = Array.prototype.slice.call(gallery.querySelectorAll(".shot-tabs button"));
+        var title = gallery.querySelector("[data-gallery-title]");
+        var line = gallery.querySelector("[data-gallery-line]");
+        var index = 0;
+        var timer = null;
+        var transitionTimer = null;
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function activate(next) {
+          if (next === index) return;
+          var previous = index;
+          var direction = (next - previous + panels.length) % panels.length;
+          gallery.dataset.direction = direction > panels.length / 2 ? "prev" : "next";
+
+          if (transitionTimer) window.clearTimeout(transitionTimer);
+          panels.forEach(function (panel) {
+            panel.classList.remove("was-active");
+          });
+
+          var outgoing = panels[previous];
+          if (outgoing) outgoing.classList.add("was-active");
+          gallery.classList.add("is-switching");
+          transitionTimer = window.setTimeout(function () {
+            gallery.classList.remove("is-switching");
+            if (outgoing) outgoing.classList.remove("was-active");
+            transitionTimer = null;
+          }, 920);
+
+          index = next;
+          panels.forEach(function (panel, i) {
+            var active = i === index;
+            panel.classList.toggle("is-active", active);
+            panel.setAttribute("aria-hidden", active ? "false" : "true");
+          });
+          tabs.forEach(function (tab, i) {
+            var active = i === index;
+            tab.classList.toggle("is-active", active);
+            tab.setAttribute("aria-pressed", active ? "true" : "false");
+          });
+          if (title) title.textContent = panels[index].dataset.title || "";
+          if (line) line.textContent = panels[index].dataset.line || "";
+        }
+
+        function start() {
+          if (reduceMotion || timer) return;
+          timer = window.setInterval(function () {
+            activate((index + 1) % panels.length);
+          }, 4500);
+        }
+
+        function stop() {
+          if (!timer) return;
+          window.clearInterval(timer);
+          timer = null;
+        }
+
+        tabs.forEach(function (tab, i) {
+          tab.addEventListener("click", function () {
+            stop();
+            activate(i);
+            start();
+          });
+        });
+
+        if (frame) {
+          frame.addEventListener("click", function (event) {
+            var box = frame.getBoundingClientRect();
+            var next = event.clientX < box.left + box.width / 2
+              ? (index - 1 + panels.length) % panels.length
+              : (index + 1) % panels.length;
+            stop();
+            activate(next);
+            start();
+          });
+        }
+
+        gallery.addEventListener("mouseenter", stop);
+        gallery.addEventListener("mouseleave", start);
+        gallery.addEventListener("focusin", stop);
+        gallery.addEventListener("focusout", start);
+        start();
+      })();
+    </script>
+  </body>
+</html>
