@@ -770,16 +770,68 @@ code {
 }
 
 .feature-icon {
+  --icon-accent: var(--green-dark);
+  --icon-fill: rgba(8, 120, 90, 0.1);
+  position: relative;
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   place-items: center;
   margin-bottom: 18px;
-  color: #fff;
-  background: var(--green-dark);
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 760;
+  color: var(--icon-accent);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0)),
+    var(--icon-fill);
+  border: 1px solid rgba(23, 32, 29, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(21, 91, 72, 0.12), 0 1px 0 rgba(255, 255, 255, 0.86) inset;
+}
+
+.feature-icon::after {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 6px;
+  height: 6px;
+  content: "";
+  background: currentColor;
+  border-radius: 999px;
+  opacity: 0.22;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.feature-grid article:nth-child(2) .feature-icon {
+  --icon-accent: #1866cc;
+  --icon-fill: rgba(24, 102, 204, 0.1);
+}
+
+.feature-grid article:nth-child(3) .feature-icon {
+  --icon-accent: #9a5b00;
+  --icon-fill: rgba(241, 185, 49, 0.18);
+}
+
+.feature-grid article:nth-child(4) .feature-icon {
+  --icon-accent: #0b6f7c;
+  --icon-fill: rgba(11, 111, 124, 0.1);
+}
+
+.feature-grid article:nth-child(5) .feature-icon {
+  --icon-accent: #7a4fcb;
+  --icon-fill: rgba(122, 79, 203, 0.1);
+}
+
+.feature-grid article:nth-child(6) .feature-icon {
+  --icon-accent: #bf4b43;
+  --icon-fill: rgba(239, 111, 97, 0.13);
 }
 
 .privacy-band,
@@ -915,6 +967,22 @@ summary {
 
 details p {
   margin: 14px 0 0;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translate3d(0, 18px, 0);
+  transition-property: opacity, filter, transform;
+  transition-duration: 760ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .site-footer {
@@ -1278,5 +1346,14 @@ details p {
   .site-footer {
     flex-direction: column;
     padding: 24px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
   }
 }
