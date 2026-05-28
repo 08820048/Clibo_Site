@@ -26,31 +26,43 @@
 
     <main id="top">
       <section class="hero">
-        <img class="hero-art" src="/assets/clibo-icon.png" alt="" />
+        <div class="hero-visual" aria-hidden="true">
+          <figure class="hero-shot hero-shot-main">
+            <img src="/assets/hero-preview.png" alt="" />
+          </figure>
+          <figure class="hero-shot hero-shot-panel">
+            <img src="/assets/hero-quick-panel.png" alt="" />
+          </figure>
+          <figure class="hero-shot hero-shot-privacy">
+            <img src="/assets/privacy.png" alt="" />
+          </figure>
+        </div>
         <div class="hero-content">
-          <p class="eyebrow">macOS clipboard command center</p>
+          <p class="eyebrow">Mac clipboard workspace</p>
           <h1>Clibo</h1>
           <p class="hero-copy">
-            为高频复制、检索、预览和整理而设计的 Mac 剪贴板工作台。顶部菜单栏即时打开最近内容，Dashboard 适合深度查阅，敏感过滤和 AI 动作保持可控。
+            <span>文本、代码、图片、链接和颜色值。</span>
+            <span>复制后整理、预览，再次命中。</span>
+            <span>为反复查找和复用内容的 Mac 用户设计。</span>
           </p>
           <div class="hero-actions">
             <a class="primary-action" href="#pricing">购买 Clibo</a>
-            <a class="secondary-action" href="#pricing">查看 Pro</a>
+            <a class="secondary-action" href="#preview-title">查看工作流</a>
           </div>
           <div class="hero-meta">
             <span>本地优先</span>
-            <span>菜单栏常驻</span>
-            <span>Markdown 与代码预览</span>
+            <span>原生 Mac 体验</span>
+            <span>AI 主动触发</span>
           </div>
         </div>
       </section>
 
       <section class="product-showcase" aria-labelledby="preview-title">
         <div class="section-heading product-heading">
-          <p class="eyebrow">00 · preview</p>
-          <h2 id="preview-title">Five clipboard workflows, one workspace.</h2>
+          <p class="eyebrow">workflows</p>
+          <h2 id="preview-title">复制之后的每一步，都留在同一个工作台。</h2>
           <p class="section-lede">
-            快捷面板、悬停预览、Dashboard、AI 动作和隐私控制放在同一个原生 Mac 工作台里，每个工作流都有独立入口。
+            快捷命中、悬停阅读、完整历史、AI 处理和隐私规则用同一套原生 Mac 交互串起来，减少在多个工具之间来回切换。
           </p>
           <p class="section-versus">
             覆盖日常在 <b>Paste</b> · <b>Raycast Clipboard</b> · <b>CleanShot</b> · <b>Markdown Preview</b> · <b>AI Chat</b> 之间来回切换的剪贴板任务
@@ -60,137 +72,23 @@
         <div class="shot-gallery" data-gallery>
           <div class="shot-frame" aria-live="polite">
             <figure class="shot-panel is-active" data-title="Quick panel" data-line="最近内容在菜单栏里就能命中。">
-              <div class="app-shot quick-shot">
-                <div class="shot-toolbar">
-                  <span></span><span></span><span></span>
-                  <strong>Clibo Quick Panel</strong>
-                </div>
-                <div class="quick-layout">
-                  <aside>
-                    <p>Today</p>
-                    <button class="is-active">All Clips</button>
-                    <button>Text</button>
-                    <button>Code</button>
-                    <button>Images</button>
-                  </aside>
-                  <main>
-                    <div class="shot-search">Search clipboard history...</div>
-                    <div class="shot-row is-selected">
-                      <span class="row-icon">#</span>
-                      <div><b>FluxLocus 产品需求文档</b><small>Markdown · 2 分钟前</small></div>
-                      <kbd>⌘1</kbd>
-                    </div>
-                    <div class="shot-row">
-                      <span class="row-icon code">{ }</span>
-                      <div><b>import AppKit...</b><small>Swift · 8 分钟前</small></div>
-                      <kbd>⌘2</kbd>
-                    </div>
-                    <div class="shot-row">
-                      <span class="row-icon image">▧</span>
-                      <div><b>CleanShot preview.png</b><small>Image · 14 分钟前</small></div>
-                      <kbd>⌘3</kbd>
-                    </div>
-                  </main>
-                </div>
-              </div>
+              <img class="real-shot real-shot-tall" src="/assets/hero-quick-panel.png" alt="Clibo Quick Panel screenshot" />
             </figure>
 
             <figure class="shot-panel" data-title="Hover preview" data-line="Markdown、代码和长文本悬停即读。" aria-hidden="true">
-              <div class="app-shot preview-shot">
-                <div class="shot-toolbar">
-                  <span></span><span></span><span></span>
-                  <strong>Hover Preview</strong>
-                </div>
-                <div class="preview-layout">
-                  <div class="preview-copy">
-                    <p class="shot-label">PRD 摘要</p>
-                    <h3>减少复制后的二次搜索</h3>
-                    <p>Markdown 会直接渲染，链接、图片、代码片段保留对应的阅读形态。长内容在预览区内滚动，不必打开新的窗口。</p>
-                  </div>
-                  <pre><code>let provider = AIProvider.deepSeek
-client.baseURL = "https://api.deepseek.com"</code></pre>
-                </div>
-              </div>
+              <img class="real-shot" src="/assets/hero-preview.png" alt="Clibo hover preview screenshot" />
             </figure>
 
             <figure class="shot-panel" data-title="Dashboard" data-line="需要深查时再进入完整历史。 " aria-hidden="true">
-              <div class="app-shot dashboard-shot">
-                <div class="shot-toolbar">
-                  <span></span><span></span><span></span>
-                  <strong>Dashboard</strong>
-                </div>
-                <div class="dashboard-layout">
-                  <aside>
-                    <button class="is-active">Inbox</button>
-                    <button>Pinned</button>
-                    <button>Ignored</button>
-                    <button>Rules</button>
-                  </aside>
-                  <main>
-                    <div class="dashboard-head">
-                      <h3>Clipboard History</h3>
-                      <p>1,428 clips indexed locally</p>
-                    </div>
-                    <div class="clip-table">
-                      <span>Title</span><span>Type</span><span>Source</span><span>Time</span>
-                      <b>Landing page copy</b><small>Text</small><small>Safari</small><small>Now</small>
-                      <b>tokenizer.swift</b><small>Code</small><small>Xcode</small><small>8m</small>
-                      <b>hero-screenshot.png</b><small>Image</small><small>Finder</small><small>21m</small>
-                    </div>
-                  </main>
-                </div>
-              </div>
+              <img class="real-shot" src="/assets/hero-dashboard.png" alt="Clibo Dashboard screenshot" />
             </figure>
 
             <figure class="shot-panel" data-title="AI actions" data-line="选中内容后再主动交给模型处理。" aria-hidden="true">
-              <div class="app-shot ai-shot">
-                <div class="shot-toolbar">
-                  <span></span><span></span><span></span>
-                  <strong>AI Actions</strong>
-                </div>
-                <div class="ai-layout">
-                  <div>
-                    <p class="shot-label">Selected clip</p>
-                    <h3>Release note draft</h3>
-                    <p>Explain what changed, keep it concise, and preserve technical names.</p>
-                  </div>
-                  <div class="action-stack">
-                    <button>Summarize</button>
-                    <button class="is-active">Rewrite in Chinese</button>
-                    <button>Extract tasks</button>
-                  </div>
-                  <div class="ai-result">
-                    <p>已改写为更适合官网发布的中文说明，并保留原始技术名词。</p>
-                  </div>
-                </div>
-              </div>
+              <img class="real-shot real-shot-square" src="/assets/ai-actions.png" alt="Clibo AI Actions screenshot" />
             </figure>
 
             <figure class="shot-panel" data-title="Privacy rules" data-line="敏感内容过滤留在本机执行。" aria-hidden="true">
-              <div class="app-shot privacy-shot">
-                <div class="shot-toolbar">
-                  <span></span><span></span><span></span>
-                  <strong>Privacy Controls</strong>
-                </div>
-                <div class="privacy-layout">
-                  <div class="privacy-card">
-                    <b>Password fields</b>
-                    <span>Never save</span>
-                  </div>
-                  <div class="privacy-card">
-                    <b>One-time codes</b>
-                    <span>Ignore automatically</span>
-                  </div>
-                  <div class="privacy-card">
-                    <b>Regex filters</b>
-                    <span>12 active rules</span>
-                  </div>
-                  <div class="privacy-note">
-                    <h3>Local-first by default</h3>
-                    <p>剪贴板历史、过滤规则和 API Key 都优先留在这台 Mac。AI 请求只在主动触发动作时发生。</p>
-                  </div>
-                </div>
-              </div>
+              <img class="real-shot" src="/assets/privacy.png" alt="Clibo Privacy settings screenshot" />
             </figure>
           </div>
 
@@ -498,6 +396,14 @@ client.baseURL = "https://api.deepseek.com"</code></pre>
         revealItems.forEach(function (item) {
           observer.observe(item);
         });
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            revealItems.forEach(function (item) {
+              item.classList.add("is-visible");
+              observer.unobserve(item);
+            });
+          }, 180);
+        }
         window.requestAnimationFrame(function () {
           revealItems.forEach(revealIfInView);
         });
