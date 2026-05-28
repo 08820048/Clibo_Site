@@ -111,10 +111,10 @@ Security behavior:
 The success page currently points `Download Clibo` to:
 
 ```txt
-https://xuyi.dev
+https://downloads.clibo.us/dmgs/1.0.0/Clibo-1.0.0.dmg
 ```
 
-Before paid launch, replace this with the stable notarized release URL.
+This should be updated whenever the public notarized release URL changes.
 
 Recommended final shape:
 
