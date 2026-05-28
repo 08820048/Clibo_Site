@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Clibo - 购买成功</title>
+    <meta
+      name="description"
+      content="Clibo 购买成功页面。查看 license key、复制授权码并下载 Clibo。"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body class="success-page">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Clibo home">
+        <img src="/assets/clibo-icon.png" alt="" />
+        <span>Clibo</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/#features">功能</a>
+        <a href="/#privacy">隐私</a>
+        <a href="/#pricing">价格</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main class="success-shell">
+      <section class="success-panel" aria-labelledby="success-title">
+        <div class="success-kicker">purchase complete</div>
+        <h1 id="success-title">Clibo 已准备好。</h1>
+        <p class="success-copy" data-success-copy>
+          复制你的 license key，然后在 Clibo 里完成激活。
+        </p>
+
+        <div class="success-meta" data-success-meta hidden>
+          <span data-email-row hidden>Email: <b data-customer-email></b></span>
+          <span data-payment-row hidden>Payment ID: <b data-payment-id></b></span>
+        </div>
+
+        <div class="license-list" data-license-list></div>
+
+        <div class="success-actions">
+          <a class="primary-action" href="https://xuyi.dev" data-download-link>Download Clibo</a>
+          <a class="secondary-action" href="/">回到首页</a>
+        </div>
+
+        <div class="activation-box">
+          <h2>激活步骤</h2>
+          <ol>
+            <li>打开 Clibo。</li>
+            <li>进入 <code>Settings -&gt; License</code>。</li>
+            <li>粘贴 license key。</li>
+            <li>点击 <code>Activate</code>。</li>
+          </ol>
+        </div>
+
+        <p class="support-note" data-support-note>
+          如果没有看到 license key，请检查 Dodo 发送的邮件，或联系支持并附上 payment ID。
+        </p>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var keys = parseLicenseKeys(params.get("license_key"));
+        var email = params.get("email") || "";
+        var paymentId = params.get("payment_id") || "";
+
+        var copy = document.querySelector("[data-success-copy]");
+        var meta = document.querySelector("[data-success-meta]");
+        var emailRow = document.querySelector("[data-email-row]");
+        var paymentRow = document.querySelector("[data-payment-row]");
+        var emailSlot = document.querySelector("[data-customer-email]");
+        var paymentSlot = document.querySelector("[data-payment-id]");
+        var list = document.querySelector("[data-license-list]");
+        var support = document.querySelector("[data-support-note]");
+
+        if (window.history && window.location.search) {
+          window.history.replaceState(null, "", window.location.pathname);
+        }
+
+        if (email) {
+          meta.hidden = false;
+          emailRow.hidden = false;
+          emailSlot.textContent = email;
+        }
+
+        if (paymentId) {
+          meta.hidden = false;
+          paymentRow.hidden = false;
+          paymentSlot.textContent = paymentId;
+          support.textContent = "需要帮助时，请联系支持并附上 payment ID: " + paymentId + "。";
+        }
+
+        if (!keys.length) {
+          copy.textContent = "付款已完成。如果这里没有显示 license key，请查看 Dodo 发送到邮箱的收据或授权邮件。";
+          renderFallback(list);
+          return;
+        }
+
+        keys.forEach(function (key, index) {
+          renderLicenseKey(list, key, index);
+        });
+
+        function parseLicenseKeys(value) {
+          if (!value) return [];
+          return value
+            .split(",")
+            .map(function (key) {
+              return key.trim();
+            })
+            .filter(Boolean);
+        }
+
+        function renderFallback(target) {
+          var empty = document.createElement("div");
+          empty.className = "license-empty";
+          empty.innerHTML = "<b>License key 暂未出现在回跳链接里。</b><span>你仍然可以先下载 Clibo，稍后从 Dodo 邮件中复制 license key 激活。</span>";
+          target.appendChild(empty);
+        }
+
+        function renderLicenseKey(target, key, index) {
+          var item = document.createElement("div");
+          item.className = "license-item";
+
+          var label = document.createElement("span");
+          label.className = "license-label";
+          label.textContent = keys.length > 1 ? "License key " + (index + 1) : "License key";
+
+          var value = document.createElement("code");
+          value.className = "license-value";
+          value.textContent = key;
+
+          var button = document.createElement("button");
+          button.className = "copy-button";
+          button.type = "button";
+          button.textContent = "Copy";
+          button.addEventListener("click", function () {
+            copyToClipboard(key).then(function () {
+              button.textContent = "Copied";
+              window.setTimeout(function () {
+                button.textContent = "Copy";
+              }, 1600);
+            });
+          });
+
+          item.appendChild(label);
+          item.appendChild(value);
+          item.appendChild(button);
+          target.appendChild(item);
+        }
+
+        function copyToClipboard(text) {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(text);
+          }
+
+          var input = document.createElement("textarea");
+          input.value = text;
+          input.setAttribute("readonly", "");
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          document.body.removeChild(input);
+          return Promise.resolve();
+        }
+      })();
+    </script>
+  </body>
+</html>
