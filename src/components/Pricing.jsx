@@ -150,7 +150,7 @@ export default function Pricing() {
         </p>
         <a
           className="button button-primary pricing-buy"
-          href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX"
+          href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess"
         >
           <I18nText
             t={{

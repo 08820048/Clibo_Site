@@ -58,10 +58,10 @@ Do not expose Dodo secret API keys in browser code. The static site does not nee
 The current website button uses Dodo hosted checkout:
 
 ```txt
-https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX
+https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess
 ```
 
-Before launch, confirm this is the live Dodo product/payment link ID and that the Dodo product or checkout link returns to:
+Before launch, confirm this is the live Dodo product/payment link ID and that the Dodo product or checkout link keeps this redirect URL:
 
 ```txt
 https://clibo.us/success
