@@ -1,0 +1,130 @@
+.privacy-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 clamp(18px, 4vw, 48px);
+  background: rgba(251, 250, 246, 0.72);
+  border-bottom: 1px solid rgba(13, 17, 23, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.privacy-brand,
+.privacy-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.privacy-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  box-shadow: 0 10px 24px rgba(29, 158, 117, 0.28);
+  object-fit: cover;
+}
+
+.privacy-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 104px 20px 72px;
+}
+
+.privacy-main h1 {
+  margin: 0 0 8px;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 400;
+}
+
+.privacy-main .updated {
+  margin: 0 0 44px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.privacy-main h2 {
+  margin: 44px 0 12px;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+}
+
+.privacy-main p,
+.privacy-main li {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.privacy-main p {
+  margin: 0 0 16px;
+}
+
+.privacy-main ul {
+  margin: 0 0 20px;
+  padding: 0 0 0 22px;
+}
+
+.privacy-main li {
+  margin-bottom: 8px;
+}
+
+.privacy-email {
+  color: var(--teal-dark);
+  text-decoration: underline;
+}
+
+.privacy-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px clamp(20px, 4vw, 48px);
+  color: var(--muted);
+  background: #fff;
+  border-top: 1px solid rgba(13, 17, 23, 0.08);
+  font-size: 14px;
+}
+
+.privacy-footer-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.privacy-footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.privacy-footer-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.privacy-footer-links a:hover {
+  color: var(--teal-dark);
+}
+
+@media (max-width: 600px) {
+  .privacy-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

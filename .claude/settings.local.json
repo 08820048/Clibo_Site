@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(kill %1)",
+      "Bash(curl -s http://127.0.0.1:5175/)",
+      "Bash(curl -s http://127.0.0.1:5175/privacy)",
+      "Bash(npm run *)",
+      "Bash(npx vite *)",
+      "Bash(curl -s http://127.0.0.1:5173/privacy.html)",
+      "Bash(tesseract \"/Users/xuyi/.claude/image-cache/3f57281f-1047-4b18-a45d-a5c728bcb8b9/1.png\" -)",
+      "Bash(curl -s http://127.0.0.1:5173/)",
+      "Bash(python3 *)",
+      "Bash(npm install *)",
+      "Bash(sed -n '17,1400p' /Users/xuyi/Documents/CliboSite/index.html.bak)",
+      "Bash(sed -n '17,1400p' /Users/xuyi/Documents/CliboSite/index.html)"
+    ]
+  }
+}

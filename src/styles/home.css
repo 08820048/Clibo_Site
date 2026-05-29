@@ -1,20 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Clibo - Your clipboard, finally smart.</title>
-    <meta
-      name="description"
-      content="Clibo is a smart macOS clipboard app with local history, rich hover previews, pinned snippets, and privacy-first storage."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
+
       :root {
         color-scheme: light;
         --teal: #1d9e75;
@@ -30,7 +14,8 @@
         --yellow: #f3b63f;
         --blue: #3174d5;
         --serif: "DM Serif Display", Georgia, serif;
-        --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --sans:
+          "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
         --shadow-sm: 0 12px 32px rgba(13, 17, 23, 0.09);
         --shadow-md: 0 24px 70px rgba(13, 17, 23, 0.13);
@@ -55,16 +40,16 @@
           linear-gradient(rgba(13, 17, 23, 0.035) 1px, transparent 1px),
           linear-gradient(90deg, rgba(13, 17, 23, 0.035) 1px, transparent 1px),
           var(--paper);
-        background-size: 64px 64px, 64px 64px, auto;
+        background-size:
+          64px 64px,
+          64px 64px,
+          auto;
         font-family: var(--sans);
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
         overflow-x: hidden;
       }
 
-      body.zh-mode .en { display: none; }
-      body.zh-mode .zh { display: block; }
-      .zh { display: none; }
 
       a {
         color: inherit;
@@ -162,6 +147,104 @@
         gap: 10px;
         flex: 0 0 auto;
         margin-left: auto;
+      }
+
+      .lang-switcher {
+        position: relative;
+        z-index: 60;
+      }
+
+      .lang-switcher-trigger {
+        min-width: 128px;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 12px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        cursor: pointer;
+        font: inherit;
+        font-size: 14px;
+        transition-property: color, border-color, background, transform;
+        transition-duration: 180ms;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      .lang-switcher-trigger:hover {
+        color: var(--black);
+        border-color: rgba(13, 17, 23, 0.18);
+        background: white;
+      }
+
+      .lang-switcher-trigger:active {
+        transform: scale(0.96);
+      }
+
+      .lang-switcher-trigger .arrow {
+        width: 10px;
+        height: 6px;
+        flex: 0 0 auto;
+        transition-property: transform;
+        transition-duration: 180ms;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      .lang-switcher.is-open .arrow {
+        transform: rotate(180deg);
+      }
+
+      .lang-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        width: 168px;
+        display: grid;
+        gap: 2px;
+        padding: 6px;
+        visibility: hidden;
+        opacity: 0;
+        background: rgba(255, 255, 255, 0.94);
+        border-radius: 12px;
+        box-shadow:
+          0 0 0 1px rgba(13, 17, 23, 0.08),
+          0 18px 46px rgba(13, 17, 23, 0.14);
+        transform: translateY(-4px);
+        transform-origin: top right;
+        transition-property: opacity, transform, visibility;
+        transition-duration: 160ms;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      .lang-switcher.is-open .lang-dropdown {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .lang-option {
+        min-height: 36px;
+        padding: 0 10px;
+        color: var(--muted);
+        background: transparent;
+        border: 0;
+        border-radius: 7px;
+        cursor: pointer;
+        font: inherit;
+        font-size: 14px;
+        text-align: left;
+        transition-property: color, background;
+        transition-duration: 160ms;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+      }
+
+      .lang-option:hover,
+      .lang-option.is-active {
+        color: var(--black);
+        background: rgba(13, 17, 23, 0.055);
       }
 
       .language-toggle {
@@ -398,7 +481,11 @@
         align-items: center;
         gap: 8px;
         padding: 0 18px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(246, 248, 246, 0.66));
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.84),
+          rgba(246, 248, 246, 0.66)
+        );
         border-bottom: 1px solid rgba(13, 17, 23, 0.08);
       }
 
@@ -409,9 +496,15 @@
         box-shadow: 0 0 0 1px rgba(13, 17, 23, 0.08) inset;
       }
 
-      .traffic-light.red { background: #ff5f56; }
-      .traffic-light.yellow { background: #ffbd2e; }
-      .traffic-light.green { background: #27c93f; }
+      .traffic-light.red {
+        background: #ff5f56;
+      }
+      .traffic-light.yellow {
+        background: #ffbd2e;
+      }
+      .traffic-light.green {
+        background: #27c93f;
+      }
 
       .window-body {
         padding: 20px;
@@ -512,10 +605,18 @@
         font-size: 18px;
       }
 
-      .clip-row:nth-of-type(1) .clip-icon { color: var(--blue); }
-      .clip-row:nth-of-type(2) .clip-icon { color: var(--teal); }
-      .clip-row:nth-of-type(3) .clip-icon { color: var(--coral); }
-      .clip-row:nth-of-type(4) .clip-icon { color: #758078; }
+      .clip-row:nth-of-type(1) .clip-icon {
+        color: var(--blue);
+      }
+      .clip-row:nth-of-type(2) .clip-icon {
+        color: var(--teal);
+      }
+      .clip-row:nth-of-type(3) .clip-icon {
+        color: var(--coral);
+      }
+      .clip-row:nth-of-type(4) .clip-icon {
+        color: #758078;
+      }
 
       .clip-title {
         min-width: 0;
@@ -645,7 +746,11 @@
         margin-bottom: 20px;
         color: var(--teal-dark);
         background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(231, 247, 241, 0.76)),
+          linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(231, 247, 241, 0.76)
+          ),
           #f3f5f2;
         border-radius: 12px;
         box-shadow:
@@ -939,33 +1044,6 @@
         color: var(--teal-dark);
       }
 
-      .lang-inline .zh,
-      .nav-links .zh,
-      .button .zh,
-      .text-link .zh,
-      .language-toggle .zh,
-      .footer-links .zh {
-        display: none;
-      }
-
-      body.zh-mode .lang-inline .en,
-      body.zh-mode .nav-links .en,
-      body.zh-mode .button .en,
-      body.zh-mode .text-link .en,
-      body.zh-mode .language-toggle .en,
-      body.zh-mode .footer-links .en {
-        display: none;
-      }
-
-      body.zh-mode .lang-inline .zh,
-      body.zh-mode .nav-links .zh,
-      body.zh-mode .button .zh,
-      body.zh-mode .text-link .zh,
-      body.zh-mode .language-toggle .zh,
-      body.zh-mode .footer-links .zh {
-        display: inline;
-      }
-
       .reveal {
         opacity: 0;
         transform: translateY(18px);
@@ -997,7 +1075,8 @@
       }
 
       @keyframes pulse {
-        0%, 100% {
+        0%,
+        100% {
           box-shadow: 0 0 0 0 rgba(29, 158, 117, 0.28);
         }
         50% {
@@ -1036,6 +1115,10 @@
         }
 
         .language-toggle {
+          display: none;
+        }
+
+        .lang-switcher {
           display: none;
         }
 
@@ -1175,409 +1258,3 @@
           padding: 26px 18px;
         }
       }
-    </style>
-  </head>
-  <body>
-    <header class="site-nav" data-nav>
-      <a class="brand" href="#top" aria-label="Clibo home">
-        <img class="logo-mark" src="/assets/clibo-icon.png" alt="" />
-        <span>Clibo</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#features">
-          <span class="en">Features</span>
-          <span class="zh">功能</span>
-        </a>
-        <a href="#pricing">
-          <span class="en">Pricing</span>
-          <span class="zh">价格</span>
-        </a>
-        <a href="#faq">FAQ</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">
-          <span class="en">EN / 中</span>
-          <span class="zh">中 / EN</span>
-        </button>
-        <a class="button button-primary" href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX">
-          <span class="en">Buy - $8</span>
-          <span class="zh">购买 - $8</span>
-        </a>
-      </div>
-    </header>
-
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <div class="badge reveal" style="--delay: 40ms">
-              <span class="en">Now available · macOS 13+</span>
-              <span class="zh">现已推出 · macOS 13+</span>
-            </div>
-            <h1 id="hero-title" class="reveal" style="--delay: 130ms">
-              <span class="en">Your<br />clipboard,<br />finally<br /><em>smart.</em></span>
-              <span class="zh">剪贴板，终于变<em>聪明了。</em></span>
-            </h1>
-            <p class="subtitle reveal" style="--delay: 220ms">
-              <span class="en">
-                Clibo remembers everything you copy - text, code, images, links. Find anything instantly with
-                AI-powered search. Yours forever for $8.
-              </span>
-              <span class="zh">
-                Clibo 记住你复制的一切。AI 语义搜索秒速召回。一次买断，永久使用。
-              </span>
-            </p>
-            <div class="hero-actions reveal" style="--delay: 310ms">
-              <a class="button button-primary button-teal" href="https://releases.clibo.us/Clibo-1.0.0.dmg">
-                <span class="en">Download for Mac</span>
-                <span class="zh">下载 Mac 版</span>
-              </a>
-              <a class="text-link" href="#features">
-                <span class="en">See features →</span>
-                <span class="zh">查看功能 →</span>
-              </a>
-            </div>
-            <p class="price-note reveal" style="--delay: 400ms">
-              <span class="en">Early Bird: $8 one-time · Regular price $12</span>
-              <span class="zh">早鸟价：$8 一次买断 · 原价 $12</span>
-            </p>
-          </div>
-
-          <figure class="hero-screenshot-frame reveal" style="--delay: 490ms">
-            <img src="/assets/hero-dashboard.png" alt="Clibo clipboard history dashboard" />
-          </figure>
-        </div>
-      </section>
-
-      <section class="section" id="features" aria-labelledby="features-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Features</p>
-          <h2 id="features-title">
-            <span class="en">Built for the clipboard work you repeat every day.</span>
-            <span class="zh">为每天重复发生的剪贴板工作而生。</span>
-          </h2>
-          <p class="section-lede">
-            <span class="en">Search, pin, transform, and paste without breaking flow.</span>
-            <span class="zh">搜索、置顶、处理、粘贴，不打断当前工作流。</span>
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="6" y="5" width="12" height="15" rx="2"></rect><path d="M9 5.5V4h6v1.5"></path><path d="M9.5 10h5"></path><path d="M9.5 14h4"></path></svg>
-            </span>
-            <h3>
-              <span class="en">Clipboard History</span>
-              <span class="zh">剪贴板历史</span>
-            </h3>
-            <p>
-              <span class="en">Automatically saves everything you copy. Never lose anything again.</span>
-              <span class="zh">自动保存你复制的一切。再也不会丢失任何内容。</span>
-            </p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="3"></rect><path d="M8 21l3-4h5"></path><path d="M8.5 11.5c1.8-2.4 5.2-2.4 7 0-1.8 2.4-5.2 2.4-7 0Z"></path><circle cx="12" cy="11.5" r="1.4"></circle></svg>
-            </span>
-            <h3>
-              <span class="en">Hover Previews</span>
-              <span class="zh">悬停预览</span>
-            </h3>
-            <p>
-              <span class="en">Hover any clipboard item to inspect it before pasting. Preview text, images, links, code, files, and colors without opening another app.</span>
-              <span class="zh">鼠标悬停在剪贴板条目上即可先看内容。文本、图片、链接、代码、文件、颜色都能在粘贴前快速确认。</span>
-            </p>
-            <ul class="preview-type-list" aria-label="Preview types">
-              <li><span class="preview-swatch"></span><span class="en">Text</span><span class="zh">文本</span></li>
-              <li><span class="preview-swatch"></span><span class="en">Image</span><span class="zh">图片</span></li>
-              <li><span class="preview-swatch"></span><span class="en">Links</span><span class="zh">链接</span></li>
-              <li><span class="preview-swatch"></span><span class="en">Code</span><span class="zh">代码</span></li>
-              <li><span class="preview-swatch"></span><span class="en">Files</span><span class="zh">文件</span></li>
-            </ul>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3.5 13.7 8l4.5 1.7-4.5 1.7L12 16l-1.7-4.6-4.5-1.7L10.3 8 12 3.5Z"></path><path d="m6 15 .8 2.1L9 18l-2.2.9L6 21l-.8-2.1L3 18l2.2-.9L6 15Z"></path><path d="M18 4v3"></path><path d="M19.5 5.5h-3"></path></svg>
-            </span>
-            <h3>
-              <span class="en">AI Content Actions</span>
-              <span class="zh">AI 内容动作</span>
-            </h3>
-            <p>
-              <span class="en">Translate, rewrite, summarize. Bring your own API key - your data stays private.</span>
-              <span class="zh">翻译、改写、总结。自带 API Key，数据完全本地。</span>
-            </p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="m9 4 7 7"></path><path d="m14.5 5.5 4 4-3 3 .7 3.8-1.1 1.1-4.5-4.5L7 16.5 5.5 15l3.6-3.6-4.5-4.5 1.1-1.1 3.8.7 3-3Z"></path><path d="m8.5 15.5-3 3"></path></svg>
-            </span>
-            <h3>
-              <span class="en">Pin Snippets</span>
-              <span class="zh">Pin 常用片段</span>
-            </h3>
-            <p>
-              <span class="en">Pin frequently used text, code templates, or links. They stay at the top, forever.</span>
-              <span class="zh">将常用内容置顶。永久保留，随时取用。</span>
-            </p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7.8a4 4 0 0 1 8 0V10"></path><path d="M12 14v2"></path></svg>
-            </span>
-            <h3>
-              <span class="en">Privacy First</span>
-              <span class="zh">隐私优先</span>
-            </h3>
-            <p>
-              <span class="en">All data stored locally. Password manager content auto-excluded.</span>
-              <span class="zh">所有数据本地存储。密码管理器内容自动排除。</span>
-            </p>
-          </article>
-          <article class="feature-card reveal">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M13 2 5 13h6l-1 9 8-12h-6l1-8Z"></path></svg>
-            </span>
-            <h3>
-              <span class="en">Instant Access</span>
-              <span class="zh">即时唤起</span>
-            </h3>
-            <p>
-              <span class="en">⌘ + Shift + V from anywhere. Search, select, paste in under a second.</span>
-              <span class="zh">任意位置按 ⌘+Shift+V 唤起。一秒完成。</span>
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="pricing-band" id="pricing" aria-labelledby="pricing-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Pricing</p>
-          <h2 id="pricing-title">
-            <span class="en">One fair price. No subscription.</span>
-            <span class="zh">一个清晰价格，无订阅。</span>
-          </h2>
-          <p class="section-lede">
-            <span class="en">Buy once and keep your clipboard workspace forever.</span>
-            <span class="zh">一次买断，永久拥有你的剪贴板工作台。</span>
-          </p>
-        </div>
-
-        <article class="pricing-card reveal">
-          <p class="offer-badge">🎉 Early Bird Offer / 早鸟优惠</p>
-          <p class="price">$8</p>
-          <p class="pricing-subtitle">One-time purchase · Yours forever / 一次买断 · 永久使用</p>
-          <p class="original-price"><s>$12</s> <span class="save">Save $4</span></p>
-
-          <ul class="pricing-list">
-            <li><span class="check">✓</span><span>Unlimited clipboard history / 无限剪贴板历史</span></li>
-            <li><span class="check">✓</span><span>Rich hover previews / 丰富悬停预览</span></li>
-            <li><span class="check">✓</span><span>Translate, rewrite, summarize / 翻译、改写、总结</span></li>
-            <li><span class="check">✓</span><span>Pin snippets forever / 永久 Pin 常用片段</span></li>
-            <li><span class="check">✓</span><span>Privacy-first, local storage / 本地存储，隐私优先</span></li>
-            <li><span class="check">✓</span><span>Free updates forever / 终身免费更新</span></li>
-            <li><span class="check">✓</span><span>2 Mac activations / 支持 2 台 Mac 激活</span></li>
-          </ul>
-
-          <a class="button button-primary button-teal" href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX">
-            Buy Clibo for $8 →
-          </a>
-          <p class="trial-note">14-day free trial · No credit card required to try</p>
-        </article>
-      </section>
-
-      <section class="section" id="faq" aria-labelledby="faq-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker">FAQ</p>
-          <h2 id="faq-title">
-            <span class="en">Questions, answered.</span>
-            <span class="zh">常见问题。</span>
-          </h2>
-        </div>
-
-        <div class="faq-list">
-          <article class="faq-item is-open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span>What is BYOK?</span>
-              <span class="faq-plus" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p class="en">You use your own OpenAI/Anthropic/Gemini API key. Clibo never charges extra for AI. Key stored in Mac Keychain.</p>
-                <p class="zh">你使用自己的 API Key 启用 AI 功能。Clibo 不额外收费。Key 安全存储在钥匙串中。</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Is my data sent to cloud?</span>
-              <span class="faq-plus" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p class="en">Never. All stored locally in SQLite on your Mac. AI only sends clips you choose to process.</p>
-                <p class="zh">绝对不会。所有数据存储在本地 SQLite 中。</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>What macOS version?</span>
-              <span class="faq-plus" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p class="en">macOS 13 Ventura or later. Native on Apple Silicon and Intel.</p>
-                <p class="zh">需要 macOS 13 Ventura 或更高版本。</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Can I try before buying?</span>
-              <span class="faq-plus" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p class="en">Yes! 14-day free trial, full features, no credit card.</p>
-                <p class="zh">可以！14 天免费试用，完整功能，无需信用卡。</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>How many Macs per license?</span>
-              <span class="faq-plus" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p class="en">2 Mac activations per license.</p>
-                <p class="zh">每个许可证支持 2 台 Mac 激活。</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-left">
-        <span class="footer-brand">
-          <img class="logo-mark" src="/assets/clibo-icon.png" alt="" />
-          <span>Clibo</span>
-        </span>
-        <span>© 2026 Clibo · Made with ♥ for Mac users</span>
-      </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/privacy.html">Privacy</a>
-        <a href="mailto:ilikexff@gmail.com" aria-label="Email support" class="mail-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="m22 4-10 7.85L2 4"/>
-          </svg>
-        </a>
-        <a href="https://x.com/shizouffa" aria-label="X / Twitter" class="x-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-        </a>
-      </nav>
-    </footer>
-
-    <script>
-      (function () {
-        var body = document.body;
-        var nav = document.querySelector("[data-nav]");
-        var toggle = document.querySelector("[data-lang-toggle]");
-        var faqItems = Array.prototype.slice.call(document.querySelectorAll(".faq-item"));
-        var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-        function syncNav() {
-          if (!nav) return;
-          nav.classList.toggle("is-scrolled", window.scrollY > 10);
-        }
-
-        function setFaqHeight(item) {
-          var answer = item.querySelector(".faq-answer");
-          if (!answer) return;
-          answer.style.maxHeight = "";
-        }
-
-        function syncAllFaqHeights() {
-          faqItems.forEach(setFaqHeight);
-        }
-
-        function setLanguage(isChinese) {
-          body.classList.toggle("zh-mode", isChinese);
-          document.documentElement.lang = isChinese ? "zh-CN" : "en";
-          if (toggle) {
-            toggle.setAttribute("aria-label", isChinese ? "Switch to English" : "切换到中文");
-          }
-          window.setTimeout(syncAllFaqHeights, 40);
-        }
-
-        if (toggle) {
-          toggle.addEventListener("click", function () {
-            setLanguage(!body.classList.contains("zh-mode"));
-          });
-        }
-
-        faqItems.forEach(function (item) {
-          var question = item.querySelector(".faq-question");
-          if (!question) return;
-          question.addEventListener("click", function () {
-            var shouldOpen = !item.classList.contains("is-open");
-            faqItems.forEach(function (other) {
-              other.classList.remove("is-open");
-              var otherQuestion = other.querySelector(".faq-question");
-              if (otherQuestion) otherQuestion.setAttribute("aria-expanded", "false");
-              setFaqHeight(other);
-            });
-            item.classList.toggle("is-open", shouldOpen);
-            question.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
-            setFaqHeight(item);
-          });
-        });
-
-        if (reduceMotion || !("IntersectionObserver" in window)) {
-          revealItems.forEach(function (item) {
-            item.classList.add("is-visible");
-          });
-        } else {
-          revealItems.forEach(function (item, index) {
-            if (!item.style.getPropertyValue("--delay")) {
-              item.style.setProperty("--delay", Math.min(index * 35, 220) + "ms");
-            }
-          });
-          var observer = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-              });
-            },
-            { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
-          );
-          revealItems.forEach(function (item) {
-            observer.observe(item);
-          });
-        }
-
-        window.addEventListener("scroll", syncNav, { passive: true });
-        window.addEventListener("resize", syncAllFaqHeights);
-        syncNav();
-        syncAllFaqHeights();
-        setLanguage(false);
-      })();
-    </script>
-  </body>
-</html>
