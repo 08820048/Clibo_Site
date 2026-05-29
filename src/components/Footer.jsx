@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import I18nText from "./I18nText.jsx";
 
 export default function Footer() {
   return (
@@ -8,12 +10,47 @@ export default function Footer() {
           <img className="logo-mark" src="/assets/clibo-icon.png" alt="" />
           <span>Clibo</span>
         </span>
-        <span>© 2026 Clibo · Made with ♥ for Mac users</span>
+        <span>
+          <I18nText
+            t={{
+              en: "© 2026 Clibo · Made with ♥ for Mac users",
+              zh: "© 2026 Clibo · 为 Mac 用户用心打造",
+              ja: "© 2026 Clibo · Macユーザーのために作りました",
+              ko: "© 2026 Clibo · Mac 사용자를 위해 만들었습니다",
+              fr: "© 2026 Clibo · Conçu avec ♥ pour les utilisateurs Mac",
+              de: "© 2026 Clibo · Mit ♥ für Mac-Nutzer gemacht",
+              it: "© 2026 Clibo · Creato con ♥ per utenti Mac",
+              es: "© 2026 Clibo · Hecho con ♥ para usuarios de Mac",
+            }}
+          />
+        </span>
       </div>
       <nav className="footer-links" aria-label="Footer navigation">
-        <a href="mailto:support@clibo.us?subject=Privacy%20question">Privacy</a>
-        <a href="mailto:support@clibo.us">Support (support@clibo.us)</a>
-        <a href="https://twitter.com/clibo_us">Twitter</a>
+        <Link to="/privacy">
+          <I18nText
+            t={{
+              en: "Privacy",
+              zh: "隐私",
+              ja: "プライバシー",
+              ko: "개인정보",
+              fr: "Confidentialité",
+              de: "Datenschutz",
+              it: "Privacy",
+              es: "Privacidad",
+            }}
+          />
+        </Link>
+        <a href="mailto:ilikexff@gmail.com" aria-label="Email support">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 4-10 7.85L2 4" />
+          </svg>
+        </a>
+        <a href="https://x.com/shizouffa" aria-label="X / Twitter">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
       </nav>
     </footer>
   );

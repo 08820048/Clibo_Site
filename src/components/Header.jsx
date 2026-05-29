@@ -35,38 +35,6 @@ export default function Header() {
         <span>Clibo</span>
       </a>
 
-      <nav className="nav-links" aria-label="Primary navigation">
-        <a href="#features">
-          <I18nText
-            t={{
-              en: "Features",
-              zh: "功能",
-              ja: "機能",
-              ko: "기능",
-              fr: "Fonctionnalités",
-              de: "Funktionen",
-              it: "Funzionalità",
-              es: "Funciones",
-            }}
-          />
-        </a>
-        <a href="#pricing">
-          <I18nText
-            t={{
-              en: "Pricing",
-              zh: "价格",
-              ja: "価格",
-              ko: "가격",
-              fr: "Tarifs",
-              de: "Preise",
-              it: "Prezzi",
-              es: "Precios",
-            }}
-          />
-        </a>
-        <a href="#faq">FAQ</a>
-      </nav>
-
       <div className="nav-actions">
         <div className={`lang-switcher ${isOpen ? "is-open" : ""}`} ref={ref}>
           <button
@@ -102,23 +70,6 @@ export default function Header() {
             ))}
           </div>
         </div>
-        <a
-          className="button button-primary"
-          href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX"
-        >
-          <I18nText
-            t={{
-              en: "Buy - $9",
-              zh: "购买 - $9",
-              ja: "購入 - $9",
-              ko: "구매 - $9",
-              fr: "Acheter - $9",
-              de: "Kaufen - $9",
-              it: "Acquista - $9",
-              es: "Comprar - $9",
-            }}
-          />
-        </a>
       </div>
     </header>
   );

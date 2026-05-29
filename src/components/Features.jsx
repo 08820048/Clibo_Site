@@ -190,7 +190,20 @@ export default function Features() {
   return (
     <section className="section" id="features" aria-labelledby="features-title">
       <div className="section-heading reveal">
-        <p className="section-kicker">Features</p>
+        <p className="section-kicker">
+          <I18nText
+            t={{
+              en: "Features",
+              zh: "功能",
+              ja: "機能",
+              ko: "기능",
+              fr: "Fonctionnalités",
+              de: "Funktionen",
+              it: "Funzionalità",
+              es: "Funciones",
+            }}
+          />
+        </p>
         <h2 id="features-title">
           <I18nText
             t={{

@@ -67,17 +67,20 @@ export default function Hero() {
                 }}
               />
             </a>
-            <a className="text-link" href="#features">
+            <a
+              className="button button-primary"
+              href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX"
+            >
               <I18nText
                 t={{
-                  en: "See features →",
-                  zh: "查看功能 →",
-                  ja: "機能を見る →",
-                  ko: "기능 보기 →",
-                  fr: "Voir les fonctionnalités →",
-                  de: "Funktionen ansehen →",
-                  it: "Vedi le funzionalità →",
-                  es: "Ver funciones →",
+                  en: "Buy - $9",
+                  zh: "购买 - $9",
+                  ja: "購入 - $9",
+                  ko: "구매 - $9",
+                  fr: "Acheter - $9",
+                  de: "Kaufen - $9",
+                  it: "Acquista - $9",
+                  es: "Comprar - $9",
                 }}
               />
             </a>

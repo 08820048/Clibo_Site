@@ -1,17 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
 import I18nText from "../components/I18nText.jsx";
+import { useNavScroll } from "../hooks/useNavScroll.js";
+import "../styles/home.css";
 import "../styles/privacy.css";
 
 export default function Privacy() {
+  useNavScroll();
+
   return (
     <>
-      <header className="privacy-header">
-        <Link className="privacy-brand" to="/" aria-label="Clibo home">
-          <img className="privacy-logo" src="/assets/clibo-icon.png" alt="" />
-          <span>Clibo</span>
-        </Link>
-      </header>
+      <Header />
 
       <main className="privacy-main">
         <h1>
@@ -369,29 +369,7 @@ export default function Privacy() {
         </section>
       </main>
 
-      <footer className="privacy-footer">
-        <div className="privacy-footer-left">
-          <span className="privacy-footer-brand">
-            <img className="privacy-logo" src="/assets/clibo-icon.png" alt="" />
-            <span>Clibo</span>
-          </span>
-          <span>© 2026 Clibo</span>
-        </div>
-        <nav className="privacy-footer-links" aria-label="Footer navigation">
-          <Link to="/privacy">Privacy</Link>
-          <a href="mailto:ilikexff@gmail.com" aria-label="Email support">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 4-10 7.85L2 4" />
-            </svg>
-          </a>
-          <a href="https://x.com/shizouffa" aria-label="X / Twitter">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-        </nav>
-      </footer>
+      <Footer />
     </>
   );
 }

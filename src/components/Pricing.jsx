@@ -1,6 +1,79 @@
 import React from "react";
 import I18nText from "./I18nText.jsx";
 
+const PRICING_FEATURES = [
+  {
+    en: "Unlimited clipboard history",
+    zh: "无限剪贴板历史",
+    ja: "無制限のクリップボード履歴",
+    ko: "무제한 클립보드 기록",
+    fr: "Historique du presse-papiers illimité",
+    de: "Unbegrenzter Zwischenablagenverlauf",
+    it: "Cronologia clipboard illimitata",
+    es: "Historial del portapapeles ilimitado",
+  },
+  {
+    en: "Rich multi-format hover previews",
+    zh: "丰富多种格式悬停预览",
+    ja: "複数形式のリッチなホバープレビュー",
+    ko: "다양한 형식의 풍부한 호버 미리보기",
+    fr: "Aperçus riches multi-formats au survol",
+    de: "Umfangreiche Hover-Vorschauen für mehrere Formate",
+    it: "Anteprime al passaggio ricche e multi-formato",
+    es: "Previsualizaciones enriquecidas de varios formatos",
+  },
+  {
+    en: "Translate, rewrite, summarize",
+    zh: "翻译、改写、总结",
+    ja: "翻訳、書き換え、要約",
+    ko: "번역, 재작성, 요약",
+    fr: "Traduire, réécrire, résumer",
+    de: "Übersetzen, umschreiben, zusammenfassen",
+    it: "Traduci, riscrivi, riassumi",
+    es: "Traducir, reescribir, resumir",
+  },
+  {
+    en: "Pin snippets forever",
+    zh: "永久 Pin 常用片段",
+    ja: "スニペットを永久に固定",
+    ko: "스니펫 영구 고정",
+    fr: "Épingler des extraits pour toujours",
+    de: "Snippets dauerhaft anpinnen",
+    it: "Fissa snippet per sempre",
+    es: "Fija fragmentos para siempre",
+  },
+  {
+    en: "Free updates forever",
+    zh: "终身免费更新",
+    ja: "永久無料アップデート",
+    ko: "평생 무료 업데이트",
+    fr: "Mises à jour gratuites à vie",
+    de: "Kostenlose Updates auf Dauer",
+    it: "Aggiornamenti gratuiti per sempre",
+    es: "Actualizaciones gratuitas para siempre",
+  },
+  {
+    en: "2 Mac activations",
+    zh: "支持 2 台 Mac 激活",
+    ja: "2台のMacで有効化",
+    ko: "Mac 2대 활성화",
+    fr: "2 activations Mac",
+    de: "2 Mac-Aktivierungen",
+    it: "2 attivazioni Mac",
+    es: "2 activaciones de Mac",
+  },
+  {
+    en: "14-day free trial",
+    zh: "14 天免费试用",
+    ja: "14日間無料トライアル",
+    ko: "14일 무료 체험",
+    fr: "Essai gratuit de 14 jours",
+    de: "14 Tage kostenlos testen",
+    it: "Prova gratuita di 14 giorni",
+    es: "Prueba gratuita de 14 días",
+  },
+];
+
 export default function Pricing() {
   return (
     <section
@@ -9,7 +82,20 @@ export default function Pricing() {
       aria-labelledby="pricing-title"
     >
       <div className="section-heading reveal">
-        <p className="section-kicker">Pricing</p>
+        <p className="section-kicker">
+          <I18nText
+            t={{
+              en: "Pricing",
+              zh: "价格",
+              ja: "価格",
+              ko: "가격",
+              fr: "Tarifs",
+              de: "Preise",
+              it: "Prezzi",
+              es: "Precios",
+            }}
+          />
+        </p>
         <h2 id="pricing-title">
           <I18nText
             t={{
@@ -41,55 +127,102 @@ export default function Pricing() {
       </div>
 
       <article className="pricing-card reveal">
-        <p className="offer-badge">🎉 Early Bird Offer / 早鸟优惠</p>
         <p className="price">$9</p>
-        <p className="pricing-subtitle">
-          One-time purchase · Yours forever / 一次买断 · 永久使用
-        </p>
-        <p className="original-price">
-          <s>$15</s> <span className="save">Save $6</span>
-        </p>
-
-        <ul className="pricing-list">
-          <li>
-            <span className="check">✓</span>
-            <span>Unlimited clipboard history / 无限剪贴板历史</span>
-          </li>
-          <li>
-            <span className="check">✓</span>
-            <span>Rich hover previews / 丰富悬停预览</span>
-          </li>
-          <li>
-            <span className="check">✓</span>
-            <span>Translate, rewrite, summarize / 翻译、改写、总结</span>
-          </li>
-          <li>
-            <span className="check">✓</span>
-            <span>Pin snippets forever / 永久 Pin 常用片段</span>
-          </li>
-          <li>
-            <span className="check">✓</span>
-            <span>Privacy-first, local storage / 本地存储，隐私优先</span>
-          </li>
-          <li>
-            <span className="check">✓</span>
-            <span>Free updates forever / 终身免费更新</span>
-          </li>
-          <li>
-            <span className="check">✓</span>
-            <span>2 Mac activations / 支持 2 台 Mac 激活</span>
-          </li>
-        </ul>
-
         <a
-          className="button button-primary button-teal"
+          className="button button-primary pricing-buy"
           href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX"
         >
-          Buy Clibo for $9 →
+          <I18nText
+            t={{
+              en: "Buy Clibo for $9",
+              zh: "以 $9 购买 Clibo",
+              ja: "Cliboを$9で購入",
+              ko: "$9에 Clibo 구매",
+              fr: "Acheter Clibo pour 9 $",
+              de: "Clibo für 9 $ kaufen",
+              it: "Acquista Clibo per 9 $",
+              es: "Comprar Clibo por 9 $",
+            }}
+          />
         </a>
-        <p className="trial-note">
-          14-day free trial · No credit card required to try
+        <p className="pricing-subtitle">
+          <I18nText
+            t={{
+              en: "Early Bird: $9 one-time · Regular price $15",
+              zh: "早鸟价：$9 一次买断 · 正价 $15",
+              ja: "早期価格：$9買い切り · 通常価格$15",
+              ko: "얼리버드: $9 일회 결제 · 정상가 $15",
+              fr: "Early Bird : 9 $ en une fois · Prix normal 15 $",
+              de: "Early Bird: 9 $ einmalig · Regulärer Preis 15 $",
+              it: "Early Bird: 9 $ una tantum · Prezzo regolare 15 $",
+              es: "Early Bird: 9 $ pago único · Precio regular 15 $",
+            }}
+          />
         </p>
+        <p className="original-price">
+          <I18nText
+            t={{
+              en: "One-time purchase · Yours forever",
+              zh: "一次买断 · 永久使用",
+              ja: "買い切り · ずっと使える",
+              ko: "일회 구매 · 영구 사용",
+              fr: "Achat unique · À vous pour toujours",
+              de: "Einmalkauf · Für immer Ihnen",
+              it: "Acquisto una tantum · Tuo per sempre",
+              es: "Compra única · Tuyo para siempre",
+            }}
+          />
+        </p>
+        <p className="trial-note">
+          <I18nText
+            t={{
+              en: "All clipboard tools included, plus privacy-first local storage.",
+              zh: "包含所有剪贴板工具，并采用隐私优先的本地存储。",
+              ja: "すべてのクリップボードツールと、プライバシー優先のローカル保存が含まれます。",
+              ko: "모든 클립보드 도구와 개인정보 우선 로컬 저장이 포함됩니다.",
+              fr: "Tous les outils de presse-papiers inclus, avec stockage local axé sur la confidentialité.",
+              de: "Alle Zwischenablagen-Tools inklusive, plus datenschutzfreundliche lokale Speicherung.",
+              it: "Tutti gli strumenti clipboard inclusi, con archiviazione locale orientata alla privacy.",
+              es: "Incluye todas las herramientas del portapapeles y almacenamiento local con privacidad primero.",
+            }}
+          />
+        </p>
+        <p className="pricing-free-link">
+          <I18nText
+            t={{
+              en: "or",
+              zh: "或",
+              ja: "または",
+              ko: "또는",
+              fr: "ou",
+              de: "oder",
+              it: "oppure",
+              es: "o",
+            }}
+          />{" "}
+          <a href="https://releases.clibo.us/Clibo-1.0.0.dmg">
+            <I18nText
+              t={{
+                en: "try it free",
+                zh: "免费试用",
+                ja: "無料で試す",
+                ko: "무료로 사용해 보기",
+                fr: "essayer gratuitement",
+                de: "kostenlos testen",
+                it: "provalo gratis",
+                es: "probar gratis",
+              }}
+            />
+          </a>
+        </p>
+
+        <ul className="pricing-list" aria-label="Included features">
+          {PRICING_FEATURES.map((feature, index) => (
+            <li key={index}>
+              <I18nText t={feature} />
+            </li>
+          ))}
+        </ul>
       </article>
     </section>
   );

@@ -62,16 +62,16 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 clamp(18px, 4vw, 48px);
-        background: rgba(251, 250, 246, 0.72);
-        border-bottom: 1px solid rgba(13, 17, 23, 0.06);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+        background: transparent;
+        border-bottom: 0;
       }
 
-      .brand {
+      .brand,
+      .footer-brand {
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        min-height: 40px;
         font-weight: 500;
       }
 
@@ -84,23 +84,22 @@
       }
 
       .language-toggle {
-        min-width: 58px;
+        min-width: 0;
         min-height: 40px;
-        padding: 0 12px;
+        padding: 0 2px;
         color: var(--muted);
-        background: rgba(255, 255, 255, 0.68);
-        border: 1px solid var(--line);
-        border-radius: 999px;
+        background: transparent;
+        border: 0;
         cursor: pointer;
         font-size: 14px;
-        transition: color 180ms, border-color 180ms, background 180ms;
+        transition: color 180ms, transform 180ms;
       }
 
       .language-toggle:hover {
         color: var(--black);
-        border-color: rgba(13, 17, 23, 0.18);
-        background: white;
       }
+
+      .language-toggle:active { transform: scale(0.96); }
 
       main {
         max-width: 760px;
@@ -179,7 +178,7 @@
     </style>
   </head>
   <body>
-    <header class="site-nav">
+    <header class="site-nav" data-nav>
       <a class="brand" href="/" aria-label="Clibo home">
         <img class="logo-mark" src="/assets/clibo-icon.png" alt="" />
         <span>Clibo</span>
@@ -419,11 +418,11 @@
 
     <footer class="site-footer">
       <div class="footer-left">
-        <span style="display:inline-flex;align-items:center;gap:10px;">
+        <span class="footer-brand">
           <img class="logo-mark" src="/assets/clibo-icon.png" alt="" />
           <span>Clibo</span>
         </span>
-        <span>© 2026 Clibo</span>
+        <span>© 2026 Clibo · Made with ♥ for Mac users</span>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="/privacy.html">Privacy</a>

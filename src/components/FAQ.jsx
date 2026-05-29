@@ -3,7 +3,16 @@ import I18nText from "./I18nText.jsx";
 
 const FAQS = [
   {
-    q: "What is BYOK?",
+    q: {
+      en: "What is BYOK?",
+      zh: "什么是 BYOK？",
+      ja: "BYOKとは？",
+      ko: "BYOK란 무엇인가요?",
+      fr: "Qu'est-ce que BYOK ?",
+      de: "Was ist BYOK?",
+      it: "Che cos'è BYOK?",
+      es: "¿Qué es BYOK?",
+    },
     a: {
       en: "You use your own OpenAI/Anthropic/Gemini API key. Clibo never charges extra for AI. Key stored in Mac Keychain.",
       zh: "你使用自己的 API Key 启用 AI 功能。Clibo 不额外收费。Key 安全存储在钥匙串中。",
@@ -16,7 +25,16 @@ const FAQS = [
     },
   },
   {
-    q: "Is my data sent to cloud?",
+    q: {
+      en: "Is my data sent to the cloud?",
+      zh: "我的数据会发送到云端吗？",
+      ja: "データはクラウドに送信されますか？",
+      ko: "데이터가 클라우드로 전송되나요?",
+      fr: "Mes données sont-elles envoyées dans le cloud ?",
+      de: "Werden meine Daten in die Cloud gesendet?",
+      it: "I miei dati vengono inviati al cloud?",
+      es: "¿Mis datos se envían a la nube?",
+    },
     a: {
       en: "Never. All stored locally in SQLite on your Mac. AI only sends clips you choose to process.",
       zh: "绝对不会。所有数据存储在本地 SQLite 中。",
@@ -29,7 +47,16 @@ const FAQS = [
     },
   },
   {
-    q: "What macOS version?",
+    q: {
+      en: "What macOS version is required?",
+      zh: "需要哪个 macOS 版本？",
+      ja: "必要なmacOSバージョンは？",
+      ko: "어떤 macOS 버전이 필요한가요?",
+      fr: "Quelle version de macOS est requise ?",
+      de: "Welche macOS-Version ist erforderlich?",
+      it: "Quale versione di macOS è richiesta?",
+      es: "¿Qué versión de macOS se requiere?",
+    },
     a: {
       en: "macOS 13 Ventura or later. Native on Apple Silicon and Intel.",
       zh: "需要 macOS 13 Ventura 或更高版本。",
@@ -42,7 +69,16 @@ const FAQS = [
     },
   },
   {
-    q: "Can I try before buying?",
+    q: {
+      en: "Can I try before buying?",
+      zh: "购买前可以试用吗？",
+      ja: "購入前に試せますか？",
+      ko: "구매 전에 사용해 볼 수 있나요?",
+      fr: "Puis-je essayer avant d'acheter ?",
+      de: "Kann ich es vor dem Kauf testen?",
+      it: "Posso provarlo prima di acquistare?",
+      es: "¿Puedo probarlo antes de comprar?",
+    },
     a: {
       en: "Yes! 14-day free trial, full features, no credit card.",
       zh: "可以！14 天免费试用，完整功能，无需信用卡。",
@@ -55,7 +91,16 @@ const FAQS = [
     },
   },
   {
-    q: "How many Macs per license?",
+    q: {
+      en: "How many Macs per license?",
+      zh: "每个许可证支持几台 Mac？",
+      ja: "1ライセンスで何台のMacを使えますか？",
+      ko: "라이선스 하나로 Mac 몇 대를 사용할 수 있나요?",
+      fr: "Combien de Mac par licence ?",
+      de: "Wie viele Macs pro Lizenz?",
+      it: "Quanti Mac per licenza?",
+      es: "¿Cuántos Mac por licencia?",
+    },
     a: {
       en: "2 Mac activations per license.",
       zh: "每个许可证支持 2 台 Mac 激活。",
@@ -106,7 +151,7 @@ export default function FAQ() {
                 aria-expanded={isOpen}
                 onClick={() => setOpenIdx(isOpen ? -1 : i)}
               >
-                <span>{faq.q}</span>
+                <I18nText t={faq.q} />
                 <span className="faq-plus" aria-hidden="true">
                   +
                 </span>
