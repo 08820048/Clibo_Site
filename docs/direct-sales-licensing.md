@@ -135,6 +135,7 @@ The website needs:
 - Success page that shows license key
 - Privacy policy
 - Terms of service
+- Refund policy
 - Support page or support email
 - Release notes page
 

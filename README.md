@@ -25,4 +25,4 @@ npm run preview
 
 ## Payment Integration Notes
 
-The current Pro purchase link is a placeholder. Replace it with a Dodo Payments checkout URL or a backend-created checkout session URL when the product is configured.
+The current Pro purchase link opens Dodo Payments hosted checkout. Confirm the live Dodo product, License Key entitlement, activation limit, and `/success` return URL in the Dodo dashboard before sending paid traffic.

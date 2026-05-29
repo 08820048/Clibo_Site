@@ -40,6 +40,48 @@ export default function Footer() {
             }}
           />
         </Link>
+        <Link to="/terms">
+          <I18nText
+            t={{
+              en: "Terms",
+              zh: "条款",
+              ja: "利用規約",
+              ko: "약관",
+              fr: "Conditions",
+              de: "Bedingungen",
+              it: "Termini",
+              es: "Términos",
+            }}
+          />
+        </Link>
+        <Link to="/refund">
+          <I18nText
+            t={{
+              en: "Refunds",
+              zh: "退款",
+              ja: "返金",
+              ko: "환불",
+              fr: "Remboursements",
+              de: "Rückerstattungen",
+              it: "Rimborsi",
+              es: "Reembolsos",
+            }}
+          />
+        </Link>
+        <Link to="/releases">
+          <I18nText
+            t={{
+              en: "Releases",
+              zh: "更新",
+              ja: "リリース",
+              ko: "릴리스",
+              fr: "Versions",
+              de: "Versionen",
+              it: "Release",
+              es: "Versiones",
+            }}
+          />
+        </Link>
         <a href="mailto:ilikexff@gmail.com" aria-label="Email support">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2" />

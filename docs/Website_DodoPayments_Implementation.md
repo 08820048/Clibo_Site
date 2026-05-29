@@ -58,22 +58,26 @@ Do not expose Dodo secret API keys in browser code. The static site does not nee
 The current website button uses Dodo hosted checkout:
 
 ```txt
-https://checkout.dodopayments.com/buy/REPLACE_WITH_DODO_PRODUCT_ID?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess
+https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX
 ```
 
-Before launch, replace `REPLACE_WITH_DODO_PRODUCT_ID` in `index.html` with the live Dodo product/payment link ID.
+Before launch, confirm this is the live Dodo product/payment link ID and that the Dodo product or checkout link returns to:
+
+```txt
+https://clibo.us/success
+```
 
 Recommended process:
 
 1. Create the Dodo product in test mode.
-2. Replace the placeholder with the test product ID.
+2. Replace the website checkout link with the test product/payment link ID.
 3. Run a test purchase.
 4. Confirm `/success` receives `license_key`, `email`, and `payment_id`.
 5. Switch to the live product ID only after the test flow works.
 
 ## Success Page
 
-The static page is `success.html`, served as `/success` by Vercel clean URLs.
+The React route is `/success`, served by Cloudflare Pages SPA fallback.
 
 It handles these query parameters:
 
@@ -101,8 +105,8 @@ Security behavior:
 
 - The success page has `robots` `noindex,nofollow`.
 - The success page has `Referrer-Policy: no-referrer`.
-- Vercel sends `X-Robots-Tag: noindex, nofollow` for `/success`.
-- Vercel sends `Referrer-Policy: no-referrer` for `/success`.
+- Cloudflare Pages sends `X-Robots-Tag: noindex, nofollow` for `/success`.
+- Cloudflare Pages sends `Referrer-Policy: no-referrer` for `/success`.
 - The page removes query parameters from browser history with `history.replaceState()` after parsing.
 - No analytics should be added to this page while license keys are rendered.
 
@@ -206,6 +210,9 @@ Do not send paid traffic until all are true:
 - Checkout button uses the live Dodo product ID.
 - Return URL is `/success`.
 - Success page handles license present, multiple licenses, and missing license states.
+- Terms of service page is published at `/terms`.
+- Refund policy page is published at `/refund`.
+- Release notes page is published at `/releases`.
 - Download link points to a Developer ID signed and notarized build.
 - Sparkle appcast is hosted and an update from one signed version to the next has been tested.
 - Test-mode purchase passes.

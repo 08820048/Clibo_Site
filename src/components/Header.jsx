@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useLang } from "../context/LangContext.jsx";
-import I18nText from "./I18nText.jsx";
 
 const LANG_NAMES = {
   en: "English",
@@ -30,10 +30,10 @@ export default function Header() {
 
   return (
     <header className="site-nav" data-nav>
-      <a className="brand" href="#top" aria-label="Clibo home">
+      <Link className="brand" to="/" aria-label="Clibo home">
         <img className="logo-mark" src="/assets/clibo-icon.png" alt="" />
         <span>Clibo</span>
-      </a>
+      </Link>
 
       <div className="nav-actions">
         <div className={`lang-switcher ${isOpen ? "is-open" : ""}`} ref={ref}>
