@@ -1,5 +1,6 @@
 import React from "react";
 import I18nText from "./I18nText.jsx";
+import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const PRICING_FEATURES = [
   {
@@ -82,8 +83,8 @@ export default function Pricing() {
       aria-labelledby="pricing-title"
     >
       <div className="section-heading reveal">
-        <p className="section-kicker">
-          <I18nText
+        <p className="section-kicker section-kicker-animated">
+          <AnimatedI18nText
             t={{
               en: "Pricing",
               zh: "价格",
@@ -97,7 +98,7 @@ export default function Pricing() {
           />
         </p>
         <h2 id="pricing-title">
-          <I18nText
+          <AnimatedI18nText
             t={{
               en: "One fair price. No subscription.",
               zh: "一个清晰价格，无订阅。",
@@ -111,7 +112,9 @@ export default function Pricing() {
           />
         </h2>
         <p className="section-lede">
-          <I18nText
+          <AnimatedI18nText
+            delay={0.18}
+            stagger={0.018}
             t={{
               en: "Buy once and keep your clipboard workspace forever.",
               zh: "一次买断，永久拥有你的剪贴板工作台。",
@@ -126,8 +129,25 @@ export default function Pricing() {
         </p>
       </div>
 
-      <article className="pricing-card reveal">
-        <p className="price">$9</p>
+      <article className="pricing-card reveal reveal-soft">
+        <span className="pricing-shine-badge">
+          <I18nText
+            t={{
+              en: "Early Bird",
+              zh: "早鸟价",
+              ja: "早期価格",
+              ko: "얼리버드",
+              fr: "Early Bird",
+              de: "Frühbucher",
+              it: "Early Bird",
+              es: "Early Bird",
+            }}
+          />
+        </span>
+        <p className="price" aria-label="$9">
+          <span aria-hidden="true" style={{ "--digit-delay": "80ms" }}>$</span>
+          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>9</span>
+        </p>
         <a
           className="button button-primary pricing-buy"
           href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAalLXA11xz0qCX"
@@ -146,7 +166,9 @@ export default function Pricing() {
           />
         </a>
         <p className="pricing-subtitle">
-          <I18nText
+          <AnimatedI18nText
+            delay={0.1}
+            stagger={0.016}
             t={{
               en: "Early Bird: $9 one-time · Regular price $15",
               zh: "早鸟价：$9 一次买断 · 正价 $15",
@@ -160,7 +182,9 @@ export default function Pricing() {
           />
         </p>
         <p className="original-price">
-          <I18nText
+          <AnimatedI18nText
+            delay={0.16}
+            stagger={0.018}
             t={{
               en: "One-time purchase · Yours forever",
               zh: "一次买断 · 永久使用",
@@ -174,7 +198,9 @@ export default function Pricing() {
           />
         </p>
         <p className="trial-note">
-          <I18nText
+          <AnimatedI18nText
+            delay={0.2}
+            stagger={0.012}
             t={{
               en: "All clipboard tools included, plus privacy-first local storage.",
               zh: "包含所有剪贴板工具，并采用隐私优先的本地存储。",
@@ -218,7 +244,7 @@ export default function Pricing() {
 
         <ul className="pricing-list" aria-label="Included features">
           {PRICING_FEATURES.map((feature, index) => (
-            <li key={index}>
+            <li key={index} style={{ "--item-delay": `${index * 45}ms` }}>
               <I18nText t={feature} />
             </li>
           ))}

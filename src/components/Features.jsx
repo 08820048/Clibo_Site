@@ -1,5 +1,6 @@
 import React from "react";
 import I18nText from "./I18nText.jsx";
+import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const FEATURES = [
   {
@@ -190,8 +191,8 @@ export default function Features() {
   return (
     <section className="section" id="features" aria-labelledby="features-title">
       <div className="section-heading reveal">
-        <p className="section-kicker">
-          <I18nText
+        <p className="section-kicker section-kicker-animated">
+          <AnimatedI18nText
             t={{
               en: "Features",
               zh: "功能",
@@ -205,7 +206,7 @@ export default function Features() {
           />
         </p>
         <h2 id="features-title">
-          <I18nText
+          <AnimatedI18nText
             t={{
               en: "Built for the clipboard work you repeat every day.",
               zh: "为每天重复发生的剪贴板工作而生。",
@@ -219,7 +220,9 @@ export default function Features() {
           />
         </h2>
         <p className="section-lede">
-          <I18nText
+          <AnimatedI18nText
+            delay={0.18}
+            stagger={0.018}
             t={{
               en: "Search, pin, transform, and paste without breaking flow.",
               zh: "搜索、置顶、处理、粘贴，不打断当前工作流。",
@@ -236,20 +239,24 @@ export default function Features() {
 
       <div className="feature-grid">
         {FEATURES.map((f, i) => (
-          <article key={i} className="feature-card reveal">
+          <article
+            key={i}
+            className="feature-card reveal reveal-soft"
+            style={{ "--delay": `${Math.min(i * 70, 320)}ms` }}
+          >
             <span className="feature-icon" aria-hidden="true">
               {f.icon}
             </span>
             <h3>
-              <I18nText t={f.title} />
+              <AnimatedI18nText t={f.title} delay={0.06} stagger={0.025} />
             </h3>
             <p>
-              <I18nText t={f.desc} />
+              <AnimatedI18nText t={f.desc} delay={0.12} stagger={0.012} />
             </p>
             {f.previews && (
               <ul className="preview-type-list" aria-label="Preview types">
                 {f.previews.map((p, j) => (
-                  <li key={j}>
+                  <li key={j} style={{ "--chip-delay": `${190 + j * 55}ms` }}>
                     <span className="preview-swatch"></span>
                     <I18nText t={p} />
                   </li>

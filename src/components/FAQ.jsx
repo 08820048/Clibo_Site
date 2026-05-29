@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import I18nText from "./I18nText.jsx";
+import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const FAQS = [
   {
@@ -120,9 +121,11 @@ export default function FAQ() {
   return (
     <section className="section" id="faq" aria-labelledby="faq-title">
       <div className="section-heading reveal">
-        <p className="section-kicker">FAQ</p>
+        <p className="section-kicker section-kicker-animated">
+          <AnimatedI18nText t={{ en: "FAQ" }} />
+        </p>
         <h2 id="faq-title">
-          <I18nText
+          <AnimatedI18nText
             t={{
               en: "Questions, answered.",
               zh: "常见问题。",
@@ -143,7 +146,8 @@ export default function FAQ() {
           return (
             <article
               key={i}
-              className={`faq-item ${isOpen ? "is-open" : ""}`}
+              className={`faq-item reveal reveal-soft ${isOpen ? "is-open" : ""}`}
+              style={{ "--delay": `${Math.min(i * 60, 260)}ms` }}
             >
               <button
                 className="faq-question"
@@ -151,7 +155,9 @@ export default function FAQ() {
                 aria-expanded={isOpen}
                 onClick={() => setOpenIdx(isOpen ? -1 : i)}
               >
-                <I18nText t={faq.q} />
+                <span className="faq-question-text">
+                  <AnimatedI18nText t={faq.q} delay={0.04} stagger={0.018} />
+                </span>
                 <span className="faq-plus" aria-hidden="true">
                   +
                 </span>

@@ -1,5 +1,76 @@
 import React from "react";
+import { useLang } from "../context/LangContext.jsx";
 import I18nText from "./I18nText.jsx";
+import AnimatedI18nText from "./AnimatedI18nText.jsx";
+
+const HERO_TITLE = {
+  en: [
+    [{ text: "Your" }],
+    [{ text: "clipboard," }],
+    [{ text: "finally" }],
+    [{ text: "smart.", emphasis: true }],
+  ],
+  zh: [[{ text: "剪贴板，" }], [{ text: "终于变" }], [{ text: "聪明了。", emphasis: true }]],
+  ja: [
+    [{ text: "あなたの" }],
+    [{ text: "クリップボード、" }],
+    [{ text: "ついに" }, { text: "賢く。", emphasis: true }],
+  ],
+  ko: [
+    [{ text: "당신의" }],
+    [{ text: "클립보드," }],
+    [{ text: "드디어 " }, { text: "똑똑해지다.", emphasis: true }],
+  ],
+  fr: [
+    [{ text: "Votre" }],
+    [{ text: "presse-papiers," }],
+    [{ text: "enfin " }, { text: "intelligent.", emphasis: true }],
+  ],
+  de: [
+    [{ text: "Ihre" }],
+    [{ text: "Zwischenablage," }],
+    [{ text: "endlich " }, { text: "schlau.", emphasis: true }],
+  ],
+  it: [
+    [{ text: "La tua" }],
+    [{ text: "clipboard," }],
+    [{ text: "finalmente " }, { text: "intelligente.", emphasis: true }],
+  ],
+  es: [
+    [{ text: "Tu" }],
+    [{ text: "portapapeles," }],
+    [{ text: "por fin " }, { text: "inteligente.", emphasis: true }],
+  ],
+};
+
+function AnimatedHeroTitle() {
+  const { lang } = useLang();
+  const lines = HERO_TITLE[lang] || HERO_TITLE.en;
+  let step = 0;
+
+  return (
+    <span className={`hero-title-lines ${lang}`}>
+      {lines.map((line, lineIndex) => (
+        <span className="hero-title-line" key={lineIndex}>
+          {line.map((part, partIndex) => {
+            const Tag = part.emphasis ? "em" : "span";
+            const style = { "--word-delay": `${0.08 + step * 0.075}s` };
+            step += 1;
+            return (
+              <Tag
+                className="hero-title-word"
+                style={style}
+                key={`${part.text}-${partIndex}`}
+              >
+                {part.text}
+              </Tag>
+            );
+          })}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
@@ -20,23 +91,11 @@ export default function Hero() {
               }}
             />
           </div>
-          <h1 id="hero-title" className="reveal" style={{ "--delay": "130ms" }}>
-            <I18nText
-              t={{
-                en: 'Your<br />clipboard,<br />finally<br /><em>smart.</em>',
-                zh: '剪贴板，终于变<em>聪明了。</em>',
-                ja: 'あなたの<br />クリップボード、<br />ついに<em>賢く。</em>',
-                ko: '당신의<br />클립보드,<br />드디어<em>똑똑해지다.</em>',
-                fr: 'Votre<br />presse-papiers,<br />enfin<em>intelligent.</em>',
-                de: 'Ihre<br />Zwischenablage,<br />endlich<em>schlau.</em>',
-                it: 'La tua<br />clipboard,<br />finalmente<em>intelligente.</em>',
-                es: 'Tu<br />portapapeles,<br />por fin<em>inteligente.</em>',
-              }}
-              html
-            />
+          <h1 id="hero-title" className="hero-title reveal" style={{ "--delay": "130ms" }}>
+            <AnimatedHeroTitle />
           </h1>
           <p className="subtitle reveal" style={{ "--delay": "220ms" }}>
-            <I18nText
+            <AnimatedI18nText
               t={{
                 en: "Clibo remembers everything you copy — color, code, images, links. Rich previews for every format. AI-powered search that just works. Yours forever for $9.",
                 zh: "Clibo 记住你复制的一切。多种格式一键预览，快捷高效。 AI 语义搜索秒速召回。一次买断，永久使用。",
@@ -101,7 +160,12 @@ export default function Hero() {
           </p>
         </div>
 
-        <figure className="hero-screenshot-frame reveal" style={{ "--delay": "490ms" }}>
+        <figure
+          className="hero-screenshot-frame reveal reveal-right"
+          style={{ "--delay": "490ms" }}
+        >
+          <span className="hero-live-dot" aria-hidden="true"></span>
+          <span className="hero-progress-pill" aria-hidden="true"></span>
           <img
             src="/assets/hero-dashboard.png"
             alt="Clibo clipboard history dashboard"
