@@ -81,14 +81,14 @@ const FAQS = [
       es: "¿Puedo probarlo antes de comprar?",
     },
     a: {
-      en: "Yes! 14-day free trial, full features, no credit card.",
-      zh: "可以！14 天免费试用，完整功能，无需信用卡。",
-      ja: "はい！14日間の無料トライアル、全機能、クレジットカード不要。",
-      ko: "네! 14일 묣료 체험판, 전체 기능, 신용카드 불필요.",
-      fr: "Oui ! Essai gratuit de 14 jours, toutes les fonctionnalités, pas de carte de crédit.",
-      de: "Ja! 14-tägige kostenlose Testversion, alle Funktionen, keine Kreditkarte.",
-      it: "Sì! Prova gratuita di 14 giorni, tutte le funzionalità, nessuna carta di credito.",
-      es: "¡Sí! Prueba gratuita de 14 días, todas las funciones, sin tarjeta de crédito.",
+      en: "Yes! 3-day free trial, full features, no credit card.",
+      zh: "可以！3 天免费试用，完整功能，无需信用卡。",
+      ja: "はい！3日間の無料トライアル、全機能、クレジットカード不要。",
+      ko: "네! 3일 무료 체험, 전체 기능, 신용카드 불필요.",
+      fr: "Oui ! Essai gratuit de 3 jours, toutes les fonctionnalites, pas de carte de credit.",
+      de: "Ja! 3 Tage kostenlos testen, alle Funktionen, keine Kreditkarte.",
+      it: "Si! Prova gratuita di 3 giorni, tutte le funzionalita, nessuna carta di credito.",
+      es: "Si! Prueba gratuita de 3 dias, todas las funciones, sin tarjeta de credito.",
     },
   },
   {
@@ -140,13 +140,13 @@ export default function FAQ() {
         </h2>
       </div>
 
-      <div className="faq-list">
+      <div className="faq-list reveal reveal-soft">
         {FAQS.map((faq, i) => {
           const isOpen = openIdx === i;
           return (
             <article
               key={i}
-              className={`faq-item reveal reveal-soft ${isOpen ? "is-open" : ""}`}
+              className={`faq-item ${isOpen ? "is-open" : ""}`}
               style={{ "--delay": `${Math.min(i * 60, 260)}ms` }}
             >
               <button

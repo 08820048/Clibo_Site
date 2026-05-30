@@ -50,6 +50,15 @@
         overflow-x: hidden;
       }
 
+      #root {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
 
       a {
         color: inherit;
@@ -532,19 +541,6 @@
         border-radius: inherit;
         background: currentColor;
         animation: hero-live-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
-      }
-
-      .hero-progress-pill {
-        position: absolute;
-        z-index: 3;
-        top: clamp(14px, 2.2vw, 24px);
-        right: clamp(16px, 2.4vw, 28px);
-        width: clamp(44px, 7vw, 72px);
-        height: 8px;
-        background: rgba(29, 158, 117, 0.42);
-        border-radius: 999px;
-        transform-origin: left center;
-        animation: hero-progress-cycle 3.4s ease-in-out infinite;
       }
 
       .window-chrome {
@@ -1240,23 +1236,16 @@
 
       .faq-item .faq-question-text,
       .faq-item .faq-plus {
-        opacity: 0;
-        filter: blur(8px);
-        transform: translateY(8px);
-        transition-property: opacity, filter, transform;
-        transition-duration: 460ms;
+        opacity: 1;
+        filter: none;
+        transform: translateY(0);
+        transition-property: transform;
+        transition-duration: 180ms;
         transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
       }
 
       .faq-item .faq-plus {
-        transition-delay: 120ms;
-      }
-
-      .faq-item.is-visible .faq-question-text,
-      .faq-item.is-visible .faq-plus {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
+        transition-property: transform;
       }
 
       .faq-item:hover {
@@ -1349,6 +1338,7 @@
       }
 
       .site-footer {
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1598,7 +1588,6 @@
         .hero-screenshot-frame img,
         .hero-screenshot-frame::after,
         .hero-live-dot::before,
-        .hero-progress-pill,
         .pricing-shine-badge::after,
         .pricing-list li {
           animation: none !important;

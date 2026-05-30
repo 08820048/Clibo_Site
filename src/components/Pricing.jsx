@@ -64,14 +64,14 @@ const PRICING_FEATURES = [
     es: "2 activaciones de Mac",
   },
   {
-    en: "14-day free trial",
-    zh: "14 天免费试用",
-    ja: "14日間無料トライアル",
-    ko: "14일 무료 체험",
-    fr: "Essai gratuit de 14 jours",
-    de: "14 Tage kostenlos testen",
-    it: "Prova gratuita di 14 giorni",
-    es: "Prueba gratuita de 14 días",
+    en: "3-day free trial",
+    zh: "3 天免费试用",
+    ja: "3日間無料トライアル",
+    ko: "3일 무료 체험",
+    fr: "Essai gratuit de 3 jours",
+    de: "3 Tage kostenlos testen",
+    it: "Prova gratuita di 3 giorni",
+    es: "Prueba gratuita de 3 días",
   },
 ];
 
@@ -202,14 +202,14 @@ export default function Pricing() {
             delay={0.2}
             stagger={0.012}
             t={{
-              en: "All clipboard tools included, plus privacy-first local storage.",
-              zh: "包含所有剪贴板工具，并采用隐私优先的本地存储。",
-              ja: "すべてのクリップボードツールと、プライバシー優先のローカル保存が含まれます。",
-              ko: "모든 클립보드 도구와 개인정보 우선 로컬 저장이 포함됩니다.",
-              fr: "Tous les outils de presse-papiers inclus, avec stockage local axé sur la confidentialité.",
-              de: "Alle Zwischenablagen-Tools inklusive, plus datenschutzfreundliche lokale Speicherung.",
-              it: "Tutti gli strumenti clipboard inclusi, con archiviazione locale orientata alla privacy.",
-              es: "Incluye todas las herramientas del portapapeles y almacenamiento local con privacidad primero.",
+              en: "Lifetime updates · 2 Macs / license · 14-day refund · Cards, Apple Pay, WeChat, and more",
+              zh: "终身更新 · 2 台 Mac / 许可证 · 14 天退款 · 支持银行卡、Apple Pay、微信等",
+              ja: "永久アップデート · 1ライセンス2台のMac · 14日間返金 · カード、Apple Pay、WeChatなどに対応",
+              ko: "평생 업데이트 · 라이선스당 Mac 2대 · 14일 환불 · 카드, Apple Pay, WeChat 등 지원",
+              fr: "Mises a jour a vie · 2 Mac / licence · Remboursement 14 jours · Cartes, Apple Pay, WeChat, etc.",
+              de: "Lebenslange Updates · 2 Macs / Lizenz · 14 Tage Ruckerstattung · Karten, Apple Pay, WeChat und mehr",
+              it: "Aggiornamenti a vita · 2 Mac / licenza · Rimborso di 14 giorni · Carte, Apple Pay, WeChat e altro",
+              es: "Actualizaciones de por vida · 2 Mac / licencia · Reembolso de 14 dias · Tarjetas, Apple Pay, WeChat y mas",
             }}
           />
         </p>

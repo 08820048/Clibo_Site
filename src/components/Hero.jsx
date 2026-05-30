@@ -165,7 +165,6 @@ export default function Hero() {
           style={{ "--delay": "490ms" }}
         >
           <span className="hero-live-dot" aria-hidden="true"></span>
-          <span className="hero-progress-pill" aria-hidden="true"></span>
           <img
             src="/assets/hero-dashboard.png"
             alt="Clibo clipboard history dashboard"
