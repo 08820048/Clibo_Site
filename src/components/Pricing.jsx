@@ -64,14 +64,14 @@ const PRICING_FEATURES = [
     es: "2 activaciones de Mac",
   },
   {
-    en: "3-day free trial",
-    zh: "3 天免费试用",
-    ja: "3日間無料トライアル",
-    ko: "3일 무료 체험",
-    fr: "Essai gratuit de 3 jours",
-    de: "3 Tage kostenlos testen",
-    it: "Prova gratuita di 3 giorni",
-    es: "Prueba gratuita de 3 días",
+    en: "7-day free trial",
+    zh: "7 天免费试用",
+    ja: "7日間無料トライアル",
+    ko: "7일 무료 체험",
+    fr: "Essai gratuit de 7 jours",
+    de: "7 Tage kostenlos testen",
+    it: "Prova gratuita di 7 giorni",
+    es: "Prueba gratuita de 7 días",
   },
 ];
 
