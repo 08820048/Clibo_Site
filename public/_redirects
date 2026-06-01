@@ -1,1 +1,6 @@
-/* /index.html 200
+/privacy/ /privacy 301
+/terms/ /terms 301
+/refund/ /refund 301
+/releases/ /releases 301
+/success/ /success 301
+/docs/ /docs 301

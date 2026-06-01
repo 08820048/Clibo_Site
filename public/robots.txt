@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /success
+Disallow: /docs
+
+Sitemap: https://clibo.us/sitemap.xml

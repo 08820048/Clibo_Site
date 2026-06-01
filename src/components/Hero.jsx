@@ -111,7 +111,7 @@ export default function Hero() {
           <div className="hero-actions reveal" style={{ "--delay": "310ms" }}>
             <a
               className="button button-primary button-teal"
-              href="https://releases.clibo.us/Clibo-1.0.1.dmg"
+              href="https://releases.clibo.us/Clibo-1.0.3-6.dmg"
             >
               <I18nText
                 t={{

@@ -7,10 +7,13 @@ import Refund from "./pages/Refund.jsx";
 import Releases from "./pages/Releases.jsx";
 import Success from "./pages/Success.jsx";
 import Docs from "./pages/Docs.jsx";
+import Seo from "./seo/Seo.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
     <LangProvider>
+      <Seo />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
@@ -19,6 +22,7 @@ export default function App() {
         <Route path="/releases" element={<Releases />} />
         <Route path="/success" element={<Success />} />
         <Route path="/docs" element={<Docs />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </LangProvider>
   );
