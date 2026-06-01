@@ -6,24 +6,39 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-left">
-        <span className="footer-brand">
-          <img className="logo-mark" src="/assets/clibo-icon.png" alt="" />
-          <span>Clibo</span>
-        </span>
-        <span>
-          <I18nText
-            t={{
-              en: "© 2026 Clibo · Made with ♥ for Mac users",
-              zh: "© 2026 Clibo · 为 Mac 用户用心打造",
-              ja: "© 2026 Clibo · Macユーザーのために作りました",
-              ko: "© 2026 Clibo · Mac 사용자를 위해 만들었습니다",
-              fr: "© 2026 Clibo · Conçu avec ♥ pour les utilisateurs Mac",
-              de: "© 2026 Clibo · Mit ♥ für Mac-Nutzer gemacht",
-              it: "© 2026 Clibo · Creato con ♥ per utenti Mac",
-              es: "© 2026 Clibo · Hecho con ♥ para usuarios de Mac",
-            }}
+        <div className="footer-copy">
+          <span className="footer-brand">
+            <img className="logo-mark" src="/assets/clibo-icon.png" alt="" />
+            <span>Clibo</span>
+          </span>
+          <span>
+            <I18nText
+              t={{
+                en: "© 2026 Clibo · Made with ♥ for Mac users",
+                zh: "© 2026 Clibo · 为 Mac 用户用心打造",
+                ja: "© 2026 Clibo · Macユーザーのために作りました",
+                ko: "© 2026 Clibo · Mac 사용자를 위해 만들었습니다",
+                fr: "© 2026 Clibo · Conçu avec ♥ pour les utilisateurs Mac",
+                de: "© 2026 Clibo · Mit ♥ für Mac-Nutzer gemacht",
+                it: "© 2026 Clibo · Creato con ♥ per utenti Mac",
+                es: "© 2026 Clibo · Hecho con ♥ para usuarios de Mac",
+              }}
+            />
+          </span>
+        </div>
+        <a
+          className="product-hunt-badge"
+          href="https://www.producthunt.com/products/clibo?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-clibo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            alt="Clibo - Your clipboard, finally smart. | Product Hunt"
+            width="250"
+            height="54"
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1159074&theme=light&t=1780319420417"
           />
-        </span>
+        </a>
       </div>
       <nav className="footer-links" aria-label="Footer navigation">
         <Link to="/privacy">

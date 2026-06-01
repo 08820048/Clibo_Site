@@ -1351,9 +1351,29 @@
 
       .footer-left {
         display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .footer-copy {
+        display: flex;
         align-items: center;
         flex-wrap: wrap;
         gap: 12px;
+      }
+
+      .product-hunt-badge {
+        display: inline-flex;
+        width: 250px;
+        max-width: 100%;
+        line-height: 0;
+      }
+
+      .product-hunt-badge img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       .footer-links {
@@ -1721,6 +1741,10 @@
         .site-footer {
           align-items: flex-start;
           flex-direction: column;
+        }
+
+        .product-hunt-badge {
+          width: min(250px, 100%);
         }
       }
 
