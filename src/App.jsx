@@ -5,6 +5,7 @@ import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
 import Refund from "./pages/Refund.jsx";
 import Releases from "./pages/Releases.jsx";
+import Support from "./pages/Support.jsx";
 import Success from "./pages/Success.jsx";
 import Docs from "./pages/Docs.jsx";
 import Seo from "./seo/Seo.jsx";
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/refund" element={<Refund />} />
         <Route path="/releases" element={<Releases />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/success" element={<Success />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="*" element={<NotFound />} />

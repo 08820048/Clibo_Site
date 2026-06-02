@@ -27,6 +27,13 @@
   font-weight: 400;
 }
 
+.privacy-main h3 {
+  margin: 28px 0 8px;
+  color: var(--black);
+  font-size: 17px;
+  font-weight: 500;
+}
+
 .privacy-main p,
 .privacy-main li {
   color: var(--muted);

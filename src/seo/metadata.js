@@ -4,7 +4,7 @@ export const DEFAULT_IMAGE = `${SITE_URL}/assets/hero-dashboard.png`;
 export const DEFAULT_LOCALE = "en_US";
 export const TWITTER_HANDLE = "@shizouffa";
 
-export const PUBLIC_ROUTES = ["/", "/privacy", "/terms", "/refund", "/releases"];
+export const PUBLIC_ROUTES = ["/", "/privacy", "/terms", "/refund", "/releases", "/support"];
 
 export const SEO_ROUTES = {
   "/": {
@@ -52,6 +52,16 @@ export const SEO_ROUTES = {
     description:
       "See the latest Clibo releases, product changes, feature updates, fixes, and localization improvements.",
     path: "/releases",
+    type: "article",
+    image: DEFAULT_IMAGE,
+    robots: "index, follow",
+    schema: ["breadcrumb"],
+  },
+  "/support": {
+    title: "Support - Clibo",
+    description:
+      "Get Clibo support, requirements, common questions, troubleshooting steps, and contact information.",
+    path: "/support",
     type: "article",
     image: DEFAULT_IMAGE,
     robots: "index, follow",

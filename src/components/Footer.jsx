@@ -97,6 +97,20 @@ export default function Footer() {
             }}
           />
         </Link>
+        <Link to="/support">
+          <I18nText
+            t={{
+              en: "Support",
+              zh: "支持",
+              ja: "サポート",
+              ko: "지원",
+              fr: "Support",
+              de: "Support",
+              it: "Supporto",
+              es: "Soporte",
+            }}
+          />
+        </Link>
         <a href="mailto:ilikexff@gmail.com" aria-label="Email support">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2" />
