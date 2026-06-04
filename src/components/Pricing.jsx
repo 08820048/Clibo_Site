@@ -226,7 +226,7 @@ export default function Pricing() {
               es: "o",
             }}
           />{" "}
-          <a href="https://releases.clibo.us/Clibo-1.0.3-6.dmg">
+          <a href="https://releases.clibo.us/Clibo-1.0.5-8.dmg">
             <I18nText
               t={{
                 en: "try it free",

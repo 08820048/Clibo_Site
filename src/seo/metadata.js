@@ -135,7 +135,7 @@ export function getStructuredData(seo) {
       operatingSystem: "macOS 13 or later",
       description: seo.description,
       url: `${SITE_URL}/`,
-      downloadUrl: "https://releases.clibo.us/Clibo-1.0.3-6.dmg",
+      downloadUrl: "https://releases.clibo.us/Clibo-1.0.5-8.dmg",
       image: DEFAULT_IMAGE,
       offers: {
         "@type": "Offer",
