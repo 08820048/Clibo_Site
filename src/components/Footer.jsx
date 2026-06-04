@@ -111,6 +111,24 @@ export default function Footer() {
             }}
           />
         </Link>
+        <a
+          href="https://clibo.userjot.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <I18nText
+            t={{
+              en: "Feedback",
+              zh: "反馈",
+              ja: "フィードバック",
+              ko: "피드백",
+              fr: "Retour",
+              de: "Feedback",
+              it: "Feedback",
+              es: "Comentarios",
+            }}
+          />
+        </a>
         <a href="mailto:ilikexff@gmail.com" aria-label="Email support">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2" />
