@@ -141,6 +141,7 @@ export function getStructuredData(seo) {
         "@type": "Offer",
         price: "9",
         priceCurrency: "USD",
+        priceValidUntil: "2026-07-01",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/#pricing`,
       },

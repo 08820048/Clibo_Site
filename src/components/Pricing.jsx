@@ -170,14 +170,14 @@ export default function Pricing() {
             delay={0.1}
             stagger={0.016}
             t={{
-              en: "Early Bird: $9 one-time · Regular price $15",
-              zh: "早鸟价：$9 一次买断 · 正价 $15",
-              ja: "早期価格：$9買い切り · 通常価格$15",
-              ko: "얼리버드: $9 일회 결제 · 정상가 $15",
-              fr: "Early Bird : 9 $ en une fois · Prix normal 15 $",
-              de: "Early Bird: 9 $ einmalig · Regulärer Preis 15 $",
-              it: "Early Bird: 9 $ una tantum · Prezzo regolare 15 $",
-              es: "Early Bird: 9 $ pago único · Precio regular 15 $",
+              en: "Early Bird: $9 one-time · Regular price $15 · Valid until July 1, 2026",
+              zh: "早鸟价：$9 一次买断 · 正价 $15 · 2026年7月1日前有效",
+              ja: "早期価格：$9買い切り · 通常価格$15 · 2026年7月1日まで有効",
+              ko: "얼리버드: $9 일회 결제 · 정상가 $15 · 2026년 7월 1일까지 유효",
+              fr: "Early Bird : 9 $ en une fois · Prix normal 15 $ · Valable jusqu'au 1 juillet 2026",
+              de: "Early Bird: 9 $ einmalig · Regulärer Preis 15 $ · Gültig bis 1. Juli 2026",
+              it: "Early Bird: 9 $ una tantum · Prezzo regolare 15 $ · Valido fino al 1 luglio 2026",
+              es: "Early Bird: 9 $ pago único · Precio regular 15 $ · Válido hasta el 1 de julio de 2026",
             }}
           />
         </p>

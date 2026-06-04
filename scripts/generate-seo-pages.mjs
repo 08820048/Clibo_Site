@@ -109,7 +109,7 @@ function buildSnapshot(seo) {
       </section>
       <section>
         <h2>Pricing</h2>
-        <p>Early Bird: $9 one-time purchase. Includes a 7-day free trial and 2 Mac activations.</p>
+        <p>Early Bird: $9 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
         <p><a href="https://releases.clibo.us/Clibo-1.0.3-6.dmg">Download Clibo free trial</a></p>
       </section>
     </main>`;
@@ -119,6 +119,12 @@ function buildSnapshot(seo) {
     return `<main>
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
+      <section>
+        <h2>Clibo 1.0.4</h2>
+        <ul>
+          <li>Added a temporary sensitive copy recording switch, masked sensitive previews, and local image OCR text extraction with Apple Vision.</li>
+        </ul>
+      </section>
       <section>
         <h2>Clibo 1.0.3</h2>
         <ul>

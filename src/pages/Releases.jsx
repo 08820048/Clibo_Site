@@ -8,6 +8,52 @@ import "../styles/privacy.css";
 
 const RELEASES = [
   {
+    version: "1.0.4",
+    date: "2026-06-04",
+    title: {
+      en: "Sensitive capture controls, masked previews, and local image OCR",
+      zh: "敏感复制控制、脱敏预览与本地图片 OCR",
+      ja: "機密コピー制御、マスク表示、ローカル画像 OCR",
+      ko: "민감한 복사 제어, 마스킹 미리보기 및 로컬 이미지 OCR",
+      fr: "Controle des copies sensibles, apercus masques et OCR local des images",
+      de: "Steuerung sensibler Kopien, maskierte Vorschauen und lokale Bild-OCR",
+      it: "Controlli per copie sensibili, anteprime mascherate e OCR locale immagini",
+      es: "Controles de copia sensible, vistas enmascaradas y OCR local de imagenes",
+    },
+    notes: [
+      {
+        en: "Added a temporary \"Record Sensitive Copies\" switch to the quick panel. While enabled, Clibo bypasses sensitive filtering and changes the menu bar icon to `lock.slash`; turning it off restores the normal privacy rules.",
+        zh: "快捷面板新增临时“记录敏感复制”开关。开启期间会绕过敏感过滤并让菜单栏图标切换为 `lock.slash`，关闭后恢复正常隐私规则。",
+        ja: "クイックパネルに一時的な「機密コピーを記録」スイッチを追加しました。有効な間は機密フィルターをバイパスし、メニューバーアイコンが `lock.slash` に切り替わります。オフにすると通常のプライバシールールに戻ります。",
+        ko: "빠른 패널에 임시 \"민감한 복사 기록\" 스위치를 추가했습니다. 켜져 있는 동안 민감한 필터링을 우회하고 메뉴 막대 아이콘이 `lock.slash`로 바뀌며, 끄면 일반 개인정보 보호 규칙으로 돌아갑니다.",
+        fr: "Ajout d'un interrupteur temporaire \"Record Sensitive Copies\" dans le panneau rapide. Lorsqu'il est active, Clibo contourne le filtrage sensible et remplace l'icone de barre de menus par `lock.slash`; une fois desactive, les regles de confidentialite normales sont restaurees.",
+        de: "Im Schnellpanel gibt es einen temporaeren Schalter \"Record Sensitive Copies\". Solange er aktiv ist, umgeht Clibo den Filter fuer sensible Inhalte und wechselt das Menuleistensymbol zu `lock.slash`; nach dem Deaktivieren gelten wieder die normalen Datenschutzregeln.",
+        it: "Aggiunto al pannello rapido un interruttore temporaneo \"Record Sensitive Copies\". Quando e attivo, Clibo aggira il filtro dei contenuti sensibili e cambia l'icona della barra dei menu in `lock.slash`; disattivandolo tornano le normali regole di privacy.",
+        es: "Se agrego al panel rapido un interruptor temporal \"Record Sensitive Copies\". Mientras esta activado, Clibo omite el filtrado sensible y cambia el icono de la barra de menus a `lock.slash`; al desactivarlo se restauran las reglas normales de privacidad.",
+      },
+      {
+        en: "Sensitive content is masked by default in panels and can be disabled in Privacy settings; copying, pasting, and database storage still use the original content.",
+        zh: "敏感内容默认在面板中脱敏显示，可在隐私设置中关闭；复制、粘贴和数据库存储仍使用原始内容。",
+        ja: "機密内容はデフォルトでパネル内ではマスク表示され、プライバシー設定で無効化できます。コピー、貼り付け、データベース保存には引き続き元の内容が使われます。",
+        ko: "민감한 콘텐츠는 기본적으로 패널에서 마스킹되어 표시되며 개인정보 설정에서 끌 수 있습니다. 복사, 붙여넣기 및 데이터베이스 저장에는 여전히 원본 콘텐츠가 사용됩니다.",
+        fr: "Le contenu sensible est masque par defaut dans les panneaux et peut etre desactive dans les reglages de confidentialite; la copie, le collage et le stockage en base de donnees utilisent toujours le contenu d'origine.",
+        de: "Sensible Inhalte werden in Panels standardmaessig maskiert angezeigt und koennen in den Datenschutzeinstellungen deaktiviert werden; Kopieren, Einfuegen und Datenbankspeicherung verwenden weiterhin den Originalinhalt.",
+        it: "I contenuti sensibili sono mascherati per impostazione predefinita nei pannelli e possono essere disattivati nelle impostazioni Privacy; copia, incolla e archiviazione nel database usano ancora il contenuto originale.",
+        es: "El contenido sensible se muestra enmascarado por defecto en los paneles y puede desactivarse en los ajustes de privacidad; copiar, pegar y almacenar en la base de datos siguen usando el contenido original.",
+      },
+      {
+        en: "Added local OCR text extraction to the image record context menu, using Apple Vision to recognize text in images without configuring an AI provider.",
+        zh: "图片记录右键菜单新增本地 OCR 文本提取功能，使用 Apple Vision 识别图片文字，无需配置 AI provider。",
+        ja: "画像記録のコンテキストメニューにローカル OCR テキスト抽出を追加しました。Apple Vision で画像内の文字を認識するため、AI provider の設定は不要です。",
+        ko: "이미지 기록 컨텍스트 메뉴에 로컬 OCR 텍스트 추출 기능을 추가했습니다. Apple Vision으로 이미지의 텍스트를 인식하므로 AI provider 설정이 필요 없습니다.",
+        fr: "Ajout de l'extraction de texte OCR locale au menu contextuel des images, avec Apple Vision pour reconnaitre le texte des images sans configurer d'AI provider.",
+        de: "Das Kontextmenu fuer Bildeintraege bietet jetzt lokale OCR-Textextraktion mit Apple Vision, um Text in Bildern ohne konfigurierten AI provider zu erkennen.",
+        it: "Aggiunta l'estrazione testo OCR locale al menu contestuale dei record immagine, usando Apple Vision per riconoscere il testo nelle immagini senza configurare un AI provider.",
+        es: "Se agrego extraccion local de texto OCR al menu contextual de los registros de imagen, usando Apple Vision para reconocer texto en imagenes sin configurar un AI provider.",
+      },
+    ],
+  },
+  {
     version: "1.0.3",
     date: "2026-06-01",
     title: {
