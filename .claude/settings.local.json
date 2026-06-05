@@ -12,7 +12,12 @@
       "Bash(python3 *)",
       "Bash(npm install *)",
       "Bash(sed -n '17,1400p' /Users/xuyi/Documents/CliboSite/index.html.bak)",
-      "Bash(sed -n '17,1400p' /Users/xuyi/Documents/CliboSite/index.html)"
+      "Bash(sed -n '17,1400p' /Users/xuyi/Documents/CliboSite/index.html)",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(npx wrangler *)",
+      "Bash(npm ls *)",
+      "Bash(git commit *)"
     ]
   }
 }
