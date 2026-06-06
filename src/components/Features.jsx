@@ -132,6 +132,37 @@ const FEATURES = [
   {
     icon: (
       <svg viewBox="0 0 24 24">
+        <path d="M8 17.5H7a4 4 0 0 1-.9-7.9 5.5 5.5 0 0 1 10.7-1.5A4.5 4.5 0 0 1 17.5 17.5H16"></path>
+        <path d="M12 12v8"></path>
+        <path d="m8.5 16.5 3.5 3.5 3.5-3.5"></path>
+        <path d="M9.5 7.5h3.8"></path>
+        <path d="M9.5 10.5h5"></path>
+      </svg>
+    ),
+    title: {
+      en: "Pinned Sync",
+      zh: "置顶同步",
+      ja: "ピン留め同期",
+      ko: "고정 항목 동기화",
+      fr: "Sync des epingles",
+      de: "Pin-Synchronisierung",
+      it: "Sync elementi fissati",
+      es: "Sincronizacion de fijados",
+    },
+    desc: {
+      en: "Share pinned clipboard items across your Macs with iCloud Drive or any synced folder, while local history stays on each device.",
+      zh: "通过 iCloud Drive 或其他同步文件夹，在多台 Mac 间共享置顶的复制内容；本地剪贴板历史仍保留在各自设备上。",
+      ja: "iCloud Drive または任意の同期フォルダで、ピン留めしたクリップボード項目を複数の Mac 間で共有。ローカル履歴は各デバイスに残ります。",
+      ko: "iCloud Drive 또는 동기화 폴더로 고정한 클립보드 항목을 여러 Mac에서 공유합니다. 로컬 기록은 각 기기에 그대로 남습니다.",
+      fr: "Partagez les elements epingles du presse-papiers entre vos Macs via iCloud Drive ou tout dossier synchronise, tout en gardant l'historique local sur chaque appareil.",
+      de: "Teilen Sie angeheftete Zwischenablageeintraege per iCloud Drive oder einem Sync-Ordner zwischen Ihren Macs, waehrend der lokale Verlauf auf jedem Geraet bleibt.",
+      it: "Condividi gli elementi fissati degli appunti tra i tuoi Mac con iCloud Drive o una cartella sincronizzata, mantenendo la cronologia locale su ogni dispositivo.",
+      es: "Comparte elementos fijados del portapapeles entre tus Mac con iCloud Drive o cualquier carpeta sincronizada, manteniendo el historial local en cada dispositivo.",
+    },
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24">
         <rect x="5" y="10" width="14" height="10" rx="2"></rect>
         <path d="M8 10V7.8a4 4 0 0 1 8 0V10"></path>
         <path d="M12 14v2"></path>
