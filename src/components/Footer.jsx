@@ -33,7 +33,7 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           <img
-            alt="Clibo - Your clipboard, finally smart. | Product Hunt"
+            alt="Clibo makes your clipboard finally smart. | Product Hunt"
             width="250"
             height="54"
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1159074&theme=light&t=1780319420417"

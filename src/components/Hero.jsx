@@ -5,41 +5,51 @@ import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const HERO_TITLE = {
   en: [
-    [{ text: "Your" }],
-    [{ text: "clipboard," }],
+    [{ text: "Clibo" }],
+    [{ text: "makes your" }],
+    [{ text: "clipboard" }],
     [{ text: "finally" }],
     [{ text: "smart.", emphasis: true }],
   ],
-  zh: [[{ text: "剪贴板，" }], [{ text: "终于变" }], [{ text: "聪明了。", emphasis: true }]],
+  zh: [[{ text: "Clibo" }], [{ text: "让剪贴板" }], [{ text: "终于" }], [{ text: "聪明了。", emphasis: true }]],
   ja: [
+    [{ text: "Cliboが" }],
     [{ text: "あなたの" }],
-    [{ text: "クリップボード、" }],
-    [{ text: "ついに" }, { text: "賢く。", emphasis: true }],
+    [{ text: "クリップボードを" }],
+    [{ text: "賢く。", emphasis: true }],
   ],
   ko: [
-    [{ text: "당신의" }],
-    [{ text: "클립보드," }],
-    [{ text: "드디어 " }, { text: "똑똑해지다.", emphasis: true }],
+    [{ text: "Clibo가" }],
+    [{ text: "클립보드를" }],
+    [{ text: "마침내" }],
+    [{ text: "똑똑하게.", emphasis: true }],
   ],
   fr: [
-    [{ text: "Votre" }],
+    [{ text: "Clibo rend" }],
+    [{ text: "votre" }],
     [{ text: "presse-papiers," }],
-    [{ text: "enfin " }, { text: "intelligent.", emphasis: true }],
+    [{ text: "enfin" }],
+    [{ text: "intelligent.", emphasis: true }],
   ],
   de: [
+    [{ text: "Clibo macht" }],
     [{ text: "Ihre" }],
     [{ text: "Zwischenablage," }],
-    [{ text: "endlich " }, { text: "schlau.", emphasis: true }],
+    [{ text: "endlich" }],
+    [{ text: "schlau.", emphasis: true }],
   ],
   it: [
-    [{ text: "La tua" }],
-    [{ text: "clipboard," }],
-    [{ text: "finalmente " }, { text: "intelligente.", emphasis: true }],
+    [{ text: "Clibo rende" }],
+    [{ text: "i tuoi" }],
+    [{ text: "appunti" }],
+    [{ text: "intelligenti.", emphasis: true }],
   ],
   es: [
-    [{ text: "Tu" }],
+    [{ text: "Clibo hace" }],
+    [{ text: "tu" }],
     [{ text: "portapapeles," }],
-    [{ text: "por fin " }, { text: "inteligente.", emphasis: true }],
+    [{ text: "por fin" }],
+    [{ text: "inteligente.", emphasis: true }],
   ],
 };
 
@@ -97,14 +107,14 @@ export default function Hero() {
           <p className="subtitle reveal" style={{ "--delay": "220ms" }}>
             <AnimatedI18nText
               t={{
-                en: "Clibo remembers everything you copy — color, code, images, links. Rich previews for every format. AI-powered search that just works. Yours forever for $9.",
-                zh: "Clibo 记住你复制的一切。多种格式一键预览，快捷高效。 AI 语义搜索秒速召回。一次买断，永久使用。",
-                ja: "Cliboはコピーしたすべてを記憶 — 色、コード、画像、リンク。あらゆる形式のリッチプレビュー。AI検索が自然に機能。$9で永久に。",
-                ko: "Clibo가 복사한 모든 것을 기억합니다 — 색상, 코드, 이미지, 링크. 모든 형식의 리치 미리보기. AI 검색이 자연스럽게 작동. $9로 영구 사용.",
-                fr: "Clibo mémorise tout ce que vous copiez — couleurs, code, images, liens. Aperçus riches pour chaque format. Recherche IA qui fonctionne. À vous pour $9.",
-                de: "Clibo merkt sich alles, was Sie kopieren — Farben, Code, Bilder, Links. Rich-Previews für jedes Format. KI-Suche, die einfach funktioniert. Für $9 für immer Ihre.",
-                it: "Clibo ricorda tutto ciò che copi — colori, codice, immagini, link. Anteprime ricche per ogni formato. Ricerca AI che funziona. Tua per sempre a $9.",
-                es: "Clibo recuerda todo lo que copias — colores, código, imágenes, enlaces. Previsualizaciones enriquecidas para cada formato. Búsqueda con IA que funciona. Tuyo para siempre por $9.",
+                en: "Save everything you copy on your Mac: text, images, links, files, colors, dates, emails, and phone numbers. Search fast, preview richly, and turn copied content into notes, reminders, calendar events, and contacts.",
+                zh: "保存你在 Mac 上复制的一切：文本、图片、链接、文件、颜色、日期、邮箱和电话号码。快速搜索、丰富预览，还能把复制内容变成备忘录、提醒事项、日历事件和联系人。",
+                ja: "Macでコピーしたテキスト、画像、リンク、ファイル、色、日付、メール、電話番号を保存。高速検索、リッチプレビュー、メモ、リマインダー、カレンダー、連絡先への連携まで。",
+                ko: "Mac에서 복사한 텍스트, 이미지, 링크, 파일, 색상, 날짜, 이메일, 전화번호를 저장하세요. 빠르게 검색하고 풍부하게 미리 보며, 메모, 미리 알림, 캘린더, 연락처로 이어집니다.",
+                fr: "Enregistrez tout ce que vous copiez sur Mac : texte, images, liens, fichiers, couleurs, dates, emails et numeros. Recherchez vite, previsualisez mieux, puis creez notes, rappels, evenements et contacts.",
+                de: "Speichern Sie alles, was Sie auf dem Mac kopieren: Text, Bilder, Links, Dateien, Farben, Daten, E-Mails und Telefonnummern. Schnell suchen, reichhaltig ansehen und in Notizen, Erinnerungen, Kalendertermine oder Kontakte verwandeln.",
+                it: "Salva tutto cio che copi sul Mac: testo, immagini, link, file, colori, date, email e numeri di telefono. Cerca in fretta, guarda anteprime ricche e crea note, promemoria, eventi e contatti.",
+                es: "Guarda todo lo que copias en tu Mac: texto, imagenes, enlaces, archivos, colores, fechas, emails y telefonos. Busca rapido, previsualiza mejor y crea notas, recordatorios, eventos y contactos.",
               }}
             />
           </p>
