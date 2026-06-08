@@ -101,7 +101,7 @@ export default function Pricing() {
           <AnimatedI18nText
             t={{
               en: "One fair price. No subscription.",
-              zh: "一个清晰价格，无订阅。",
+              zh: "一次买断 无订阅",
               ja: "わかりやすい価格。サブスクリプションなし。",
               ko: "한 번의 공정한 가격. 구독 없음.",
               fr: "Un prix juste. Pas d'abonnement.",

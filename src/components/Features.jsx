@@ -279,9 +279,6 @@ export default function Features() {
             className="feature-card reveal reveal-soft"
             style={{ "--delay": `${Math.min(i * 70, 320)}ms` }}
           >
-            <span className="feature-icon" aria-hidden="true">
-              {f.icon}
-            </span>
             <h3>
               <AnimatedI18nText t={f.title} delay={0.06} stagger={0.025} />
             </h3>

@@ -4,53 +4,14 @@ import I18nText from "./I18nText.jsx";
 import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const HERO_TITLE = {
-  en: [
-    [{ text: "Clibo" }],
-    [{ text: "makes your" }],
-    [{ text: "clipboard" }],
-    [{ text: "finally" }],
-    [{ text: "smart.", emphasis: true }],
-  ],
-  zh: [[{ text: "Clibo" }], [{ text: "让剪贴板" }], [{ text: "终于" }], [{ text: "聪明了。", emphasis: true }]],
-  ja: [
-    [{ text: "Cliboが" }],
-    [{ text: "あなたの" }],
-    [{ text: "クリップボードを" }],
-    [{ text: "賢く。", emphasis: true }],
-  ],
-  ko: [
-    [{ text: "Clibo가" }],
-    [{ text: "클립보드를" }],
-    [{ text: "마침내" }],
-    [{ text: "똑똑하게.", emphasis: true }],
-  ],
-  fr: [
-    [{ text: "Clibo rend" }],
-    [{ text: "votre" }],
-    [{ text: "presse-papiers," }],
-    [{ text: "enfin" }],
-    [{ text: "intelligent.", emphasis: true }],
-  ],
-  de: [
-    [{ text: "Clibo macht" }],
-    [{ text: "Ihre" }],
-    [{ text: "Zwischenablage," }],
-    [{ text: "endlich" }],
-    [{ text: "schlau.", emphasis: true }],
-  ],
-  it: [
-    [{ text: "Clibo rende" }],
-    [{ text: "i tuoi" }],
-    [{ text: "appunti" }],
-    [{ text: "intelligenti.", emphasis: true }],
-  ],
-  es: [
-    [{ text: "Clibo hace" }],
-    [{ text: "tu" }],
-    [{ text: "portapapeles," }],
-    [{ text: "por fin" }],
-    [{ text: "inteligente.", emphasis: true }],
-  ],
+  en: [[{ text: "Clibo" }]],
+  zh: [[{ text: "Clibo" }]],
+  ja: [[{ text: "Clibo" }]],
+  ko: [[{ text: "Clibo" }]],
+  fr: [[{ text: "Clibo" }]],
+  de: [[{ text: "Clibo" }]],
+  it: [[{ text: "Clibo" }]],
+  es: [[{ text: "Clibo" }]],
 };
 
 function AnimatedHeroTitle() {
@@ -90,14 +51,14 @@ export default function Hero() {
           <div className="badge reveal" style={{ "--delay": "40ms" }}>
             <I18nText
               t={{
-                en: "Now available · macOS 13+",
-                zh: "现已推出 · macOS 13+",
-                ja: "利用可能 · macOS 13+",
-                ko: "사용 가능 · macOS 13+",
-                fr: "Disponible · macOS 13+",
-                de: "Jetzt verfügbar · macOS 13+",
-                it: "Disponibile · macOS 13+",
-                es: "Disponible · macOS 13+",
+                en: "Native Mac clipboard utility · v1.0.8 · macOS 13+",
+                zh: "原生 Mac 剪贴板工具 · v1.0.8 · macOS 13+",
+                ja: "ネイティブ Mac クリップボードツール · v1.0.8 · macOS 13+",
+                ko: "네이티브 Mac 클립보드 도구 · v1.0.8 · macOS 13+",
+                fr: "Utilitaire presse-papiers Mac natif · v1.0.8 · macOS 13+",
+                de: "Native Mac-Zwischenablage · v1.0.8 · macOS 13+",
+                it: "Utility clipboard Mac nativa · v1.0.8 · macOS 13+",
+                es: "Utilidad nativa de portapapeles para Mac · v1.0.8 · macOS 13+",
               }}
             />
           </div>
