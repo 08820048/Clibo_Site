@@ -12,7 +12,7 @@ import {
 } from "../src/seo/metadata.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-05-31";
+const LAST_MODIFIED = "2026-06-08";
 
 function escapeHtml(value) {
   return String(value)
@@ -95,16 +95,18 @@ function buildSnapshot(seo) {
 
   if (seo.path === "/") {
     return `<main>
-      <h1>Clibo - Smart Clipboard Manager for macOS</h1>
-      <p>Clibo is a privacy-first macOS clipboard manager with local history, rich previews, pinned snippets, AI search, and a 7-day free trial.</p>
+      <h1>Clibo - Private Clipboard Manager for Mac</h1>
+      <p>Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.</p>
       <img src="/assets/hero-dashboard.png" alt="Clibo clipboard history dashboard" />
       <section>
         <h2>Features</h2>
         <ul>
-          <li>Local clipboard history stored on your Mac.</li>
-          <li>Rich previews for text, images, code, links, colors, and files.</li>
-          <li>Pinned snippets, quick panel, and fast search.</li>
-          <li>Optional BYOK AI actions for translate, rewrite, and summarize.</li>
+          <li>Local clipboard history for text, images, links, files, colors, dates, emails, and phone numbers.</li>
+          <li>Maccy import plus JSON, CSV, TXT, and Markdown import.</li>
+          <li>Pinned clipboard sync across Macs with iCloud Drive or synced folders.</li>
+          <li>Quick panel, pinned snippets, global snippet shortcuts, and fast search.</li>
+          <li>Native macOS actions for Calendar, Contacts, Messages, Notes, and Reminders.</li>
+          <li>Optional BYOK AI actions for translate, rewrite, summarize, and more.</li>
         </ul>
       </section>
       <section>
@@ -120,27 +122,34 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
-        <h2>Clibo 1.0.4</h2>
+        <h2>Clibo 1.0.8</h2>
         <ul>
-          <li>Added a temporary sensitive copy recording switch, masked sensitive previews, and local image OCR text extraction with Apple Vision.</li>
+          <li>Added Maccy import for history, images, files, pinned content, and original copy timestamps.</li>
+          <li>Added date and phone number recognition plus native macOS actions for Calendar, Contacts, Messages, Notes, and Reminders.</li>
+          <li>Added onboarding guidance for permissions and updated Simplified Chinese, German, Spanish, French, Italian, Japanese, and Korean localization.</li>
         </ul>
       </section>
       <section>
-        <h2>Clibo 1.0.3</h2>
+        <h2>Clibo 1.0.7</h2>
         <ul>
-          <li>Added Snippets templates, statistics, local formatting actions, Explain Code, stronger automations, new automation actions, and type-colored content icons.</li>
+          <li>Added a Data settings panel and generic import flow for JSON, CSV, TXT, and Markdown files.</li>
+          <li>Added preview before import, import destinations for history, pinned records, or Snippets, and duplicate filtering options.</li>
+          <li>Added Email classification and edit actions for clipboard records.</li>
         </ul>
       </section>
       <section>
-        <h2>Clibo 1.0.2</h2>
+        <h2>Clibo 1.0.6</h2>
         <ul>
-          <li>Added README documentation, SwiftPM tests, SQLite migration support, Sparkle appcast improvements, 7-day trial copy updates, onboarding improvements, internal module cleanup, and SwiftLint configuration.</li>
+          <li>Added pinned clipboard sync through iCloud Drive or other synced folders.</li>
+          <li>Added global Snippet shortcuts from Command + Shift + 1 through Command + Shift + 9.</li>
+          <li>Added app selection for excluded privacy sources with Bundle ID detection.</li>
         </ul>
       </section>
       <section>
-        <h2>Clibo 1.0.1</h2>
+        <h2>Clibo 1.0.5</h2>
         <ul>
-          <li>Improved quick panel color swatches, context menus, file and path recognition, history cleanup settings, menu bar icon, animations, and localization.</li>
+          <li>Improved image OCR for Chinese and other languages using Apple Vision.</li>
+          <li>Added sensitive copy statistics, source statistics, and AI usage statistics.</li>
         </ul>
       </section>
     </main>`;

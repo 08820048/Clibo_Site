@@ -1,7 +1,7 @@
 {
   "name": "Clibo",
   "short_name": "Clibo",
-  "description": "Privacy-first smart clipboard manager for macOS.",
+  "description": "Private clipboard manager for Mac with local history, rich previews, pinned sync, and snippets.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -8,9 +8,9 @@ export const PUBLIC_ROUTES = ["/", "/privacy", "/terms", "/refund", "/releases",
 
 export const SEO_ROUTES = {
   "/": {
-    title: "Clibo - Smart Clipboard Manager for macOS",
+    title: "Clibo - Private Clipboard Manager for Mac",
     description:
-      "Clibo is a privacy-first macOS clipboard manager with local history, rich previews, pinned snippets, AI search, and a 7-day free trial.",
+      "Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.",
     path: "/",
     type: "website",
     image: DEFAULT_IMAGE,
@@ -50,7 +50,7 @@ export const SEO_ROUTES = {
   "/releases": {
     title: "Release Notes - Clibo",
     description:
-      "See the latest Clibo releases, product changes, feature updates, fixes, and localization improvements.",
+      "See the latest Clibo 1.0.8 release notes, product changes, feature updates, fixes, and localization improvements.",
     path: "/releases",
     type: "article",
     image: DEFAULT_IMAGE,
@@ -60,7 +60,7 @@ export const SEO_ROUTES = {
   "/support": {
     title: "Support - Clibo",
     description:
-      "Get Clibo support, requirements, common questions, troubleshooting steps, and contact information.",
+      "Get Clibo support for macOS requirements, clipboard permissions, privacy settings, troubleshooting, and contact information.",
     path: "/support",
     type: "article",
     image: DEFAULT_IMAGE,
@@ -78,9 +78,9 @@ export const SEO_ROUTES = {
     schema: [],
   },
   "/docs": {
-    title: "Clibo - Smart Clipboard Manager for macOS",
+    title: "Clibo - Private Clipboard Manager for Mac",
     description:
-      "Clibo is a privacy-first macOS clipboard manager with local history, rich previews, pinned snippets, AI search, and a 7-day free trial.",
+      "Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.",
     path: "/",
     type: "website",
     image: DEFAULT_IMAGE,
@@ -121,8 +121,23 @@ export function getStructuredData(seo) {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       name: SITE_NAME,
+      alternateName: "Clibo Mac Clipboard Manager",
       url: `${SITE_URL}/`,
       inLanguage: "en",
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+    });
+
+    graph.push({
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/assets/clibo-icon.png`,
+      sameAs: [
+        "https://www.producthunt.com/products/clibo",
+      ],
     });
   }
 
@@ -132,11 +147,17 @@ export function getStructuredData(seo) {
       "@id": `${SITE_URL}/#software`,
       name: SITE_NAME,
       applicationCategory: "ProductivityApplication",
+      applicationSubCategory: "Clipboard manager",
       operatingSystem: "macOS 13 or later",
+      softwareVersion: "1.0.8",
       description: seo.description,
       url: `${SITE_URL}/`,
       downloadUrl: "https://releases.clibo.us/Clibo-1.0.8-11.dmg",
       image: DEFAULT_IMAGE,
+      screenshot: DEFAULT_IMAGE,
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
       offers: {
         "@type": "Offer",
         price: "9",
@@ -146,10 +167,13 @@ export function getStructuredData(seo) {
         url: `${SITE_URL}/#pricing`,
       },
       featureList: [
-        "Local clipboard history",
-        "Rich previews for text, images, code, links, colors, and files",
-        "Pinned snippets",
-        "Quick panel",
+        "Local clipboard history for text, images, links, files, colors, dates, emails, and phone numbers",
+        "Rich hover previews",
+        "Maccy import and JSON, CSV, TXT, and Markdown import",
+        "Pinned clipboard sync across Macs with iCloud Drive or synced folders",
+        "Pinned snippets and global snippet shortcuts",
+        "Quick panel and fast search",
+        "Native macOS actions for Calendar, Contacts, Messages, Notes, and Reminders",
         "Optional BYOK AI actions",
         "7-day free trial",
       ],
