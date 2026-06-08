@@ -68,14 +68,14 @@ export default function Hero() {
           <p className="subtitle reveal" style={{ "--delay": "220ms" }}>
             <AnimatedI18nText
               t={{
-                en: "Save everything you copy on your Mac: text, images, links, files, colors, dates, emails, and phone numbers. Search fast, preview richly, and turn copied content into notes, reminders, calendar events, and contacts.",
-                zh: "保存你在 Mac 上复制的一切：文本、图片、链接、文件、颜色、日期、邮箱和电话号码。快速搜索、丰富预览，还能把复制内容变成备忘录、提醒事项、日历事件和联系人。",
-                ja: "Macでコピーしたテキスト、画像、リンク、ファイル、色、日付、メール、電話番号を保存。高速検索、リッチプレビュー、メモ、リマインダー、カレンダー、連絡先への連携まで。",
-                ko: "Mac에서 복사한 텍스트, 이미지, 링크, 파일, 색상, 날짜, 이메일, 전화번호를 저장하세요. 빠르게 검색하고 풍부하게 미리 보며, 메모, 미리 알림, 캘린더, 연락처로 이어집니다.",
-                fr: "Enregistrez tout ce que vous copiez sur Mac : texte, images, liens, fichiers, couleurs, dates, emails et numeros. Recherchez vite, previsualisez mieux, puis creez notes, rappels, evenements et contacts.",
-                de: "Speichern Sie alles, was Sie auf dem Mac kopieren: Text, Bilder, Links, Dateien, Farben, Daten, E-Mails und Telefonnummern. Schnell suchen, reichhaltig ansehen und in Notizen, Erinnerungen, Kalendertermine oder Kontakte verwandeln.",
-                it: "Salva tutto cio che copi sul Mac: testo, immagini, link, file, colori, date, email e numeri di telefono. Cerca in fretta, guarda anteprime ricche e crea note, promemoria, eventi e contatti.",
-                es: "Guarda todo lo que copias en tu Mac: texto, imagenes, enlaces, archivos, colores, fechas, emails y telefonos. Busca rapido, previsualiza mejor y crea notas, recordatorios, eventos y contactos.",
+                en: "Keep every copy close, search it instantly, and turn useful clips into action.",
+                zh: "保存每一次复制，快速找回，并把有用内容直接变成行动。",
+                ja: "コピーした内容を手元に残し、すばやく検索して、そのまま次の作業へ。",
+                ko: "복사한 내용을 가까이에 두고, 즉시 찾아서 바로 다음 작업으로 이어가세요.",
+                fr: "Gardez chaque copie a portee, retrouvez-la vite et transformez-la en action.",
+                de: "Alles Kopierte griffbereit behalten, sofort finden und direkt weiterverwenden.",
+                it: "Tieni ogni copia a portata, trovala subito e trasformala in azione.",
+                es: "Guarda cada copia cerca, encuentrala al instante y conviertela en accion.",
               }}
             />
           </p>
