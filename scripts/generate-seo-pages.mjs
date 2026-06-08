@@ -173,7 +173,6 @@ function buildRobots() {
   return `User-agent: *
 Allow: /
 Disallow: /success
-Disallow: /docs
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `;

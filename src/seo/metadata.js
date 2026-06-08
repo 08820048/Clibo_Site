@@ -4,7 +4,7 @@ export const DEFAULT_IMAGE = `${SITE_URL}/assets/hero-dashboard.png`;
 export const DEFAULT_LOCALE = "en_US";
 export const TWITTER_HANDLE = "@shizouffa";
 
-export const PUBLIC_ROUTES = ["/", "/privacy", "/terms", "/refund", "/releases", "/support"];
+export const PUBLIC_ROUTES = ["/", "/privacy", "/terms", "/refund", "/releases", "/docs", "/support"];
 
 export const SEO_ROUTES = {
   "/": {
@@ -78,14 +78,14 @@ export const SEO_ROUTES = {
     schema: [],
   },
   "/docs": {
-    title: "Clibo - Private Clipboard Manager for Mac",
+    title: "Docs - Clibo",
     description:
-      "Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.",
-    path: "/",
-    type: "website",
+      "Learn how to use Clibo for clipboard history, quick panel workflows, snippets, privacy controls, macOS integrations, pinned sync, and Maccy import.",
+    path: "/docs",
+    type: "article",
     image: DEFAULT_IMAGE,
-    robots: "noindex, follow",
-    schema: [],
+    robots: "index, follow",
+    schema: ["breadcrumb"],
   },
   "/404": {
     title: "Page Not Found - Clibo",

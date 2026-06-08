@@ -28,10 +28,6 @@
 
 /docs
   Content-Type: text/html; charset=utf-8
-  X-Robots-Tag: noindex, follow
-
-/docs/*
-  X-Robots-Tag: noindex, follow
 
 /robots.txt
   Content-Type: text/plain; charset=utf-8

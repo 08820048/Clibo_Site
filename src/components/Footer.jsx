@@ -97,6 +97,20 @@ export default function Footer() {
             }}
           />
         </Link>
+        <Link to="/docs">
+          <I18nText
+            t={{
+              en: "Docs",
+              zh: "Docs",
+              ja: "Docs",
+              ko: "Docs",
+              fr: "Docs",
+              de: "Docs",
+              it: "Docs",
+              es: "Docs",
+            }}
+          />
+        </Link>
         <Link to="/support">
           <I18nText
             t={{
