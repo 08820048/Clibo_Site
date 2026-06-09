@@ -4,14 +4,38 @@ import I18nText from "./I18nText.jsx";
 import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const HERO_TITLE = {
-  en: [[{ text: "Clibo" }]],
-  zh: [[{ text: "Clibo" }]],
-  ja: [[{ text: "Clibo" }]],
-  ko: [[{ text: "Clibo" }]],
-  fr: [[{ text: "Clibo" }]],
-  de: [[{ text: "Clibo" }]],
-  it: [[{ text: "Clibo" }]],
-  es: [[{ text: "Clibo" }]],
+  en: [
+    [{ text: "Your" }, { text: "clipboard," }],
+    [{ text: "finally" }, { text: "organized.", emphasis: true }],
+  ],
+  zh: [
+    [{ text: "剪贴板，" }],
+    [{ text: "终于" }, { text: "井井有条", emphasis: true }],
+  ],
+  ja: [
+    [{ text: "クリップボードを、" }],
+    [{ text: "ついに" }, { text: "整理。", emphasis: true }],
+  ],
+  ko: [
+    [{ text: "클립보드," }],
+    [{ text: "드디어" }, { text: "정리되다.", emphasis: true }],
+  ],
+  fr: [
+    [{ text: "Votre" }, { text: "presse-papiers," }],
+    [{ text: "enfin" }, { text: "organisé.", emphasis: true }],
+  ],
+  de: [
+    [{ text: "Ihre" }, { text: "Zwischenablage," }],
+    [{ text: "endlich" }, { text: "organisiert.", emphasis: true }],
+  ],
+  it: [
+    [{ text: "I tuoi" }, { text: "appunti," }],
+    [{ text: "finalmente" }, { text: "in ordine.", emphasis: true }],
+  ],
+  es: [
+    [{ text: "Tu" }, { text: "portapapeles," }],
+    [{ text: "por fin" }, { text: "organizado.", emphasis: true }],
+  ],
 };
 
 function AnimatedHeroTitle() {
@@ -51,14 +75,14 @@ export default function Hero() {
           <div className="badge reveal" style={{ "--delay": "40ms" }}>
             <I18nText
               t={{
-                en: "Native Mac clipboard utility · v1.0.8 · macOS 13+",
-                zh: "原生 Mac 剪贴板工具 · v1.0.8 · macOS 13+",
-                ja: "ネイティブ Mac クリップボードツール · v1.0.8 · macOS 13+",
-                ko: "네이티브 Mac 클립보드 도구 · v1.0.8 · macOS 13+",
-                fr: "Utilitaire presse-papiers Mac natif · v1.0.8 · macOS 13+",
-                de: "Native Mac-Zwischenablage · v1.0.8 · macOS 13+",
-                it: "Utility clipboard Mac nativa · v1.0.8 · macOS 13+",
-                es: "Utilidad nativa de portapapeles para Mac · v1.0.8 · macOS 13+",
+                en: "Native Mac app · macOS 13+ · No account required",
+                zh: "原生 Mac 应用 · macOS 13+ · 无需账号",
+                ja: "ネイティブ Mac アプリ · macOS 13+ · アカウント不要",
+                ko: "네이티브 Mac 앱 · macOS 13+ · 계정 불필요",
+                fr: "App Mac native · macOS 13+ · Aucun compte requis",
+                de: "Native Mac-App · macOS 13+ · Kein Account nötig",
+                it: "App Mac nativa · macOS 13+ · Nessun account richiesto",
+                es: "App Mac nativa · macOS 13+ · Sin cuenta requerida",
               }}
             />
           </div>
@@ -68,20 +92,20 @@ export default function Hero() {
           <p className="subtitle reveal" style={{ "--delay": "220ms" }}>
             <AnimatedI18nText
               t={{
-                en: "Keep every copy close, search it instantly, and turn useful clips into action.",
-                zh: "保存每一次复制，快速找回，并把有用内容直接变成行动。",
-                ja: "コピーした内容を手元に残し、すばやく検索して、そのまま次の作業へ。",
-                ko: "복사한 내용을 가까이에 두고, 즉시 찾아서 바로 다음 작업으로 이어가세요.",
-                fr: "Gardez chaque copie a portee, retrouvez-la vite et transformez-la en action.",
-                de: "Alles Kopierte griffbereit behalten, sofort finden und direkt weiterverwenden.",
-                it: "Tieni ogni copia a portata, trovala subito e trasformala in azione.",
-                es: "Guarda cada copia cerca, encuentrala al instante y conviertela en accion.",
+                en: "Everything you copy — text, images, links, colors — stored locally, always searchable, and one keystroke away. Import from Maccy and be up in seconds.",
+                zh: "你复制的一切——文字、图片、链接、颜色——都保存在本地，随时搜索，一键调取。支持从 Maccy 导入，几秒上手。",
+                ja: "コピーしたすべてのテキスト、画像、リンク、カラーをローカルに保存し、いつでも検索、ワンキーで呼び出し。Maccyからのインポートも数秒。",
+                ko: "복사한 모든 것——텍스트, 이미지, 링크, 색상——을 로컬에 저장하고, 언제든 검색, 한 번의 키로 불러오기. Maccy에서 가져오기도 몇 초면 됩니다.",
+                fr: "Tout ce que vous copiez — texte, images, liens, couleurs — stocké localement, toujours consultable, à une touche. Importez depuis Maccy en quelques secondes.",
+                de: "Alles Kopierte — Text, Bilder, Links, Farben — lokal gespeichert, jederzeit durchsuchbar, einen Tastendruck entfernt. Import aus Maccy in Sekunden.",
+                it: "Tutto ciò che copi — testo, immagini, link, colori — archiviato localmente, sempre cercabile, a un tasto di distanza. Importa da Maccy in pochi secondi.",
+                es: "Todo lo que copias — texto, imágenes, enlaces, colores — almacenado localmente, siempre consultable, a una tecla. Importa desde Maccy en segundos.",
               }}
             />
           </p>
           <div className="hero-actions reveal" style={{ "--delay": "310ms" }}>
             <a
-              className="button button-primary button-teal"
+              className="button button-primary"
               href="https://releases.clibo.us/Clibo-1.0.8-11.dmg"
             >
               <I18nText
@@ -98,7 +122,7 @@ export default function Hero() {
               />
             </a>
             <a
-              className="button button-primary"
+              className="button button-primary button-teal"
               href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess"
             >
               <I18nText
@@ -130,17 +154,6 @@ export default function Hero() {
             />
           </p>
         </div>
-
-        <figure
-          className="hero-screenshot-frame reveal reveal-right"
-          style={{ "--delay": "490ms" }}
-        >
-          <span className="hero-live-dot" aria-hidden="true"></span>
-          <img
-            src="/assets/hero-dashboard.png"
-            alt="Clibo clipboard history dashboard"
-          />
-        </figure>
       </div>
     </section>
   );

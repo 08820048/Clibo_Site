@@ -112,7 +112,8 @@ function buildSnapshot(seo) {
       <section>
         <h2>Pricing</h2>
         <p>Early Bird: $9 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
-        <p><a href="https://releases.clibo.us/Clibo-1.0.8-11.dmg">Download Clibo free trial</a></p>
+        <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $9</a></p>
+        <p><a href="https://releases.clibo.us/Clibo-1.0.8-11.dmg">or download free trial</a></p>
       </section>
     </main>`;
   }

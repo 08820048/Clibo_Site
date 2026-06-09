@@ -133,14 +133,14 @@ export default function Pricing() {
         <span className="pricing-shine-badge">
           <I18nText
             t={{
-              en: "Early Bird",
-              zh: "早鸟价",
-              ja: "早期価格",
-              ko: "얼리버드",
-              fr: "Early Bird",
-              de: "Frühbucher",
-              it: "Early Bird",
-              es: "Early Bird",
+              en: "Launch price · One-time · No subscription",
+              zh: "首发价 · 一次买断 · 无订阅",
+              ja: "ローンチ価格 · 買い切り · サブスクなし",
+              ko: "런칭 가격 · 일회성 · 구독 없음",
+              fr: "Prix de lancement · Unique · Sans abonnement",
+              de: "Einführungspreis · Einmalig · Kein Abo",
+              it: "Prezzo di lancio · Una tantum · Nessun abbonamento",
+              es: "Precio de lanzamiento · Pago único · Sin suscripción",
             }}
           />
         </span>

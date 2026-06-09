@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { LangProvider } from "./context/LangContext.jsx";
 import Home from "./pages/Home.jsx";
 import Privacy from "./pages/Privacy.jsx";
@@ -24,6 +24,8 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/success" element={<Success />} />
         <Route path="/docs" element={<Docs />} />
+        <Route path="/changelog" element={<Navigate to="/releases" replace />} />
+        <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </LangProvider>
