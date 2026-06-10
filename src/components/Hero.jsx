@@ -154,13 +154,6 @@ export default function Hero() {
             />
           </p>
         </div>
-
-        <img
-          className="hero-screenshot reveal reveal-right"
-          src="/assets/hero-dashboard.png"
-          alt="Clibo clipboard history dashboard"
-          style={{ "--delay": "490ms" }}
-        />
       </div>
     </section>
   );

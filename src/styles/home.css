@@ -2042,16 +2042,6 @@
         line-height: 1.65;
       }
 
-      .hero-screenshot {
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        top: 28%;
-        width: min(460px, 44%);
-        border-radius: 10px;
-        filter: drop-shadow(0 22px 56px rgba(13, 17, 23, 0.16));
-      }
-
       .section,
       .pricing-band {
         counter-increment: kami-section;
@@ -2420,15 +2410,6 @@
 
         .hero-copy {
           max-width: none;
-        }
-
-        .hero-screenshot {
-          position: relative;
-          top: auto;
-          right: auto;
-          width: 100%;
-          max-width: 760px;
-          margin-top: 42px;
         }
 
         h1 {
