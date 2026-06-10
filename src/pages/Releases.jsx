@@ -8,6 +8,62 @@ import "../styles/privacy.css";
 
 const RELEASES = [
   {
+    version: "1.0.9",
+    date: "2026-06-10",
+    title: {
+      en: "Launch at login, menu bar stats, snippet paste fix, and feedback",
+      zh: "开机自启动、菜单栏统计、Snippet 粘贴修复与反馈入口",
+      ja: "ログイン時起動、メニューバー統計、Snippet 貼り付け修正、フィードバック",
+      ko: "로그인 시 실행, 메뉴 막대 통계, Snippet 붙여넣기 수정 및 피드백",
+      fr: "Lancement au demarrage, stats de barre de menus, correctif Snippet et feedback",
+      de: "Autostart, Menueleisten-Statistiken, Snippet-Einfuegefix und Feedback",
+      it: "Avvio al login, statistiche menu bar, fix incolla Snippet e feedback",
+      es: "Inicio al arrancar, estadisticas en menu, arreglo de Snippet y feedback",
+    },
+    notes: [
+      {
+        en: "Added launch at login. It is enabled by default, and users can turn it off or back on in General settings.",
+        zh: "新增开机自启动功能，默认开启；用户可在通用设置中关闭或重新开启。",
+        ja: "ログイン時起動を追加しました。デフォルトで有効になっており、一般設定でオフまたは再度オンにできます。",
+        ko: "로그인 시 실행 기능을 추가했습니다. 기본으로 켜져 있으며, 일반 설정에서 끄거나 다시 켤 수 있습니다.",
+        fr: "Ajout du lancement au demarrage. Il est active par defaut et peut etre desactive ou reactive dans les reglages generaux.",
+        de: "Autostart beim Anmelden hinzugefuegt. Er ist standardmaessig aktiviert und kann in den allgemeinen Einstellungen deaktiviert oder wieder aktiviert werden.",
+        it: "Aggiunto l'avvio al login. E attivo di default e puo essere disattivato o riattivato nelle impostazioni generali.",
+        es: "Se agrego el inicio al arrancar. Esta activado por defecto y se puede desactivar o volver a activar en Ajustes generales.",
+      },
+      {
+        en: "Added a hover stats panel to the menu bar icon for quickly checking key metrics from the last 7 days, including copies, pinned items, AI requests, sensitive copies, and ignored items.",
+        zh: "顶部菜单栏图标新增 hover 快捷统计面板，可快速查看最近 7 天的复制量、置顶数、AI 请求、敏感复制和忽略次数等关键指标。",
+        ja: "メニューバーアイコンにホバー統計パネルを追加し、直近7日間のコピー数、ピン留め数、AIリクエスト、機密コピー、無視回数などの主要指標を素早く確認できるようにしました。",
+        ko: "메뉴 막대 아이콘에 hover 빠른 통계 패널을 추가해 최근 7일간의 복사 수, 고정 수, AI 요청, 민감한 복사, 무시 횟수 같은 주요 지표를 빠르게 확인할 수 있습니다.",
+        fr: "Ajout d'un panneau de statistiques au survol de l'icone de barre de menus pour consulter rapidement les copies, elements epingles, requetes IA, copies sensibles et elements ignores des 7 derniers jours.",
+        de: "Das Menueleisten-Icon hat jetzt ein Hover-Statistikpanel fuer die letzten 7 Tage, darunter Kopien, angeheftete Elemente, KI-Anfragen, sensible Kopien und ignorierte Eintraege.",
+        it: "Aggiunto un pannello statistiche al passaggio sull'icona della barra menu per vedere rapidamente copie, elementi fissati, richieste AI, copie sensibili ed elementi ignorati degli ultimi 7 giorni.",
+        es: "Se agrego un panel de estadisticas al pasar el cursor por el icono de la barra de menu para ver copias, fijados, solicitudes de IA, copias sensibles e ignorados de los ultimos 7 dias.",
+      },
+      {
+        en: "Fixed an issue where system paste could not be used directly in the Snippet title and content input fields.",
+        zh: "修复 Snippet 标题和内容输入框无法直接使用系统粘贴的问题。",
+        ja: "Snippet のタイトルと内容入力欄でシステム貼り付けを直接使えない問題を修正しました。",
+        ko: "Snippet 제목 및 내용 입력 필드에서 시스템 붙여넣기를 직접 사용할 수 없던 문제를 수정했습니다.",
+        fr: "Correction d'un probleme empechant l'utilisation directe du collage systeme dans les champs de titre et de contenu des Snippets.",
+        de: "Problem behoben, bei dem das System-Einfuegen in Snippet-Titel- und Inhaltsfeldern nicht direkt verwendet werden konnte.",
+        it: "Risolto un problema per cui non era possibile usare direttamente Incolla di sistema nei campi titolo e contenuto degli Snippet.",
+        es: "Se corrigio un problema que impedia usar el pegado del sistema directamente en los campos de titulo y contenido de Snippet.",
+      },
+      {
+        en: "Added a Feedback entry to the About panel, opening Clibo's UserJot feedback page directly.",
+        zh: "About 面板新增 Feedback 入口，可直接打开 Clibo 的 UserJot 反馈页面。",
+        ja: "About パネルに Feedback 入口を追加し、Clibo の UserJot フィードバックページを直接開けるようにしました。",
+        ko: "About 패널에 Feedback 항목을 추가해 Clibo의 UserJot 피드백 페이지를 바로 열 수 있습니다.",
+        fr: "Ajout d'une entree Feedback dans le panneau About pour ouvrir directement la page UserJot de Clibo.",
+        de: "Im About-Panel wurde ein Feedback-Eintrag hinzugefuegt, der direkt die UserJot-Feedbackseite von Clibo oeffnet.",
+        it: "Aggiunta una voce Feedback nel pannello About per aprire direttamente la pagina UserJot di Clibo.",
+        es: "Se agrego una entrada Feedback en el panel About para abrir directamente la pagina de UserJot de Clibo.",
+      },
+    ],
+  },
+  {
     version: "1.0.8",
     date: "2026-06-06",
     title: {
