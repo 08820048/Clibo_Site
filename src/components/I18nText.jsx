@@ -1,7 +1,7 @@
 import React from "react";
 import { useLang } from "../context/LangContext.jsx";
 
-export default function I18nText({ t, className, as: Tag = "span", html, ...rest }) {
+export default function I18nText({ t, className, as: Tag = "span", html, renderText, ...rest }) {
   const { lang } = useLang();
   const text = t[lang] || t.en || "";
   const cls = className ? `${className} ${lang}` : lang;
@@ -17,7 +17,7 @@ export default function I18nText({ t, className, as: Tag = "span", html, ...rest
   }
   return (
     <Tag className={cls} {...rest}>
-      {text}
+      {renderText ? renderText(text) : text}
     </Tag>
   );
 }

@@ -71,6 +71,18 @@
   margin-bottom: 8px;
 }
 
+.release-entry a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.release-entry a:hover {
+  color: #1d4ed8;
+}
+
 .privacy-email {
   color: var(--teal-dark);
   text-decoration: underline;

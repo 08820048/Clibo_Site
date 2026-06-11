@@ -6,7 +6,244 @@ import { useNavScroll } from "../hooks/useNavScroll.js";
 import "../styles/home.css";
 import "../styles/privacy.css";
 
+function ReleaseNoteText({ t }) {
+  return <I18nText t={t} renderText={renderMarkdownLinks} />;
+}
+
+function renderMarkdownLinks(text) {
+  const parts = [];
+  const linkPattern = /\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+
+    parts.push(
+      <a
+        href={match[2]}
+        key={`${match[1]}-${match.index}`}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length ? parts : text;
+}
+
 const RELEASES = [
+  {
+    version: "1.1.1",
+    date: "2026-06-11",
+    title: {
+      en: "Region OCR, shortcut hints, drag support, and notification controls",
+      zh: "区域 OCR、快捷键提示、拖动支持与通知控制",
+      ja: "範囲 OCR、ショートカット表示、ドラッグ対応、通知設定",
+      ko: "영역 OCR, 단축키 힌트, 드래그 지원 및 알림 설정",
+      fr: "OCR de zone, raccourcis, glisser-deposer et controles de notification",
+      de: "Bereichs-OCR, Tastenkurzhinweise, Drag-Unterstuetzung und Benachrichtigungen",
+      it: "OCR area, suggerimenti scorciatoie, trascinamento e controlli notifiche",
+      es: "OCR de area, atajos, arrastre y controles de notificacion",
+    },
+    notes: [
+      {
+        en: "The quick panel now includes an Extract Text (OCR) command. Select any area of the screen, and recognized text is copied directly to the clipboard.",
+        zh: "快捷面板新增“提取文本 (OCR)”命令，可框选屏幕任意区域并自动识别文字，识别成功后直接复制到剪贴板。",
+        ja: "クイックパネルに「テキストを抽出 (OCR)」コマンドを追加しました。画面上の任意の範囲を選択すると、認識したテキストを直接クリップボードにコピーします。",
+        ko: "빠른 패널에 \"텍스트 추출(OCR)\" 명령을 추가했습니다. 화면의 원하는 영역을 선택하면 인식된 텍스트가 바로 클립보드에 복사됩니다.",
+        fr: "Le panneau rapide inclut maintenant une commande Extraire le texte (OCR). Selectionnez n'importe quelle zone de l'ecran, et le texte reconnu est copie directement dans le presse-papiers.",
+        de: "Das Schnellpanel enthaelt jetzt den Befehl Text extrahieren (OCR). Waehlen Sie einen beliebigen Bildschirmbereich aus; erkannter Text wird direkt in die Zwischenablage kopiert.",
+        it: "Il pannello rapido include ora il comando Estrai testo (OCR). Seleziona qualsiasi area dello schermo e il testo riconosciuto viene copiato direttamente nella clipboard.",
+        es: "El panel rapido incluye ahora el comando Extraer texto (OCR). Selecciona cualquier area de la pantalla y el texto reconocido se copia directamente al portapapeles.",
+      },
+      {
+        en: "Bottom commands in the quick panel now have keyboard shortcuts, with key hints shown on the right side of the menu.",
+        zh: "快捷面板底部命令新增快捷键，并在菜单右侧显示对应按键提示。",
+        ja: "クイックパネル下部のコマンドにショートカットを追加し、メニュー右側に対応するキー表示を出すようにしました。",
+        ko: "빠른 패널 하단 명령에 단축키를 추가하고 메뉴 오른쪽에 해당 키 힌트를 표시합니다.",
+        fr: "Les commandes du bas du panneau rapide disposent maintenant de raccourcis clavier, affiches a droite du menu.",
+        de: "Die unteren Befehle im Schnellpanel haben jetzt Tastenkurzel, die rechts im Menue angezeigt werden.",
+        it: "I comandi inferiori del pannello rapido hanno ora scorciatoie da tastiera, mostrate sul lato destro del menu.",
+        es: "Los comandos inferiores del panel rapido ahora tienen atajos de teclado, con las teclas indicadas a la derecha del menu.",
+      },
+      {
+        en: "The quick panel no longer auto-focuses the search field on open, avoiding the default blue focus ring.",
+        zh: "快捷面板打开时不再自动聚焦搜索框，避免默认出现蓝色焦点边框。",
+        ja: "クイックパネルを開いたときに検索欄へ自動フォーカスしないようにし、既定の青いフォーカス枠を避けました。",
+        ko: "빠른 패널을 열 때 검색창에 자동 포커스하지 않아 기본 파란색 포커스 테두리가 표시되지 않습니다.",
+        fr: "Le panneau rapide ne focalise plus automatiquement le champ de recherche a l'ouverture, evitant l'anneau bleu par defaut.",
+        de: "Das Schnellpanel fokussiert das Suchfeld beim Oeffnen nicht mehr automatisch, wodurch der standardmaessige blaue Fokusring vermieden wird.",
+        it: "Il pannello rapido non mette piu automaticamente a fuoco il campo di ricerca all'apertura, evitando il bordo blu predefinito.",
+        es: "El panel rapido ya no enfoca automaticamente el campo de busqueda al abrirse, evitando el borde azul de enfoque predeterminado.",
+      },
+      {
+        en: "During region OCR, the menu bar icon switches to a loading animation and returns to its previous state when recognition completes.",
+        zh: "区域 OCR 识别期间菜单栏图标会切换为加载动画，完成后恢复原状态。",
+        ja: "範囲 OCR の認識中はメニューバーアイコンが読み込みアニメーションに切り替わり、完了後に元の状態へ戻ります。",
+        ko: "영역 OCR 인식 중에는 메뉴 막대 아이콘이 로딩 애니메이션으로 바뀌고, 완료되면 이전 상태로 돌아갑니다.",
+        fr: "Pendant l'OCR de zone, l'icone de barre de menus passe en animation de chargement, puis revient a son etat precedent une fois termine.",
+        de: "Waehrend der Bereichs-OCR wechselt das Menueleisten-Icon zu einer Ladeanimation und kehrt danach zum vorherigen Zustand zurueck.",
+        it: "Durante l'OCR area, l'icona della barra menu passa a un'animazione di caricamento e torna allo stato precedente al termine.",
+        es: "Durante el OCR de area, el icono de la barra de menu cambia a una animacion de carga y vuelve a su estado anterior al terminar.",
+      },
+      {
+        en: "The menu bar hover stats panel is taller and now includes more metrics, including data size, AI tokens, estimated cost, category top lists, and source top lists.",
+        zh: "菜单栏 hover 统计面板增大高度，新增数据大小、AI Tokens、费用估算、分类 Top 和来源 Top 等更多统计信息。",
+        ja: "メニューバーのホバー統計パネルを高くし、データサイズ、AI Tokens、推定費用、カテゴリ Top、ソース Top などの指標を追加しました。",
+        ko: "메뉴 막대 hover 통계 패널의 높이를 키우고 데이터 크기, AI Tokens, 비용 추정, 카테고리 Top, 소스 Top 등 더 많은 통계를 추가했습니다.",
+        fr: "Le panneau de statistiques au survol de la barre de menus est plus haut et inclut la taille des donnees, les AI Tokens, le cout estime, les tops par categorie et par source.",
+        de: "Das Hover-Statistikpanel der Menueleiste ist hoeher und zeigt mehr Werte wie Datengroesse, AI Tokens, Kostenschaetzung, Kategorie-Toplisten und Quellen-Toplisten.",
+        it: "Il pannello statistiche hover della barra menu e piu alto e include dimensione dati, AI Tokens, stima costi, classifiche categorie e sorgenti.",
+        es: "El panel de estadisticas hover de la barra de menu es mas alto e incluye tamano de datos, AI Tokens, coste estimado, Top de categorias y Top de fuentes.",
+      },
+      {
+        en: "Dashboard and quick panel lists now support dragging. Images drag out as PNG files, files and paths can be dragged to Finder or other apps, and text records can be dragged into inputs that accept dropped text.",
+        zh: "Dashboard 和快捷面板列表新增拖动支持，图片可拖出为 PNG 文件，文件和路径可拖动到 Finder 或其他应用，文本类内容可拖动到支持文本投放的输入区域。",
+        ja: "Dashboard とクイックパネルのリストでドラッグをサポートしました。画像は PNG ファイルとしてドラッグでき、ファイルとパスは Finder や他のアプリへ、テキスト記録はテキスト投下に対応した入力欄へドラッグできます。",
+        ko: "Dashboard와 빠른 패널 목록에 드래그 지원을 추가했습니다. 이미지는 PNG 파일로 드래그할 수 있고, 파일과 경로는 Finder 또는 다른 앱으로, 텍스트 기록은 텍스트 드롭을 지원하는 입력 영역으로 드래그할 수 있습니다.",
+        fr: "Les listes du Dashboard et du panneau rapide prennent maintenant en charge le glisser-deposer. Les images sortent en PNG, les fichiers et chemins peuvent etre deposes dans Finder ou d'autres apps, et les textes dans les champs compatibles.",
+        de: "Dashboard- und Schnellpanel-Listen unterstuetzen jetzt Dragging. Bilder lassen sich als PNG-Dateien herausziehen, Dateien und Pfade in Finder oder andere Apps ziehen, und Texteintraege in passende Textfelder ablegen.",
+        it: "Le liste di Dashboard e pannello rapido supportano ora il trascinamento. Le immagini escono come PNG, file e percorsi possono essere trascinati nel Finder o in altre app, e i testi in campi compatibili.",
+        es: "Las listas de Dashboard y del panel rapido ahora admiten arrastrar. Las imagenes salen como PNG, los archivos y rutas se pueden arrastrar al Finder u otras apps, y el texto a campos compatibles.",
+      },
+      {
+        en: "Added optional copy feedback. New copied content can show a macOS notification or play a sound, and Clibo copy, paste, and Snippet shortcut actions can play confirmation sounds.",
+        zh: "新增可选复制反馈：记录新复制内容时可显示 macOS 通知或播放提示音，从 Clibo 复制、粘贴和使用 Snippet 快捷键时可播放确认音。",
+        ja: "任意のコピー通知を追加しました。新しいコピー内容の記録時に macOS 通知またはサウンドを出せ、Clibo からのコピー、貼り付け、Snippet ショートカット時に確認音を再生できます。",
+        ko: "선택형 복사 피드백을 추가했습니다. 새 복사 내용을 기록할 때 macOS 알림 또는 소리를 사용할 수 있고, Clibo 복사, 붙여넣기, Snippet 단축키 사용 시 확인음을 재생할 수 있습니다.",
+        fr: "Ajout d'un retour de copie optionnel : les nouvelles copies peuvent afficher une notification macOS ou jouer un son, et les actions copier, coller et raccourcis Snippet de Clibo peuvent jouer une confirmation.",
+        de: "Optionales Kopier-Feedback hinzugefuegt: Neue Kopien koennen eine macOS-Benachrichtigung oder einen Ton ausloesen; Kopieren, Einfuegen und Snippet-Kuerzel in Clibo koennen Bestaetigungstoene abspielen.",
+        it: "Aggiunto feedback copia opzionale: le nuove copie possono mostrare una notifica macOS o riprodurre un suono; copia, incolla e scorciatoie Snippet da Clibo possono riprodurre un suono di conferma.",
+        es: "Se agrego feedback opcional de copia: nuevas copias pueden mostrar una notificacion de macOS o reproducir un sonido, y copiar, pegar y atajos de Snippet desde Clibo pueden reproducir confirmacion.",
+      },
+      {
+        en: "Notification content is forcibly redacted for sensitive clipboard records, preventing system notifications from exposing keys, passwords, or other sensitive text.",
+        zh: "通知内容会对敏感剪贴板记录强制脱敏，避免系统通知泄露密钥、密码等敏感文本。",
+        ja: "通知内容は機密クリップボード記録に対して強制的にマスクされ、キー、パスワードなどの機密テキストがシステム通知に表示されないようにしました。",
+        ko: "민감한 클립보드 기록의 알림 내용은 강제로 마스킹되어 시스템 알림이 키, 비밀번호 등 민감한 텍스트를 노출하지 않도록 합니다.",
+        fr: "Le contenu des notifications est force a etre masque pour les enregistrements sensibles, afin d'eviter que les notifications systeme exposent des cles, mots de passe ou textes sensibles.",
+        de: "Benachrichtigungsinhalte werden fuer sensible Zwischenablageeintraege zwangsweise maskiert, damit Systembenachrichtigungen keine Schluessel, Passwoerter oder andere sensible Texte preisgeben.",
+        it: "Il contenuto delle notifiche viene forzatamente oscurato per i record sensibili, evitando che le notifiche di sistema espongano chiavi, password o altri testi sensibili.",
+        es: "El contenido de las notificaciones se redacta forzosamente para registros sensibles, evitando que las notificaciones del sistema expongan claves, contrasenas u otros textos sensibles.",
+      },
+      {
+        en: "Added a Notifications & Sounds settings panel to control notifications, new-copy sounds, Clibo action confirmation sounds, and to open macOS notification settings directly.",
+        zh: "设置中新增“通知与声音”面板，可独立控制通知、新复制提示音、Clibo 操作确认音，并可直接打开 macOS 通知设置。",
+        ja: "設定に「通知とサウンド」パネルを追加し、通知、新規コピー音、Clibo 操作確認音を個別に制御でき、macOS 通知設定を直接開けるようにしました。",
+        ko: "설정에 \"알림 및 소리\" 패널을 추가해 알림, 새 복사 알림음, Clibo 작업 확인음을 개별 제어하고 macOS 알림 설정을 바로 열 수 있습니다.",
+        fr: "Ajout d'un panneau Notifications et sons pour controler separement les notifications, sons de nouvelle copie, sons de confirmation Clibo et ouvrir les reglages de notifications macOS.",
+        de: "Neues Einstellungsfenster Benachrichtigungen & Sounds zum separaten Steuern von Benachrichtigungen, Toenen fuer neue Kopien, Clibo-Bestaetigungstoenen und zum direkten Oeffnen der macOS-Mitteilungen.",
+        it: "Aggiunto un pannello Notifiche e suoni per controllare separatamente notifiche, suoni per nuove copie, suoni di conferma Clibo e aprire direttamente le impostazioni notifiche macOS.",
+        es: "Se agrego un panel Notificaciones y sonidos para controlar notificaciones, sonidos de nuevas copias, sonidos de confirmacion de Clibo y abrir directamente los ajustes de notificaciones de macOS.",
+      },
+    ],
+  },
+  {
+    version: "1.1.0",
+    date: "2026-06-11",
+    title: {
+      en: "Email actions, reminders, navigation fixes, and AI planning",
+      zh: "邮件操作、提醒、导航修复与 AI 规划",
+      ja: "メール操作、リマインダー、ナビゲーション修正、AI 計画",
+      ko: "메일 작업, 알림, 탐색 수정 및 AI 계획",
+      fr: "Actions e-mail, rappels, corrections de navigation et planification IA",
+      de: "E-Mail-Aktionen, Erinnerungen, Navigationskorrekturen und KI-Planung",
+      it: "Azioni email, promemoria, correzioni di navigazione e pianificazione AI",
+      es: "Acciones de correo, recordatorios, correcciones de navegacion y planificacion de IA",
+    },
+    notes: [
+      {
+        en: "Email records now include a Send Email action, allowing you to quickly create a new message through your system default mail client.",
+        zh: "邮件类型记录新增“发送邮件”操作，可通过系统默认邮件客户端快速创建新邮件。",
+        ja: "メールタイプの記録に「メールを送信」操作を追加し、システム既定のメールクライアントで新規メールをすばやく作成できるようにしました。",
+        ko: "메일 유형 기록에 \"메일 보내기\" 작업을 추가해 시스템 기본 메일 클라이언트로 새 메일을 빠르게 작성할 수 있습니다.",
+        fr: "Les enregistrements de type e-mail disposent maintenant d'une action Envoyer un e-mail pour creer rapidement un nouveau message avec le client mail par defaut du systeme.",
+        de: "E-Mail-Eintraege enthalten jetzt die Aktion E-Mail senden, mit der schnell eine neue Nachricht im Standard-Mailclient des Systems erstellt werden kann.",
+        it: "I record di tipo email includono ora l'azione Invia email, per creare rapidamente un nuovo messaggio con il client email predefinito del sistema.",
+        es: "Los registros de tipo correo ahora incluyen la accion Enviar correo, para crear rapidamente un nuevo mensaje con el cliente de correo predeterminado del sistema.",
+      },
+      {
+        en: "Any clipboard record now includes a Remind Me action, with 1-minute, 5-minute, 15-minute, 30-minute, and custom reminder times.",
+        zh: "任意剪贴板记录新增“提醒我”操作，支持 1 分钟、5 分钟、15 分钟、30 分钟和自定义时间。",
+        ja: "任意のクリップボード記録に「リマインド」操作を追加し、1分、5分、15分、30分、カスタム時刻を選べるようにしました。",
+        ko: "모든 클립보드 기록에 \"알림\" 작업을 추가했으며 1분, 5분, 15분, 30분 및 사용자 지정 시간을 지원합니다.",
+        fr: "Chaque enregistrement du presse-papiers propose maintenant une action Me le rappeler, avec des delais de 1, 5, 15, 30 minutes et une heure personnalisee.",
+        de: "Jeder Zwischenablageeintrag hat jetzt eine Erinnern-Aktion mit 1, 5, 15, 30 Minuten sowie einer benutzerdefinierten Zeit.",
+        it: "Ogni record della clipboard include ora l'azione Ricordamelo, con tempi di 1, 5, 15, 30 minuti e personalizzati.",
+        es: "Cualquier registro del portapapeles incluye ahora la accion Recordarme, con opciones de 1, 5, 15, 30 minutos y hora personalizada.",
+      },
+      {
+        en: "Clibo reminders use local macOS notifications. Clicking a notification opens Dashboard and locates the related record.",
+        zh: "Clibo 内置提醒会通过 macOS 本地通知提醒用户，点击通知可打开 Dashboard 并定位到对应记录。",
+        ja: "Clibo の内蔵リマインダーは macOS のローカル通知で知らせます。通知をクリックすると Dashboard を開き、該当記録に移動します。",
+        ko: "Clibo 내장 알림은 macOS 로컬 알림으로 사용자에게 알려줍니다. 알림을 클릭하면 Dashboard가 열리고 해당 기록으로 이동합니다.",
+        fr: "Les rappels integres de Clibo utilisent les notifications locales macOS. Cliquer sur une notification ouvre le Dashboard et localise l'enregistrement associe.",
+        de: "Clibo-Erinnerungen verwenden lokale macOS-Benachrichtigungen. Ein Klick auf die Benachrichtigung oeffnet das Dashboard und springt zum passenden Eintrag.",
+        it: "I promemoria integrati di Clibo usano le notifiche locali di macOS. Facendo clic su una notifica si apre la Dashboard sul record corrispondente.",
+        es: "Los recordatorios integrados de Clibo usan notificaciones locales de macOS. Al hacer clic en una notificacion se abre el Dashboard y se ubica el registro correspondiente.",
+      },
+      {
+        en: "AI features are moving into the next planning stage, focused on content-type action recommendations, multi-record processing, semantic search, and semi-autonomous workflow capabilities.",
+        zh: "AI 功能进入下一阶段规划：围绕内容类型推荐操作、多条记录处理、语义搜索和半自主工作流能力继续设计。",
+        ja: "AI 機能は次の計画段階に入り、内容タイプに応じた操作提案、複数記録処理、セマンティック検索、半自律ワークフロー機能を中心に設計を進めています。",
+        ko: "AI 기능은 다음 계획 단계로 넘어가며, 콘텐츠 유형별 작업 추천, 여러 기록 처리, 의미 검색, 반자율 워크플로 기능을 중심으로 설계를 계속합니다.",
+        fr: "Les fonctions IA passent a la prochaine phase de planification, autour des recommandations d'actions par type de contenu, du traitement multi-enregistrements, de la recherche semantique et de workflows semi-autonomes.",
+        de: "Die KI-Funktionen gehen in die naechste Planungsphase: Aktionsvorschlaege nach Inhaltstyp, Verarbeitung mehrerer Eintraege, semantische Suche und teilautonome Workflows.",
+        it: "Le funzioni AI entrano nella prossima fase di pianificazione: azioni consigliate per tipo di contenuto, elaborazione di piu record, ricerca semantica e workflow semi-autonomi.",
+        es: "Las funciones de IA pasan a la siguiente fase de planificacion: recomendaciones por tipo de contenido, procesamiento de varios registros, busqueda semantica y flujos semiautonomos.",
+      },
+      {
+        en: "Fixed onboarding copy that still appeared in English in some non-English environments.",
+        zh: "修复引导页部分文案在非英文环境下仍显示英文的问题。",
+        ja: "英語以外の環境でオンボーディングの一部文言が英語のまま表示される問題を修正しました。",
+        ko: "비영어 환경에서 온보딩 일부 문구가 여전히 영어로 표시되던 문제를 수정했습니다.",
+        fr: "Correction de certains textes d'onboarding qui restaient en anglais dans des environnements non anglophones.",
+        de: "Problem behoben, bei dem Teile des Onboarding-Texts in nicht englischen Umgebungen weiterhin auf Englisch angezeigt wurden.",
+        it: "Risolto un problema per cui alcuni testi dell'onboarding restavano in inglese in ambienti non inglesi.",
+        es: "Se corrigieron textos del onboarding que seguian apareciendo en ingles en entornos no ingleses.",
+      },
+      {
+        en: "Improved dark mode display for authorized permission states in onboarding.",
+        zh: "优化引导页权限已授权状态的深色模式显示。",
+        ja: "オンボーディングで権限が許可済みの状態を表示する際のダークモード表示を改善しました。",
+        ko: "온보딩에서 권한이 허용된 상태의 다크 모드 표시를 개선했습니다.",
+        fr: "Amelioration de l'affichage en mode sombre des etats d'autorisation deja accordes dans l'onboarding.",
+        de: "Die Dark-Mode-Darstellung bereits autorisierter Berechtigungen im Onboarding wurde verbessert.",
+        it: "Migliorata la visualizzazione in modalita scura degli stati di autorizzazione gia concessi nell'onboarding.",
+        es: "Se mejoro la visualizacion en modo oscuro de los estados de permisos ya autorizados en el onboarding.",
+      },
+      {
+        en: "Restored up/down keyboard selection in Dashboard and the quick panel, improved selection state when mixing mouse and keyboard input, and made quick panel navigation continuous between history items and the bottom menu. Previews now follow the current selection and open or close accordingly.",
+        zh: "恢复 Dashboard 与快捷面板的上下键选择能力，并优化鼠标和键盘混用时的选中状态；快捷面板支持在历史记录和底部菜单之间连续导航，并会跟随当前选中项显示或关闭预览。",
+        ja: "Dashboard とクイックパネルで上下キー選択を復元し、マウスとキーボードを併用した際の選択状態を改善しました。クイックパネルでは履歴項目と下部メニューの間を連続して移動でき、プレビューは現在の選択に合わせて表示または閉じます。",
+        ko: "Dashboard와 빠른 패널의 위/아래 키 선택을 복원하고, 마우스와 키보드를 함께 사용할 때의 선택 상태를 개선했습니다. 빠른 패널은 기록 항목과 하단 메뉴 사이를 연속으로 탐색할 수 있으며, 미리보기는 현재 선택 항목에 따라 표시되거나 닫힙니다.",
+        fr: "Restauration de la selection au clavier haut/bas dans Dashboard et le panneau rapide, avec un meilleur etat de selection lors du melange souris/clavier. Le panneau rapide navigue en continu entre l'historique et le menu du bas, et les apercus suivent la selection actuelle.",
+        de: "Auswahl per Auf/Ab-Tasten in Dashboard und Schnellpanel wiederhergestellt und Auswahlzustaende bei gemischter Maus- und Tastaturbedienung verbessert. Das Schnellpanel navigiert fortlaufend zwischen Verlauf und unterem Menue; Vorschauen folgen der aktuellen Auswahl.",
+        it: "Ripristinata la selezione con frecce su/giu in Dashboard e nel pannello rapido, con stato di selezione migliorato quando si usano mouse e tastiera insieme. Il pannello rapido naviga in modo continuo tra cronologia e menu inferiore; le anteprime seguono la selezione corrente.",
+        es: "Se restauro la seleccion con flechas arriba/abajo en Dashboard y el panel rapido, y se mejoro el estado seleccionado al mezclar mouse y teclado. El panel rapido navega de forma continua entre historial y menu inferior; las vistas previas siguen la seleccion actual.",
+      },
+      {
+        en: "Thanks to V2EX user [@yangfong2022](https://www.v2ex.com/member/yangfong2022) for the feedback.",
+        zh: "感谢来自 V2EX 用户 [@yangfong2022](https://www.v2ex.com/member/yangfong2022) 的反馈。",
+        ja: "V2EX ユーザー [@yangfong2022](https://www.v2ex.com/member/yangfong2022) からのフィードバックに感謝します。",
+        ko: "V2EX 사용자 [@yangfong2022](https://www.v2ex.com/member/yangfong2022)의 피드백에 감사드립니다.",
+        fr: "Merci a l'utilisateur V2EX [@yangfong2022](https://www.v2ex.com/member/yangfong2022) pour son retour.",
+        de: "Danke an den V2EX-Nutzer [@yangfong2022](https://www.v2ex.com/member/yangfong2022) fuer das Feedback.",
+        it: "Grazie all'utente V2EX [@yangfong2022](https://www.v2ex.com/member/yangfong2022) per il feedback.",
+        es: "Gracias al usuario de V2EX [@yangfong2022](https://www.v2ex.com/member/yangfong2022) por sus comentarios.",
+      },
+    ],
+  },
   {
     version: "1.0.9",
     date: "2026-06-10",
@@ -158,14 +395,14 @@ const RELEASES = [
         es: "Se agregaron textos en chino simplificado, aleman, espanol, frances, italiano, japones y coreano para las nuevas funciones de v1.0.8.",
       },
       {
-        en: "Thanks to Sam Wilson on UserJot for feedback about importing from other clipboard managers, which continued to shape the dedicated Maccy import capability.",
-        zh: "感谢 UserJot 上 Sam Wilson 提出的关于“从其他剪贴板管理器导入”的反馈，继续推动了 Maccy 专用导入能力。",
-        ja: "他のクリップボードマネージャーからの取り込みに関する UserJot での Sam Wilson のフィードバックに感謝します。Maccy 専用取り込み機能の改善につながりました。",
-        ko: "다른 클립보드 관리자에서 가져오기에 대한 UserJot의 Sam Wilson 피드백에 감사드립니다. 이 의견은 Maccy 전용 가져오기 기능을 계속 발전시키는 데 도움이 되었습니다.",
-        fr: "Merci a Sam Wilson sur UserJot pour son retour sur l'import depuis d'autres gestionnaires de presse-papiers, qui a continue a guider l'import dedie a Maccy.",
-        de: "Danke an Sam Wilson auf UserJot fuer das Feedback zum Import aus anderen Zwischenablage-Managern, das den dedizierten Maccy-Import weiter vorangebracht hat.",
-        it: "Grazie a Sam Wilson su UserJot per il feedback sull'importazione da altri gestori degli appunti, che ha continuato a guidare l'importazione dedicata da Maccy.",
-        es: "Gracias a Sam Wilson en UserJot por sus comentarios sobre importar desde otros gestores del portapapeles, que siguieron impulsando la importacion dedicada de Maccy.",
+        en: "Thanks to @Sam Wilson on [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) for feedback about importing from other clipboard managers, which continued to shape the dedicated Maccy import capability.",
+        zh: "感谢 [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) 上 @Sam Wilson 提出的关于“从其他剪贴板管理器导入”的反馈，继续推动了 Maccy 专用导入能力。",
+        ja: "他のクリップボードマネージャーからの取り込みに関する [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) での @Sam Wilson のフィードバックに感謝します。Maccy 専用取り込み機能の改善につながりました。",
+        ko: "다른 클립보드 관리자에서 가져오기에 대한 [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10)의 @Sam Wilson 피드백에 감사드립니다. 이 의견은 Maccy 전용 가져오기 기능을 계속 발전시키는 데 도움이 되었습니다.",
+        fr: "Merci a @Sam Wilson sur [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) pour son retour sur l'import depuis d'autres gestionnaires de presse-papiers, qui a continue a guider l'import dedie a Maccy.",
+        de: "Danke an @Sam Wilson auf [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) fuer das Feedback zum Import aus anderen Zwischenablage-Managern, das den dedizierten Maccy-Import weiter vorangebracht hat.",
+        it: "Grazie a @Sam Wilson su [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) per il feedback sull'importazione da altri gestori degli appunti, che ha continuato a guidare l'importazione dedicata da Maccy.",
+        es: "Gracias a @Sam Wilson en [UserJot](https://clibo.userjot.com/?cursor=1&order=top&limit=10) por sus comentarios sobre importar desde otros gestores del portapapeles, que siguieron impulsando la importacion dedicada de Maccy.",
       },
     ],
   },
@@ -314,14 +551,14 @@ const RELEASES = [
         es: "Se agregaron localizaciones en chino simplificado, aleman, espanol, frances, italiano, japones y coreano para los textos nuevos y corregidos de v1.0.7.",
       },
       {
-        en: "Thanks to Sam Wilson on UserJot for feedback about importing from other clipboard managers, which helped shape local data migration.",
-        zh: "感谢 UserJot 上 Sam Wilson 提出的关于“从其他剪贴板管理器导入”的反馈，推动了本地数据迁移能力。",
-        ja: "他のクリップボードマネージャーからの取り込みに関する UserJot での Sam Wilson のフィードバックに感謝します。ローカルデータ移行機能の実現につながりました。",
-        ko: "다른 클립보드 관리자에서 가져오기에 대한 UserJot의 Sam Wilson 피드백에 감사드립니다. 이 의견이 로컬 데이터 마이그레이션 기능을 만드는 데 도움이 되었습니다.",
-        fr: "Merci a Sam Wilson sur UserJot pour son retour sur l'import depuis d'autres gestionnaires de presse-papiers, qui a aide a faconner la migration locale des donnees.",
-        de: "Danke an Sam Wilson auf UserJot fuer das Feedback zum Import aus anderen Zwischenablage-Managern, das die lokale Datenmigration mitgepraegt hat.",
-        it: "Grazie a Sam Wilson su UserJot per il feedback sull'importazione da altri gestori degli appunti, che ha contribuito alla migrazione locale dei dati.",
-        es: "Gracias a Sam Wilson en UserJot por sus comentarios sobre importar desde otros gestores del portapapeles, que ayudaron a dar forma a la migracion local de datos.",
+        en: "Thanks to @Sam Wilson on UserJot for feedback about importing from other clipboard managers, which helped shape local data migration.",
+        zh: "感谢 UserJot 上 @Sam Wilson 提出的关于“从其他剪贴板管理器导入”的反馈，推动了本地数据迁移能力。",
+        ja: "他のクリップボードマネージャーからの取り込みに関する UserJot での @Sam Wilson のフィードバックに感謝します。ローカルデータ移行機能の実現につながりました。",
+        ko: "다른 클립보드 관리자에서 가져오기에 대한 UserJot의 @Sam Wilson 피드백에 감사드립니다. 이 의견이 로컬 데이터 마이그레이션 기능을 만드는 데 도움이 되었습니다.",
+        fr: "Merci a @Sam Wilson sur UserJot pour son retour sur l'import depuis d'autres gestionnaires de presse-papiers, qui a aide a faconner la migration locale des donnees.",
+        de: "Danke an @Sam Wilson auf UserJot fuer das Feedback zum Import aus anderen Zwischenablage-Managern, das die lokale Datenmigration mitgepraegt hat.",
+        it: "Grazie a @Sam Wilson su UserJot per il feedback sull'importazione da altri gestori degli appunti, che ha contribuito alla migrazione locale dei dati.",
+        es: "Gracias a @Sam Wilson en UserJot por sus comentarios sobre importar desde otros gestores del portapapeles, que ayudaron a dar forma a la migracion local de datos.",
       },
     ],
   },
@@ -420,14 +657,14 @@ const RELEASES = [
         es: "Se agregaron y pulieron las localizaciones en chino simplificado, aleman, espanol, frances, italiano, japones y coreano para los nuevos textos de v1.0.6.",
       },
       {
-        en: "Thanks to Alex Chen, Emily Roberts, and Sam Wilson for their UserJot feedback that shaped pinned sync and Snippet hotkeys.",
-        zh: "感谢 Alex Chen、Emily Roberts、Sam Wilson 在 UserJot 上提供的反馈，推动了置顶同步和 Snippet 快捷键功能。",
-        ja: "ピン留め同期と Snippet ホットキーの実現につながる UserJot フィードバックを寄せてくれた Alex Chen、Emily Roberts、Sam Wilson に感謝します。",
-        ko: "고정 동기화와 Snippet 단축키 기능에 도움을 준 UserJot 피드백을 제공한 Alex Chen, Emily Roberts, Sam Wilson에게 감사드립니다.",
-        fr: "Merci a Alex Chen, Emily Roberts et Sam Wilson pour leurs retours sur UserJot, qui ont contribue a la synchronisation des elements epingles et aux raccourcis Snippet.",
-        de: "Danke an Alex Chen, Emily Roberts und Sam Wilson fuer ihr Feedback auf UserJot, das die Synchronisierung angehefteter Inhalte und die Snippet-Tastenkurzel vorangebracht hat.",
-        it: "Grazie ad Alex Chen, Emily Roberts e Sam Wilson per il feedback su UserJot che ha contribuito alla sincronizzazione degli elementi fissati e alle scorciatoie Snippet.",
-        es: "Gracias a Alex Chen, Emily Roberts y Sam Wilson por sus comentarios en UserJot, que impulsaron la sincronizacion de elementos fijados y los atajos de Snippet.",
+        en: "Thanks to @Alex Chen, @Emily Roberts, and @Sam Wilson for their UserJot feedback that shaped pinned sync and Snippet hotkeys.",
+        zh: "感谢 @Alex Chen、@Emily Roberts、@Sam Wilson 在 UserJot 上提供的反馈，推动了置顶同步和 Snippet 快捷键功能。",
+        ja: "ピン留め同期と Snippet ホットキーの実現につながる UserJot フィードバックを寄せてくれた @Alex Chen、@Emily Roberts、@Sam Wilson に感謝します。",
+        ko: "고정 동기화와 Snippet 단축키 기능에 도움을 준 UserJot 피드백을 제공한 @Alex Chen, @Emily Roberts, @Sam Wilson에게 감사드립니다.",
+        fr: "Merci a @Alex Chen, @Emily Roberts et @Sam Wilson pour leurs retours sur UserJot, qui ont contribue a la synchronisation des elements epingles et aux raccourcis Snippet.",
+        de: "Danke an @Alex Chen, @Emily Roberts und @Sam Wilson fuer ihr Feedback auf UserJot, das die Synchronisierung angehefteter Inhalte und die Snippet-Tastenkurzel vorangebracht hat.",
+        it: "Grazie ad @Alex Chen, @Emily Roberts e @Sam Wilson per il feedback su UserJot che ha contribuito alla sincronizzazione degli elementi fissati e alle scorciatoie Snippet.",
+        es: "Gracias a @Alex Chen, @Emily Roberts y @Sam Wilson por sus comentarios en UserJot, que impulsaron la sincronizacion de elementos fijados y los atajos de Snippet.",
       },
     ],
   },
@@ -976,7 +1213,7 @@ export default function Releases() {
             <ul>
               {release.notes.map((note, index) => (
                 <li key={index}>
-                  <I18nText t={note} />
+                  <ReleaseNoteText t={note} />
                 </li>
               ))}
             </ul>
