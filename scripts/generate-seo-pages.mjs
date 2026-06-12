@@ -12,7 +12,7 @@ import {
 } from "../src/seo/metadata.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-06-08";
+const LAST_MODIFIED = "2026-06-12";
 
 function escapeHtml(value) {
   return String(value)
@@ -97,7 +97,6 @@ function buildSnapshot(seo) {
     return `<main>
       <h1>Clibo - Private Clipboard Manager for Mac</h1>
       <p>Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.</p>
-      <img src="/assets/hero-dashboard.png" alt="Clibo clipboard history dashboard" />
       <section>
         <h2>Features</h2>
         <ul>
@@ -123,7 +122,44 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
-        <h2>Clibo 1.0.8</h2>
+        <h2>v1.1.2</h2>
+        <ul>
+          <li>Added an Archive view in Dashboard for browsing history by date timeline.</li>
+          <li>Improved quick panel dragging for images, files, paths, and text.</li>
+          <li>Fixed Markdown image syntax being classified as sensitive content, and added direct Markdown image hover previews.</li>
+          <li>Added live screen OCR selection dimensions and writes successful OCR results into Clibo history.</li>
+          <li>Fixed a quick panel focus issue where bottom commands could show a blue focus ring on open.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.1.1</h2>
+        <ul>
+          <li>Added Extract Text (OCR) in the quick panel for selecting any screen area and copying recognized text.</li>
+          <li>Added shortcut hints for quick panel bottom commands.</li>
+          <li>Added richer menu bar hover statistics, drag support, copy feedback, and Notifications & Sounds settings.</li>
+          <li>Redacts sensitive clipboard content in system notifications.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.1.0</h2>
+        <ul>
+          <li>Added Send Email actions for email records and Remind Me actions for any clipboard record.</li>
+          <li>Clibo reminders use local macOS notifications that can open Dashboard and locate the related record.</li>
+          <li>Restored up/down keyboard selection in Dashboard and the quick panel.</li>
+          <li>Fixed onboarding localization and dark mode permission state display.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.0.9</h2>
+        <ul>
+          <li>Added launch at login, enabled by default and configurable in General settings.</li>
+          <li>Added a menu bar hover stats panel for recent copies, pinned items, AI requests, sensitive copies, and ignored items.</li>
+          <li>Fixed system paste in Snippet title and content fields.</li>
+          <li>Added a Feedback entry to the About panel.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.0.8</h2>
         <ul>
           <li>Added Maccy import for history, images, files, pinned content, and original copy timestamps.</li>
           <li>Added date and phone number recognition plus native macOS actions for Calendar, Contacts, Messages, Notes, and Reminders.</li>
@@ -131,7 +167,7 @@ function buildSnapshot(seo) {
         </ul>
       </section>
       <section>
-        <h2>Clibo 1.0.7</h2>
+        <h2>v1.0.7</h2>
         <ul>
           <li>Added a Data settings panel and generic import flow for JSON, CSV, TXT, and Markdown files.</li>
           <li>Added preview before import, import destinations for history, pinned records, or Snippets, and duplicate filtering options.</li>
@@ -139,7 +175,7 @@ function buildSnapshot(seo) {
         </ul>
       </section>
       <section>
-        <h2>Clibo 1.0.6</h2>
+        <h2>v1.0.6</h2>
         <ul>
           <li>Added pinned clipboard sync through iCloud Drive or other synced folders.</li>
           <li>Added global Snippet shortcuts from Command + Shift + 1 through Command + Shift + 9.</li>
@@ -147,7 +183,7 @@ function buildSnapshot(seo) {
         </ul>
       </section>
       <section>
-        <h2>Clibo 1.0.5</h2>
+        <h2>v1.0.5</h2>
         <ul>
           <li>Improved image OCR for Chinese and other languages using Apple Vision.</li>
           <li>Added sensitive copy statistics, source statistics, and AI usage statistics.</li>
