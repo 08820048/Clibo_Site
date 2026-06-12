@@ -43,6 +43,92 @@ function renderMarkdownLinks(text) {
 
 const RELEASES = [
   {
+    version: "1.1.2",
+    date: "2026-06-12",
+    title: {
+      en: "Archive view, Markdown image previews, OCR updates, and better dragging",
+      zh: "归档视图、Markdown 图片预览、OCR 更新与拖动优化",
+      ja: "アーカイブ表示、Markdown 画像プレビュー、OCR 更新、ドラッグ改善",
+      ko: "아카이브 보기, Markdown 이미지 미리보기, OCR 업데이트 및 드래그 개선",
+      fr: "Vue archive, apercus d'images Markdown, OCR et glisser-deposer ameliores",
+      de: "Archivansicht, Markdown-Bildvorschau, OCR-Updates und besseres Ziehen",
+      it: "Vista archivio, anteprime immagini Markdown, aggiornamenti OCR e drag migliorato",
+      es: "Vista de archivo, vistas Markdown, OCR actualizado y mejor arrastre",
+    },
+    notes: [
+      {
+        en: "Dashboard now includes an Archive view for browsing history by date timeline, with transparent overlay scrollbars to avoid white scrollbar backgrounds on the archive page.",
+        zh: "Dashboard 新增归档视图，可按日期时间线浏览历史记录，并使用透明的 overlay 滚动条，避免归档页出现白色滚动条背景框。",
+        ja: "Dashboard にアーカイブ表示を追加し、日付タイムラインで履歴を閲覧できるようにしました。透明な overlay スクロールバーにより、アーカイブページの白いスクロールバー背景を避けます。",
+        ko: "Dashboard에 아카이브 보기를 추가해 날짜 타임라인으로 기록을 탐색할 수 있습니다. 투명 overlay 스크롤바를 사용해 아카이브 페이지에 흰색 스크롤바 배경이 나타나지 않습니다.",
+        fr: "Dashboard inclut maintenant une vue Archive pour parcourir l'historique par chronologie de dates, avec des barres de defilement overlay transparentes pour eviter les fonds blancs.",
+        de: "Dashboard hat jetzt eine Archivansicht zum Durchsuchen des Verlaufs nach Datums-Zeitleiste, mit transparenten Overlay-Scrollbars statt weisser Scrollbar-Hintergruende.",
+        it: "Dashboard include ora una vista Archivio per sfogliare la cronologia per timeline di date, con scrollbar overlay trasparenti per evitare sfondi bianchi.",
+        es: "Dashboard incluye ahora una vista Archivo para explorar el historial por linea temporal de fechas, con barras overlay transparentes para evitar fondos blancos.",
+      },
+      {
+        en: "Improved drag interactions in the quick panel, reducing conflicts between list clicks, hover previews, context menus, and drag gestures so images, files, paths, and text drag out more reliably.",
+        zh: "优化快捷面板中的拖动交互，减少列表点击、悬停预览、右键菜单和拖动手势之间的冲突，让图片、文件、路径和文本拖出更稳定。",
+        ja: "クイックパネルのドラッグ操作を改善し、リストクリック、ホバープレビュー、右クリックメニュー、ドラッグジェスチャー間の競合を減らして、画像、ファイル、パス、テキストをより安定してドラッグできるようにしました。",
+        ko: "빠른 패널의 드래그 상호작용을 개선해 목록 클릭, hover 미리보기, 우클릭 메뉴, 드래그 제스처 간 충돌을 줄이고 이미지, 파일, 경로, 텍스트를 더 안정적으로 드래그할 수 있게 했습니다.",
+        fr: "Amelioration du glisser-deposer dans le panneau rapide, avec moins de conflits entre clics de liste, apercus au survol, menus contextuels et gestes de glisser.",
+        de: "Drag-Interaktionen im Schnellpanel wurden verbessert, mit weniger Konflikten zwischen Listenklicks, Hover-Vorschauen, Kontextmenues und Ziehgesten.",
+        it: "Migliorate le interazioni di trascinamento nel pannello rapido, riducendo i conflitti tra clic lista, anteprime hover, menu contestuali e gesti di drag.",
+        es: "Se mejoraron las interacciones de arrastre en el panel rapido, reduciendo conflictos entre clics, vistas hover, menus contextuales y gestos de arrastre.",
+      },
+      {
+        en: "Fixed Markdown image syntax being incorrectly classified as sensitive content. `![Name]\\(URL)` now shows the original source text in lists instead of \"Sensitive content hidden\".",
+        zh: "修复 Markdown 图片语法被误判为敏感内容的问题，`![名称]\\(地址)` 现在会在列表中显示原始源码文本，不再显示“敏感内容已隐藏”。",
+        ja: "Markdown 画像構文が機密内容として誤判定される問題を修正しました。`![名前]\\(URL)` は一覧で元のソーステキストを表示し、「機密内容は非表示」と表示しません。",
+        ko: "Markdown 이미지 문법이 민감한 콘텐츠로 잘못 분류되던 문제를 수정했습니다. `![이름]\\(주소)`는 이제 목록에 원본 소스 텍스트로 표시됩니다.",
+        fr: "Correction de la classification incorrecte de la syntaxe d'image Markdown comme contenu sensible. `![Nom]\\(URL)` affiche maintenant le texte source original dans les listes.",
+        de: "Problem behoben, bei dem Markdown-Bildsyntax falsch als sensibler Inhalt erkannt wurde. `![Name]\\(URL)` zeigt jetzt den Originalquelltext in Listen.",
+        it: "Risolto il problema per cui la sintassi immagine Markdown veniva classificata come contenuto sensibile. `![Nome]\\(URL)` mostra ora il testo sorgente originale.",
+        es: "Se corrigio la deteccion erronea de la sintaxis de imagen Markdown como contenido sensible. `![Nombre]\\(URL)` ahora muestra el texto fuente original.",
+      },
+      {
+        en: "Hover previews for Markdown image syntax now try to render the image directly, falling back to source text if loading fails.",
+        zh: "Markdown 图片语法的悬停预览现在会直接尝试渲染图片，加载失败时再回退显示源码文本。",
+        ja: "Markdown 画像構文のホバープレビューは画像を直接レンダリングし、読み込みに失敗した場合はソーステキスト表示に戻ります。",
+        ko: "Markdown 이미지 문법의 hover 미리보기는 이미지를 직접 렌더링하고, 로드에 실패하면 소스 텍스트로 되돌아갑니다.",
+        fr: "Les apercus au survol de la syntaxe d'image Markdown tentent maintenant de rendre l'image directement, puis reviennent au texte source en cas d'echec.",
+        de: "Hover-Vorschauen fuer Markdown-Bildsyntax versuchen jetzt, das Bild direkt zu rendern, und fallen bei Ladefehlern auf Quelltext zurueck.",
+        it: "Le anteprime hover della sintassi immagine Markdown provano ora a renderizzare direttamente l'immagine, tornando al testo sorgente se il caricamento fallisce.",
+        es: "Las vistas hover de sintaxis de imagen Markdown intentan renderizar la imagen directamente y vuelven al texto fuente si falla la carga.",
+      },
+      {
+        en: "Screen OCR selection now shows live selection dimensions during box selection, making it easier to confirm the capture area.",
+        zh: "快捷面板的屏幕 OCR 框选过程新增实时选区尺寸显示，方便用户确认截取范围。",
+        ja: "画面 OCR の範囲選択中にリアルタイムの選択サイズを表示し、キャプチャ範囲を確認しやすくしました。",
+        ko: "화면 OCR 영역 선택 중 실시간 선택 영역 크기를 표시해 캡처 범위를 더 쉽게 확인할 수 있습니다.",
+        fr: "La selection OCR d'ecran affiche maintenant les dimensions en temps reel pendant le cadrage, afin de confirmer plus facilement la zone capturee.",
+        de: "Die Bildschirm-OCR-Auswahl zeigt waehrend der Bereichsauswahl Live-Abmessungen an, damit der Aufnahmebereich leichter bestaetigt werden kann.",
+        it: "La selezione OCR dello schermo mostra ora le dimensioni in tempo reale durante il riquadro, per confermare meglio l'area catturata.",
+        es: "La seleccion OCR de pantalla muestra dimensiones en tiempo real durante el recuadro, facilitando confirmar el area capturada.",
+      },
+      {
+        en: "After successful screen OCR, recognized text is copied to the system clipboard and written into Clibo history. If Dashboard is open, it refreshes automatically and locates the new record.",
+        zh: "屏幕 OCR 识别成功后会同时复制到系统剪贴板并写入 Clibo 历史记录，Dashboard 已打开时会自动刷新并定位到新记录。",
+        ja: "画面 OCR が成功すると、認識テキストをシステムクリップボードへコピーし、Clibo 履歴にも書き込みます。Dashboard が開いている場合は自動更新して新しい記録へ移動します。",
+        ko: "화면 OCR 인식이 성공하면 인식된 텍스트를 시스템 클립보드에 복사하고 Clibo 기록에도 저장합니다. Dashboard가 열려 있으면 자동 새로고침 후 새 기록으로 이동합니다.",
+        fr: "Apres une OCR d'ecran reussie, le texte reconnu est copie dans le presse-papiers systeme et ajoute a l'historique Clibo. Si Dashboard est ouvert, il se rafraichit et localise le nouveau record.",
+        de: "Nach erfolgreicher Bildschirm-OCR wird erkannter Text in die Systemzwischenablage kopiert und in den Clibo-Verlauf geschrieben. Ein geoeffnetes Dashboard aktualisiert sich automatisch und springt zum neuen Eintrag.",
+        it: "Dopo un OCR schermo riuscito, il testo riconosciuto viene copiato nella clipboard di sistema e scritto nella cronologia Clibo. Se Dashboard e aperto, si aggiorna e localizza il nuovo record.",
+        es: "Tras un OCR de pantalla correcto, el texto reconocido se copia al portapapeles del sistema y se guarda en el historial de Clibo. Si Dashboard esta abierto, se actualiza y ubica el nuevo registro.",
+      },
+      {
+        en: "Fixed an issue where bottom commands in the quick panel automatically received system focus and showed a blue focus ring when the panel opened.",
+        zh: "修复快捷面板打开时底部命令自动获得系统焦点并出现蓝色焦点框的问题。",
+        ja: "クイックパネルを開いたときに下部コマンドが自動的にシステムフォーカスを受け、青いフォーカス枠が表示される問題を修正しました。",
+        ko: "빠른 패널을 열 때 하단 명령이 자동으로 시스템 포커스를 받아 파란색 포커스 테두리가 표시되던 문제를 수정했습니다.",
+        fr: "Correction d'un probleme ou les commandes du bas du panneau rapide recevaient automatiquement le focus systeme et affichaient un anneau bleu a l'ouverture.",
+        de: "Problem behoben, bei dem untere Befehle im Schnellpanel beim Oeffnen automatisch Systemfokus erhielten und einen blauen Fokusring zeigten.",
+        it: "Risolto un problema per cui i comandi inferiori del pannello rapido ricevevano automaticamente il focus di sistema e mostravano un bordo blu all'apertura.",
+        es: "Se corrigio un problema por el que los comandos inferiores del panel rapido recibian automaticamente el foco del sistema y mostraban un borde azul al abrirse.",
+      },
+    ],
+  },
+  {
     version: "1.1.1",
     date: "2026-06-11",
     title: {
@@ -1206,7 +1292,7 @@ export default function Releases() {
         {RELEASES.map((release) => (
           <section className="release-entry" key={release.version}>
             <h2>
-              Clibo {release.version}
+              v{release.version}
             </h2>
             <p className="updated">{release.date}</p>
             <I18nText as="p" t={release.title} />
