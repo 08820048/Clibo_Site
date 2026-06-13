@@ -18,6 +18,10 @@ function setMeta(selector, createTag, value, attr = "content") {
   element.setAttribute(attr, value);
 }
 
+function removeMeta(selector) {
+  document.head.querySelector(selector)?.remove();
+}
+
 function setJsonLd(data) {
   const id = "structured-data";
   let element = document.getElementById(id);
@@ -95,17 +99,22 @@ export default function Seo() {
       return meta;
     }, canonical);
 
-    setMeta('meta[property="og:image"]', () => {
-      const meta = document.createElement("meta");
-      meta.setAttribute("property", "og:image");
-      return meta;
-    }, image);
+    if (image) {
+      setMeta('meta[property="og:image"]', () => {
+        const meta = document.createElement("meta");
+        meta.setAttribute("property", "og:image");
+        return meta;
+      }, image);
 
-    setMeta('meta[property="og:image:alt"]', () => {
-      const meta = document.createElement("meta");
-      meta.setAttribute("property", "og:image:alt");
-      return meta;
-    }, "Clibo macOS clipboard manager dashboard");
+      setMeta('meta[property="og:image:alt"]', () => {
+        const meta = document.createElement("meta");
+        meta.setAttribute("property", "og:image:alt");
+        return meta;
+      }, "Clibo macOS clipboard manager dashboard");
+    } else {
+      removeMeta('meta[property="og:image"]');
+      removeMeta('meta[property="og:image:alt"]');
+    }
 
     setMeta('meta[property="og:locale"]', () => {
       const meta = document.createElement("meta");
@@ -117,7 +126,7 @@ export default function Seo() {
       const meta = document.createElement("meta");
       meta.name = "twitter:card";
       return meta;
-    }, "summary_large_image");
+    }, image ? "summary_large_image" : "summary");
 
     setMeta('meta[name="twitter:site"]', () => {
       const meta = document.createElement("meta");
@@ -137,11 +146,15 @@ export default function Seo() {
       return meta;
     }, seo.description);
 
-    setMeta('meta[name="twitter:image"]', () => {
-      const meta = document.createElement("meta");
-      meta.name = "twitter:image";
-      return meta;
-    }, image);
+    if (image) {
+      setMeta('meta[name="twitter:image"]', () => {
+        const meta = document.createElement("meta");
+        meta.name = "twitter:image";
+        return meta;
+      }, image);
+    } else {
+      removeMeta('meta[name="twitter:image"]');
+    }
 
     setJsonLd(getStructuredData(seo));
   }, [location.pathname]);

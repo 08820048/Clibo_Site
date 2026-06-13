@@ -12,7 +12,7 @@ import {
 } from "../src/seo/metadata.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-06-12";
+const LAST_MODIFIED = "2026-06-13";
 
 function escapeHtml(value) {
   return String(value)
@@ -44,6 +44,15 @@ function removeGeneratedSeo(html) {
 function buildMetaBlock(seo) {
   const canonical = absoluteUrl(seo.path);
   const image = seo.image;
+  const imageMeta = image
+    ? `
+    <meta property="og:image" content="${escapeAttr(image)}" />
+    <meta property="og:image:alt" content="Clibo macOS clipboard manager dashboard" />`
+    : "";
+  const twitterImageMeta = image
+    ? `
+    <meta name="twitter:image" content="${escapeAttr(image)}" />`
+    : "";
   const structuredData = getStructuredData(seo);
   const jsonLd = structuredData
     ? `\n    <script type="application/ld+json">${JSON.stringify(structuredData)}</script>`
@@ -62,14 +71,12 @@ function buildMetaBlock(seo) {
     <meta property="og:description" content="${escapeAttr(seo.description)}" />
     <meta property="og:type" content="${escapeAttr(seo.type)}" />
     <meta property="og:url" content="${escapeAttr(canonical)}" />
-    <meta property="og:image" content="${escapeAttr(image)}" />
-    <meta property="og:image:alt" content="Clibo macOS clipboard manager dashboard" />
+    ${imageMeta}
     <meta property="og:locale" content="${DEFAULT_LOCALE}" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}" />
     <meta name="twitter:site" content="${TWITTER_HANDLE}" />
     <meta name="twitter:title" content="${escapeAttr(seo.title)}" />
-    <meta name="twitter:description" content="${escapeAttr(seo.description)}" />
-    <meta name="twitter:image" content="${escapeAttr(image)}" />${jsonLd}`;
+    <meta name="twitter:description" content="${escapeAttr(seo.description)}" />${twitterImageMeta}${jsonLd}`;
 }
 
 function injectSeo(html, seo) {
@@ -112,7 +119,7 @@ function buildSnapshot(seo) {
         <h2>Pricing</h2>
         <p>Early Bird: $9 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
         <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $9</a></p>
-        <p><a href="https://releases.clibo.us/Clibo-1.0.8-11.dmg">or download free trial</a></p>
+        <p><a href="https://releases.clibo.us/Clibo-1.1.5-18.dmg">or download free trial</a></p>
       </section>
     </main>`;
   }

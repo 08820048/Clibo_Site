@@ -13,7 +13,7 @@ export const SEO_ROUTES = {
       "Clibo is a native macOS clipboard manager with AI semantic search, one-click Maccy import, rich previews, iCloud sync, and BYOK AI actions. All data stays local. $9 one-time, no subscription.",
     path: "/",
     type: "website",
-    image: DEFAULT_IMAGE,
+    image: null,
     robots: "index, follow",
     schema: ["website", "software"],
   },
@@ -50,7 +50,7 @@ export const SEO_ROUTES = {
   "/releases": {
     title: "Release Notes - Clibo",
     description:
-      "See the latest Clibo 1.1.3 release notes, product changes, feature updates, fixes, and localization improvements.",
+      "See the latest Clibo 1.1.5 release notes, product changes, feature updates, fixes, and localization improvements.",
     path: "/releases",
     type: "article",
     image: DEFAULT_IMAGE,
@@ -149,10 +149,10 @@ export function getStructuredData(seo) {
       applicationCategory: "ProductivityApplication",
       applicationSubCategory: "Clipboard manager",
       operatingSystem: "macOS 13 or later",
-      softwareVersion: "1.1.2",
+      softwareVersion: "1.1.5",
       description: seo.description,
       url: `${SITE_URL}/`,
-      downloadUrl: "https://releases.clibo.us/Clibo-1.0.8-11.dmg",
+      downloadUrl: "https://releases.clibo.us/Clibo-1.1.5-18.dmg",
       image: DEFAULT_IMAGE,
       screenshot: DEFAULT_IMAGE,
       publisher: {

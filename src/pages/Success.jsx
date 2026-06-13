@@ -297,7 +297,7 @@ export default function Success() {
           <div className="success-actions">
             <a
               className="success-primary-action"
-              href="https://releases.clibo.us/Clibo-1.0.8-11.dmg"
+              href="https://releases.clibo.us/Clibo-1.1.5-18.dmg"
             >
               {t("download")}
             </a>
