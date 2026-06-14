@@ -129,6 +129,16 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
+        <h2>v1.1.7</h2>
+        <ul>
+          <li>Fixed Dashboard menu icon clicks being intercepted by hover-preview outside-click handling.</li>
+          <li>Dashboard records now copy on single click and play the successful-copy sound, matching the quick panel.</li>
+          <li>Fixed hover previews not closing after leaving the preview panel or leaving the source record without entering the preview.</li>
+          <li>Quick Search now supports custom global shortcuts, and Dashboard search expands when opened from the global shortcut.</li>
+          <li>Fixed type-filter preview popups and inconsistent sensitive filtering for standard UUIDs and record IDs.</li>
+        </ul>
+      </section>
+      <section>
         <h2>v1.1.6</h2>
         <ul>
           <li>Fixed sensitive-content redaction so email records show full email content in Dashboard, the quick panel, and previews.</li>
