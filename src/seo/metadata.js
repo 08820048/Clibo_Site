@@ -149,10 +149,10 @@ export function getStructuredData(seo) {
       applicationCategory: "ProductivityApplication",
       applicationSubCategory: "Clipboard manager",
       operatingSystem: "macOS 13 or later",
-      softwareVersion: "1.1.5",
+      softwareVersion: "1.1.6",
       description: seo.description,
       url: `${SITE_URL}/`,
-      downloadUrl: "https://releases.clibo.us/Clibo-1.1.5-18.dmg",
+      downloadUrl: "https://releases.clibo.us/Clibo-1.1.6-19.dmg",
       image: DEFAULT_IMAGE,
       screenshot: DEFAULT_IMAGE,
       publisher: {
