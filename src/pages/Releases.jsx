@@ -43,6 +43,62 @@ function renderMarkdownLinks(text) {
 
 const RELEASES = [
   {
+    version: "1.1.6",
+    date: "2026-06-14",
+    title: {
+      en: "Sensitive display fixes, preview close shortcut, and copy sound feedback",
+      zh: "敏感内容显示修复、预览关闭快捷操作与复制提示音反馈",
+      ja: "機密表示の修正、プレビューを閉じる操作、コピー音フィードバック",
+      ko: "민감 콘텐츠 표시 수정, 미리보기 닫기 동작 및 복사 사운드 피드백",
+      fr: "Correctifs d'affichage sensible, fermeture d'apercu et sons de copie",
+      de: "Korrekturen fuer sensible Anzeige, Vorschau-Schliessen und Kopierklaenge",
+      it: "Correzioni contenuti sensibili, chiusura anteprima e suoni copia",
+      es: "Correcciones de contenido sensible, cierre de vista previa y sonidos de copia",
+    },
+    notes: [
+      {
+        en: "Fixed sensitive-content redaction display logic: email records are no longer incorrectly treated as sensitive content in the interface, so Dashboard, the quick panel, and previews should show full email content directly.",
+        zh: "修复敏感内容脱敏显示逻辑：邮箱类型记录不再被界面误判为敏感内容，Dashboard、快捷面板和预览中应直接显示完整邮箱内容。",
+        ja: "機密内容のマスク表示ロジックを修正しました。メールタイプの記録が UI で機密内容として誤判定されなくなり、Dashboard、クイックパネル、プレビューで完全なメール内容を直接表示します。",
+        ko: "민감 콘텐츠 마스킹 표시 로직을 수정했습니다. 이메일 유형 기록이 더 이상 인터페이스에서 민감 콘텐츠로 잘못 판단되지 않으며, Dashboard, 빠른 패널, 미리보기에서 전체 이메일 내용을 직접 표시합니다.",
+        fr: "Correction de la logique d'affichage masque des contenus sensibles : les enregistrements de type e-mail ne sont plus traites a tort comme sensibles dans l'interface, et Dashboard, le panneau rapide et les apercus affichent directement le contenu complet.",
+        de: "Die Anzeige-Logik fuer maskierte sensible Inhalte wurde korrigiert: E-Mail-Eintraege werden in der Oberflaeche nicht mehr faelschlich als sensibel behandelt, sodass Dashboard, Schnellpanel und Vorschauen den vollstaendigen E-Mail-Inhalt direkt anzeigen.",
+        it: "Corretta la logica di visualizzazione oscurata dei contenuti sensibili: i record di tipo email non vengono piu trattati erroneamente come sensibili nell'interfaccia, quindi Dashboard, pannello rapido e anteprime mostrano direttamente il contenuto email completo.",
+        es: "Se corrigio la logica de redaccion de contenido sensible: los registros de tipo correo ya no se tratan erroneamente como sensibles en la interfaz, por lo que Dashboard, el panel rapido y las vistas previas muestran el contenido completo directamente.",
+      },
+      {
+        en: "Added right-click support to close the currently hovered preview panel, making it faster to exit large image previews.",
+        zh: "新增鼠标右键关闭当前悬停预览面板，便于快速退出大图预览。",
+        ja: "現在ホバーしているプレビューパネルを右クリックで閉じられるようにし、大きな画像プレビューから素早く抜けられるようにしました。",
+        ko: "현재 hover 중인 미리보기 패널을 마우스 오른쪽 클릭으로 닫을 수 있게 하여 큰 이미지 미리보기에서 빠르게 벗어날 수 있습니다.",
+        fr: "Ajout de la fermeture du panneau d'apercu survole par clic droit, pour quitter plus rapidement les grands apercus d'image.",
+        de: "Rechtsklick kann jetzt das aktuell per Hover angezeigte Vorschaupanel schliessen, um grosse Bildvorschauen schneller zu verlassen.",
+        it: "Aggiunto il clic destro per chiudere il pannello anteprima attualmente in hover, cosi e piu rapido uscire dalle anteprime immagine grandi.",
+        es: "Se agrego clic derecho para cerrar el panel de vista previa bajo el cursor, facilitando salir rapidamente de vistas previas de imagen grandes.",
+      },
+      {
+        en: "Fixed an issue where quickly switching hovered items could let the previous item's hover-exit event cancel the new item's preview task.",
+        zh: "修复快速切换悬停项时，旧条目的 hover 退出事件误取消新条目预览任务的问题。",
+        ja: "ホバー項目を素早く切り替えたとき、古い項目の hover 終了イベントが新しい項目のプレビュータスクを誤ってキャンセルする問題を修正しました。",
+        ko: "hover 항목을 빠르게 전환할 때 이전 항목의 hover 종료 이벤트가 새 항목의 미리보기 작업을 잘못 취소하던 문제를 수정했습니다.",
+        fr: "Correction d'un probleme ou, lors du changement rapide d'element survole, l'evenement de sortie hover de l'ancien element pouvait annuler par erreur la tache d'apercu du nouvel element.",
+        de: "Problem behoben, bei dem beim schnellen Wechsel des Hover-Elements das Hover-Exit-Ereignis des alten Eintrags faelschlich die Vorschauaufgabe des neuen Eintrags abbrechen konnte.",
+        it: "Risolto un problema per cui, passando rapidamente tra elementi in hover, l'evento di uscita hover del vecchio elemento poteva annullare erroneamente l'attivita di anteprima del nuovo elemento.",
+        es: "Se corrigio un problema por el que al cambiar rapidamente entre elementos bajo el cursor, el evento de salida hover del elemento anterior podia cancelar por error la tarea de vista previa del nuevo elemento.",
+      },
+      {
+        en: "Improved sound feedback: successful copy actions in Dashboard and the quick panel now play the Clibo action confirmation sound, using a new button confirmation audio asset.",
+        zh: "优化提示音反馈：Dashboard 和快捷面板中的复制成功操作会播放 Clibo 操作提示音，并切换为新的按钮确认音效素材。",
+        ja: "サウンドフィードバックを改善しました。Dashboard とクイックパネルでコピーが成功したときに Clibo の操作確認音を再生し、新しいボタン確認音素材に切り替えました。",
+        ko: "사운드 피드백을 개선했습니다. Dashboard와 빠른 패널에서 복사가 성공하면 Clibo 작업 확인음이 재생되며, 새로운 버튼 확인 사운드 소재로 전환했습니다.",
+        fr: "Amelioration du retour sonore : les copies reussies dans Dashboard et le panneau rapide jouent maintenant le son de confirmation d'action Clibo, avec un nouvel effet sonore de confirmation de bouton.",
+        de: "Sound-Feedback verbessert: Erfolgreiche Kopieraktionen in Dashboard und Schnellpanel spielen jetzt den Clibo-Aktionsbestaetigungston und verwenden ein neues Button-Bestaetigungs-Audio.",
+        it: "Migliorato il feedback sonoro: le copie riuscite in Dashboard e nel pannello rapido riproducono ora il suono di conferma azione di Clibo, usando un nuovo effetto di conferma pulsante.",
+        es: "Se mejoro el feedback sonoro: las copias correctas en Dashboard y el panel rapido ahora reproducen el sonido de confirmacion de accion de Clibo, con un nuevo recurso de audio de confirmacion de boton.",
+      },
+    ],
+  },
+  {
     version: "1.1.5",
     date: "2026-06-13",
     title: {

@@ -12,7 +12,7 @@ import {
 } from "../src/seo/metadata.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-06-13";
+const LAST_MODIFIED = "2026-06-14";
 
 function escapeHtml(value) {
   return String(value)
@@ -97,11 +97,11 @@ function injectSeo(html, seo) {
 
 function buildSnapshot(seo) {
   if (seo.robots.startsWith("noindex")) {
-    return `<main><h1>${escapeHtml(seo.title)}</h1><p>${escapeHtml(seo.description)}</p></main>`;
+    return `<main data-seo-snapshot><h1>${escapeHtml(seo.title)}</h1><p>${escapeHtml(seo.description)}</p></main>`;
   }
 
   if (seo.path === "/") {
-    return `<main>
+    return `<main data-seo-snapshot>
       <h1>Clibo - Private Clipboard Manager for Mac</h1>
       <p>Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.</p>
       <section>
@@ -125,9 +125,43 @@ function buildSnapshot(seo) {
   }
 
   if (seo.path === "/releases") {
-    return `<main>
+    return `<main data-seo-snapshot>
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
+      <section>
+        <h2>v1.1.6</h2>
+        <ul>
+          <li>Fixed sensitive-content redaction so email records show full email content in Dashboard, the quick panel, and previews.</li>
+          <li>Added right-click support for closing the currently hovered preview panel.</li>
+          <li>Fixed hover preview task cancellation when quickly switching between hovered items.</li>
+          <li>Improved successful copy sound feedback in Dashboard and the quick panel with a new confirmation sound.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.1.5</h2>
+        <ul>
+          <li>Fixed Dashboard archive date nodes reopening after collapse because the first visible record was auto-selected.</li>
+          <li>Removed reverse expansion and async scroll triggers from archive record selection to avoid node bounce-back during collapse animations.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.1.4</h2>
+        <ul>
+          <li>Fixed Dashboard archive timeline generation so it uses the full retained history instead of only the latest 20 records.</li>
+          <li>Archive date nodes now start collapsed and can be expanded or collapsed per date.</li>
+          <li>Changed expanded archive nodes and selected record highlights to RGB(244, 73, 157).</li>
+          <li>Fixed quick panel menu bar hover stats panel clipping by making its height adapt to content and screen space.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.1.3</h2>
+        <ul>
+          <li>Improved global accent colors and selected-row readability in light and dark appearances.</li>
+          <li>Improved contrast for secondary selected-row text in Dashboard, archive timeline, quick panel, and Snippets lists.</li>
+          <li>Code records now use solid-color text while selected for better contrast.</li>
+          <li>Updated Context Rules and Automation inline action button colors.</li>
+        </ul>
+      </section>
       <section>
         <h2>v1.1.2</h2>
         <ul>
@@ -199,7 +233,7 @@ function buildSnapshot(seo) {
     </main>`;
   }
 
-  return `<main>
+  return `<main data-seo-snapshot>
     <h1>${escapeHtml(seo.title)}</h1>
     <p>${escapeHtml(seo.description)}</p>
     <p><a href="https://clibo.us/">Clibo home</a></p>
@@ -245,7 +279,7 @@ function buildNotFoundHtml(template) {
 
   return injectSeo(template, seo).replace(
     /<div id=["']root["']>[\s\S]*?<\/div>/i,
-    `<div id="root"><main><h1>Page Not Found</h1><p>The requested page could not be found.</p><p><a href="/">Go to Clibo home</a></p></main></div>`
+    `<div id="root"><main data-seo-snapshot><h1>Page Not Found</h1><p>The requested page could not be found.</p><p><a href="/">Go to Clibo home</a></p></main></div>`
   );
 }
 
