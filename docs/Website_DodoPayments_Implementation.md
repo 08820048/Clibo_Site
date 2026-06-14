@@ -115,7 +115,7 @@ Security behavior:
 The success page currently points `Download Clibo` to:
 
 ```txt
-https://releases.clibo.us/Clibo-1.1.6-19.dmg
+https://releases.clibo.us/Clibo-1.1.7-20.dmg
 ```
 
 This should be updated whenever the public notarized release URL changes.
