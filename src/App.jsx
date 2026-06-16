@@ -8,6 +8,7 @@ import Releases from "./pages/Releases.jsx";
 import Support from "./pages/Support.jsx";
 import Success from "./pages/Success.jsx";
 import Docs from "./pages/Docs.jsx";
+import YushengaPrivacy from "./pages/YushengaPrivacy.jsx";
 import Seo from "./seo/Seo.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/success" element={<Success />} />
         <Route path="/docs" element={<Docs />} />
+        <Route path="/yushenga/privacy" element={<YushengaPrivacy />} />
         <Route path="/changelog" element={<Navigate to="/releases" replace />} />
         <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
         <Route path="*" element={<NotFound />} />

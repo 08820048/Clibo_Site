@@ -50,7 +50,7 @@ export const SEO_ROUTES = {
   "/releases": {
     title: "Release Notes - Clibo",
     description:
-      "See the latest Clibo 1.1.7 release notes, product changes, feature updates, fixes, and localization improvements.",
+      "See the latest Clibo 1.2.1 release notes, product changes, feature updates, fixes, and localization improvements.",
     path: "/releases",
     type: "article",
     image: DEFAULT_IMAGE,
@@ -86,6 +86,16 @@ export const SEO_ROUTES = {
     image: DEFAULT_IMAGE,
     robots: "index, follow",
     schema: ["breadcrumb"],
+  },
+  "/yushenga/privacy": {
+    title: "余生啊隐私政策",
+    description:
+      "余生啊不收集任何用户数据。当前年龄、预期寿命、显示单位、通知和短语偏好仅保存在设备本地。",
+    path: "/yushenga/privacy",
+    type: "article",
+    image: null,
+    robots: "index, follow",
+    schema: [],
   },
   "/404": {
     title: "Page Not Found - Clibo",
