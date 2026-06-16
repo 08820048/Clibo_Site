@@ -25,8 +25,8 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/success" element={<Success />} />
         <Route path="/docs" element={<Docs />} />
-        <Route path="/yushenga/privacy" element={<Navigate to="/yushenga/privacy.html" replace />} />
-        <Route path="/yushenga/privacy.html" element={<YushengaPrivacy />} />
+        <Route path="/yushenga/privacy" element={<YushengaPrivacy />} />
+        <Route path="/yushenga/privacy/" element={<YushengaPrivacy />} />
         <Route path="/changelog" element={<Navigate to="/releases" replace />} />
         <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
         <Route path="*" element={<NotFound />} />

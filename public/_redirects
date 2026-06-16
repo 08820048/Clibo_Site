@@ -6,6 +6,7 @@ https://www.clibo.us/* https://clibo.us/:splat 301
 /support/ /support 301
 /success/ /success 301
 /docs/ /docs 301
-/yushenga/privacy /yushenga/privacy.html 302
+/yushenga/privacy /yushenga/privacy/ 302
+/yushenga/privacy.html /yushenga/privacy/ 302
 /changelog /releases 301
 /pricing / 301

@@ -279,7 +279,7 @@ function buildSnapshot(seo) {
     </main>`;
   }
 
-  if (seo.path === "/yushenga/privacy.html") {
+  if (seo.path === "/yushenga/privacy/") {
     return `<main data-seo-snapshot>
       <h1>余生啊隐私政策</h1>
       <p>更新日期：2026-06-16</p>
@@ -329,7 +329,12 @@ function buildSnapshot(seo) {
 }
 
 async function writeRouteHtml(route, html) {
-  const output = route === "/" ? join(DIST_DIR, "index.html") : join(DIST_DIR, route.slice(1));
+  const output =
+    route === "/"
+      ? join(DIST_DIR, "index.html")
+      : route.endsWith("/")
+        ? join(DIST_DIR, route.slice(1), "index.html")
+        : join(DIST_DIR, route.slice(1));
 
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html);
@@ -373,8 +378,8 @@ function buildNotFoundHtml(template) {
 
 const template = await readFile(join(DIST_DIR, "index.html"), "utf8");
 
-for (const [route, seo] of Object.entries(SEO_ROUTES)) {
-  await writeRouteHtml(route, injectSeo(template, seo));
+for (const seo of Object.values(SEO_ROUTES)) {
+  await writeRouteHtml(seo.path, injectSeo(template, seo));
 }
 
 await writeFile(join(DIST_DIR, "404.html"), buildNotFoundHtml(template));
