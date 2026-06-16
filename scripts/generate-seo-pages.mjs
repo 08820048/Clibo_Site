@@ -279,7 +279,7 @@ function buildSnapshot(seo) {
     </main>`;
   }
 
-  if (seo.path === "/yushenga/privacy") {
+  if (seo.path === "/yushenga/privacy.html") {
     return `<main data-seo-snapshot>
       <h1>余生啊隐私政策</h1>
       <p>更新日期：2026-06-16</p>
