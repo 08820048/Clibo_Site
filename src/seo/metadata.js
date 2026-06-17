@@ -50,7 +50,7 @@ export const SEO_ROUTES = {
   "/releases": {
     title: "Release Notes - Clibo",
     description:
-      "See the latest Clibo 1.2.1 release notes, product changes, feature updates, fixes, and localization improvements.",
+      "See the latest Clibo 1.2.3 release notes, product changes, feature updates, fixes, and localization improvements.",
     path: "/releases",
     type: "article",
     image: DEFAULT_IMAGE,
@@ -158,8 +158,8 @@ export function getStructuredData(seo) {
       name: SITE_NAME,
       applicationCategory: "ProductivityApplication",
       applicationSubCategory: "Clipboard manager",
-      operatingSystem: "macOS 13 or later",
-      softwareVersion: "1.1.7",
+      operatingSystem: "macOS 14 or later",
+      softwareVersion: "1.2.3",
       description: seo.description,
       url: `${SITE_URL}/`,
       downloadUrl: "https://releases.clibo.us/Clibo-1.1.7-20.dmg",

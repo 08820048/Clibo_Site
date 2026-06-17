@@ -23,7 +23,7 @@ export default function Support() {
         <section>
           <h2>Requirements</h2>
           <ul>
-            <li>macOS 13 Ventura or later</li>
+            <li>macOS 14 Sonoma or later</li>
             <li>Mac with Apple Silicon or Intel processor</li>
             <li>
               Internet access for App Store purchases and optional AI provider

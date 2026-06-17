@@ -129,6 +129,30 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
+        <h2>v1.2.3</h2>
+        <ul>
+          <li>快速搜索全局快捷键改为直接打开菜单栏快捷面板，并自动聚焦搜索框；移除原本与 Dashboard 高度重复的独立快速搜索面板。</li>
+          <li>快捷面板由快捷键打开后，再次按下快速搜索快捷键会循环选中下一条记录，保留原有快速取用效率。</li>
+          <li>Dashboard 在未输入搜索词时，主列表改为显示最近 100 条复制记录并支持按类型筛选；输入搜索词后仍会跨历史记录检索。</li>
+          <li>Dashboard 主列表滑动到底部时新增提示，说明当前仅显示最近 100 条记录，完整历史可通过归档查看。</li>
+          <li>补齐 Dashboard 最近 100 条提示和设置中图片水印相关文案的多语言本地化。</li>
+          <li>图片水印会根据水印落点区域的明暗自动切换黑白文字颜色，不添加背景块，降低浅色或深色图片上水印看不清的问题。</li>
+          <li>Dashboard 主列表改用与快捷面板一致的自绘滚动列表，删除记录时保持向右滑出效果，并移除系统列表默认分割线。</li>
+          <li>删除剪贴板记录或模板时新增独立删除音效，跟随现有 Clibo 操作音效开关。</li>
+          <li>快捷面板通过全局快捷键从可输入区域打开时，按回车会将选中内容直接粘贴回原应用；鼠标单击仍保持复制到剪贴板的行为。</li>
+          <li>修复部分系统语言或本地化场景下输入框光标从右侧开始、文本输入方向异常的问题。</li>
+          <li>最低系统要求提高到 macOS 14，以使用 Swift Charts 原生图表选择交互。</li>
+          <li>设置统计面板中的复制数据量、AI Token 趋势、AI Provider、隐私信号、隐私趋势、复制来源和分类统计图表新增原生 hover/selection 实时数据内联标注与高亮反馈。</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.2.2</h2>
+        <ul>
+          <li>快捷面板统计弹窗和设置统计页的统计数字结合从 0 加载的插值动画与 SwiftUI numericText 内容过渡，并配合 .snappy 动画，让数字变化呈现滚动式计数器效果。</li>
+          <li>Dashboard 列表移除模板分组的横条标题，保留模板内容本身直接显示在列表中。</li>
+        </ul>
+      </section>
+      <section>
         <h2>v1.2.1</h2>
         <ul>
           <li>Dashboard and Settings now open at 860x733 by default, and Settings uses a more transparent glass-style host.</li>
