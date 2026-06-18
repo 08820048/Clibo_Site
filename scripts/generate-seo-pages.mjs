@@ -303,27 +303,59 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
+        <h2>v1.2.6</h2>
+        <ul>
+          <li>Optimized Dashboard category switching to avoid repeated full-list rebuilds from category animation transactions.</li>
+          <li>Reduced initial Code category cost by removing syntax highlighting from list rows while keeping monospace text, language labels, and full highlighting in hover previews.</li>
+          <li>Cached code language detection and syntax highlighting results, reused regexes and date formatters, and reduced repeated sensitive-content and color checks.</li>
+          <li>Dashboard now shows the 30 most recent records by default instead of 100; the full history remains available in the archive.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.2.5</h2>
+        <ul>
+          <li>Dashboard and the quick panel now use a fixed Clibo icon themed tinted background with a lighter, more unified glass feel.</li>
+          <li>Dashboard’s top menu and content area share one background layer, and the top eight type filters now center within the available width.</li>
+          <li>The quick panel statistics popover and Snippet creation/editing panels were updated to match the new themed tinted surfaces.</li>
+          <li>Settings now include unlockable tinted theme packs based on copies, Snippets, and pinned items.</li>
+          <li>Settings statistics chart hover tips now use floating overlays that do not resize the charts.</li>
+          <li>Improved broad-keyword quick panel search with bounded recent-record matching for single-character searches and light input debounce.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.2.4</h2>
+        <ul>
+          <li>Fixed Return from the shortcut-opened quick panel pasting into Clibo’s search field instead of the original app.</li>
+          <li>Mouse clicks still copy to the clipboard, and Option + Return still pastes as plain text into the original app.</li>
+          <li>Dashboard and quick panel lists now load original image data on demand for previews, copy, and OCR instead of by default.</li>
+          <li>Archive data loads only when switching to the archive view, lowering the default Dashboard refresh cost.</li>
+          <li>Statistics refreshes are merged and debounced to reduce repeated calculation during rapid copy or delete operations.</li>
+          <li>The quick panel now shows the current version between Settings and Quit, and no longer includes the About menu entry.</li>
+          <li>Reduced short-term retention of original image data by the internal image paste signature.</li>
+        </ul>
+      </section>
+      <section>
         <h2>v1.2.3</h2>
         <ul>
-          <li>快速搜索全局快捷键改为直接打开菜单栏快捷面板，并自动聚焦搜索框；移除原本与 Dashboard 高度重复的独立快速搜索面板。</li>
-          <li>快捷面板由快捷键打开后，再次按下快速搜索快捷键会循环选中下一条记录，保留原有快速取用效率。</li>
-          <li>Dashboard 在未输入搜索词时，主列表改为显示最近 100 条复制记录并支持按类型筛选；输入搜索词后仍会跨历史记录检索。</li>
-          <li>Dashboard 主列表滑动到底部时新增提示，说明当前仅显示最近 100 条记录，完整历史可通过归档查看。</li>
-          <li>补齐 Dashboard 最近 100 条提示和设置中图片水印相关文案的多语言本地化。</li>
-          <li>图片水印会根据水印落点区域的明暗自动切换黑白文字颜色，不添加背景块，降低浅色或深色图片上水印看不清的问题。</li>
-          <li>Dashboard 主列表改用与快捷面板一致的自绘滚动列表，删除记录时保持向右滑出效果，并移除系统列表默认分割线。</li>
-          <li>删除剪贴板记录或模板时新增独立删除音效，跟随现有 Clibo 操作音效开关。</li>
-          <li>快捷面板通过全局快捷键从可输入区域打开时，按回车会将选中内容直接粘贴回原应用；鼠标单击仍保持复制到剪贴板的行为。</li>
-          <li>修复部分系统语言或本地化场景下输入框光标从右侧开始、文本输入方向异常的问题。</li>
-          <li>最低系统要求提高到 macOS 14，以使用 Swift Charts 原生图表选择交互。</li>
-          <li>设置统计面板中的复制数据量、AI Token 趋势、AI Provider、隐私信号、隐私趋势、复制来源和分类统计图表新增原生 hover/selection 实时数据内联标注与高亮反馈。</li>
+          <li>The global Quick Search shortcut now opens the menu bar quick panel directly and focuses the search field; the separate Quick Search panel was removed.</li>
+          <li>Pressing the Quick Search shortcut again cycles to the next record after the quick panel is opened.</li>
+          <li>Dashboard now shows the 100 most recent copied records when no search term is entered, supports type filters, and still searches the full history.</li>
+          <li>A message at the bottom of the Dashboard list explains that the complete history is available in the archive.</li>
+          <li>Added missing localizations for the recent-records message and image watermark settings.</li>
+          <li>Image watermarks automatically switch between black and white text based on the brightness of the underlying image area.</li>
+          <li>Dashboard now uses the same custom scrolling list as the quick panel, retains slide-out deletion animations, and removes system separators.</li>
+          <li>Deleting clipboard records or templates now plays a dedicated deletion sound controlled by the existing sound effects setting.</li>
+          <li>Pressing Return can paste the selected quick-panel content directly into the original app, while clicking continues to copy it.</li>
+          <li>Fixed incorrect cursor placement and text input direction under some system languages and localization scenarios.</li>
+          <li>The minimum system requirement is now macOS 14 for native Swift Charts selection interactions.</li>
+          <li>Settings statistics charts now provide native hover and selection interactions with live inline values and highlighting.</li>
         </ul>
       </section>
       <section>
         <h2>v1.2.2</h2>
         <ul>
-          <li>快捷面板统计弹窗和设置统计页的统计数字结合从 0 加载的插值动画与 SwiftUI numericText 内容过渡，并配合 .snappy 动画，让数字变化呈现滚动式计数器效果。</li>
-          <li>Dashboard 列表移除模板分组的横条标题，保留模板内容本身直接显示在列表中。</li>
+          <li>Statistics values now combine count-up interpolation, SwiftUI numericText transitions, and snappy animation for a rolling counter effect.</li>
+          <li>Dashboard lists no longer show horizontal group headers for templates; template content appears directly in the list.</li>
         </ul>
       </section>
       <section>
