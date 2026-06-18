@@ -13,7 +13,7 @@ export const SEO_ROUTES = {
       "Clibo is a native macOS clipboard manager with AI semantic search, one-click Maccy import, rich previews, iCloud sync, and BYOK AI actions. All data stays local. $9 one-time, no subscription.",
     path: "/",
     type: "website",
-    image: null,
+    image: DEFAULT_IMAGE,
     robots: "index, follow",
     schema: ["website", "software"],
   },
@@ -94,7 +94,7 @@ export const SEO_ROUTES = {
     path: "/yushenga/privacy/",
     type: "article",
     image: null,
-    robots: "index, follow",
+    robots: "noindex, follow",
     schema: [],
   },
   "/404": {

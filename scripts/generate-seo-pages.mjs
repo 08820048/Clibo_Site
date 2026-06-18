@@ -12,7 +12,7 @@ import {
 } from "../src/seo/metadata.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-06-16";
+const LAST_MODIFIED = "2026-06-18";
 
 function escapeHtml(value) {
   return String(value)
@@ -103,10 +103,11 @@ function buildSnapshot(seo) {
   if (seo.path === "/") {
     return `<main data-seo-snapshot>
       <h1>Clibo - Private Clipboard Manager for Mac</h1>
-      <p>Clibo is a native macOS clipboard manager with local history, rich previews, pinned sync, Maccy import, snippets, and BYOK AI actions.</p>
+      <p>Clibo is a native macOS clipboard manager with AI semantic search, local clipboard history, rich previews, pinned sync, one-click Maccy import, snippets, and optional BYOK AI actions. Clipboard data stays local on your Mac.</p>
       <section>
         <h2>Features</h2>
         <ul>
+          <li>AI semantic search helps you find copied text, links, code, images, files, colors, emails, dates, and phone numbers using natural-language queries.</li>
           <li>Local clipboard history for text, images, links, files, colors, dates, emails, and phone numbers.</li>
           <li>Maccy import plus JSON, CSV, TXT, and Markdown import.</li>
           <li>Pinned clipboard sync across Macs with iCloud Drive or synced folders.</li>
@@ -116,10 +117,183 @@ function buildSnapshot(seo) {
         </ul>
       </section>
       <section>
+        <h2>Why Clibo</h2>
+        <p>Clibo is built for Mac users who want a private clipboard manager with modern search and automation. It combines a native menu bar quick panel, a full Dashboard, hover previews, privacy rules, and Bring Your Own Key AI actions without sending your whole clipboard history to a hosted backend.</p>
+      </section>
+      <section>
         <h2>Pricing</h2>
         <p>Early Bird: $9 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
         <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $9</a></p>
         <p><a href="https://releases.clibo.us/Clibo-1.1.7-20.dmg">or download free trial</a></p>
+      </section>
+    </main>`;
+  }
+
+  if (seo.path === "/docs") {
+    return `<main data-seo-snapshot>
+      <h1>Clibo Documentation</h1>
+      <p>A practical guide for setting up Clibo, recording clipboard history, using the quick panel, protecting sensitive content, and connecting copied items with native macOS apps.</p>
+      <section>
+        <h2>Overview</h2>
+        <p>Clibo is a native macOS clipboard manager. It keeps clipboard history on your Mac, recognizes common content types, provides fast search and previews, and lets you reuse copied content from the Dashboard or quick panel.</p>
+        <p>The main surfaces are the menu bar icon, the Dashboard, the quick panel, preview popovers, Settings, and context menus on each clipboard record.</p>
+      </section>
+      <section>
+        <h2>Install Clibo</h2>
+        <ol>
+          <li>Download the latest Clibo DMG from the website.</li>
+          <li>Open the DMG and drag Clibo into Applications.</li>
+          <li>Launch Clibo from Applications, Launchpad, or Spotlight.</li>
+        </ol>
+        <p>Clibo includes a 7-day free trial. After the trial, activate a license from Settings. If you purchased from the website, copy the license key from your receipt email and paste it into Settings > License.</p>
+      </section>
+      <section>
+        <h2>Permissions</h2>
+        <p>The first-run guide walks through permissions Clibo needs for the workflows you enable. Accessibility is used for secure field detection and paste-related workflows. Calendar, Contacts, Notes, and Reminders permissions are requested only when you use actions that write to those macOS apps. Keychain stores license and provider credentials securely.</p>
+      </section>
+      <section>
+        <h2>Clipboard history</h2>
+        <p>Copy normally in any app. When the content is allowed by your privacy rules, Clibo saves it into local history. Supported records include text, links, code, images, files, colors, emails, dates, and phone numbers.</p>
+        <p>Use the Dashboard to browse all history, search, filter by content type, inspect previews, pin useful records, edit non-image records, and delete items you no longer need.</p>
+      </section>
+      <section>
+        <h2>Quick panel</h2>
+        <p>The quick panel is designed for staying in the current app. Open it with your configured shortcut, search for an item, then copy or paste it back into your workflow. You can search history and snippets, use context menus for record actions, open statistics, or temporarily enable sensitive recording from quick controls.</p>
+      </section>
+      <section>
+        <h2>Actions and snippets</h2>
+        <p>Right-click a clipboard record to open available actions. Text and image records can be sent to Notes, non-image content can become reminders, detected dates can be added to Calendar, and phone numbers can be saved to Contacts or opened in Messages.</p>
+        <p>Snippets are reusable text templates for content you paste repeatedly, such as email replies, prompts, signatures, addresses, or code fragments. Common snippets can be mapped to global shortcuts from Command + Shift + 1 through Command + Shift + 9.</p>
+      </section>
+      <section>
+        <h2>Privacy, sync, import, and AI</h2>
+        <p>Clibo is local-first. Clipboard history is stored in a local database on your Mac unless you explicitly enable pinned sync for pinned records. Pinned sync stores only pinned records in a separate CliboPinnedClips.json file. File Import supports JSON, CSV, TXT, and Markdown. App Import includes a dedicated Maccy import path.</p>
+        <p>AI features are optional. Configure your own provider and API key before using translation, rewriting, summarization, Explain Code, or other provider-backed actions.</p>
+      </section>
+      <section>
+        <h2>Troubleshooting</h2>
+        <p>If clipboard history is not updating, check whether Clibo is paused and confirm required permissions. If macOS actions do not work, check Calendar, Contacts, Notes, or Reminders permissions. If AI actions fail, check the provider, API key, model name, and network connection.</p>
+      </section>
+    </main>`;
+  }
+
+  if (seo.path === "/support") {
+    return `<main data-seo-snapshot>
+      <h1>Clibo Support</h1>
+      <p>Clibo is a local-first clipboard manager for macOS. It keeps clipboard history on your Mac and provides fast search, a menu bar quick panel, snippets, optional AI actions, and automation rules.</p>
+      <section>
+        <h2>Requirements</h2>
+        <ul>
+          <li>macOS 14 Sonoma or later.</li>
+          <li>Mac with Apple Silicon or Intel processor.</li>
+          <li>Internet access for purchases and optional AI provider requests.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Common Questions</h2>
+        <h3>Where is my clipboard history stored?</h3>
+        <p>Clipboard history is stored locally on your Mac under the user's Application Support folder. Clibo does not upload clipboard history to a Clibo backend.</p>
+        <h3>Why does Clibo ask for Accessibility access?</h3>
+        <p>Clibo uses Accessibility APIs to detect secure text fields so sensitive entries, such as password fields, are not recorded.</p>
+        <h3>Does Clibo contact websites for copied links?</h3>
+        <p>Only if URL title fetching is enabled in Privacy settings. It is off by default.</p>
+        <h3>How do AI features work?</h3>
+        <p>AI features are optional. If configured, Clibo sends the selected text and prompt directly to the provider chosen by the user.</p>
+      </section>
+      <section>
+        <h2>Troubleshooting</h2>
+        <p>If clipboard history is not updating, check whether Clibo is paused from the menu bar quick panel. If purchase status is not active, open Settings, choose License, and restore or enter your license. If AI actions fail, check the configured provider and API key.</p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>For support, email <a href="mailto:support@clibo.us">support@clibo.us</a>.</p>
+      </section>
+    </main>`;
+  }
+
+  if (seo.path === "/privacy") {
+    return `<main data-seo-snapshot>
+      <h1>Privacy Policy</h1>
+      <p>Last updated: May 28, 2026</p>
+      <section>
+        <h2>Overview</h2>
+        <p>Clibo is a macOS clipboard manager built with privacy as a core principle. Your clipboard data never leaves your Mac. We do not operate servers that collect, store, or transmit your clipboard content.</p>
+      </section>
+      <section>
+        <h2>Data Stored Locally</h2>
+        <p>All clipboard history is stored in a local SQLite database on your Mac. This includes text, links, code, images, timestamps, content type metadata, and pinned snippets you choose to save permanently.</p>
+        <p>This data never leaves your device. We have no access to it, and no third party receives it through Clibo.</p>
+      </section>
+      <section>
+        <h2>Password and Sensitive Content</h2>
+        <p>Clibo automatically detects and excludes content copied from password managers such as 1Password, Bitwarden, and Apple Passwords. Clipboard entries marked as concealed or coming from known password manager bundle IDs are never saved to history.</p>
+      </section>
+      <section>
+        <h2>AI Features</h2>
+        <p>Clibo offers optional AI-powered actions such as translate, rewrite, and summarize. You provide your own API key. Your API key is stored securely in the macOS Keychain. Only the specific clip you choose to process is sent to the AI provider's API.</p>
+      </section>
+      <section>
+        <h2>Payments, Licensing, and Diagnostics</h2>
+        <p>Clibo uses Dodo Payments as our payment processor. License activation validates your license key against Dodo Payments' public API and does not include clipboard data. Clibo does not automatically send crash reports or usage analytics.</p>
+      </section>
+      <section>
+        <h2>Website and Contact</h2>
+        <p>The Clibo website is a static site hosted on Cloudflare Pages. If you have questions about this privacy policy or Clibo's data practices, contact <a href="mailto:ilikexff@gmail.com">ilikexff@gmail.com</a>.</p>
+      </section>
+    </main>`;
+  }
+
+  if (seo.path === "/terms") {
+    return `<main data-seo-snapshot>
+      <h1>Terms of Service</h1>
+      <p>Last updated: May 29, 2026</p>
+      <section>
+        <h2>Agreement</h2>
+        <p>These terms govern your use of Clibo, a macOS clipboard manager. By downloading, installing, purchasing, or using Clibo, you agree to these terms.</p>
+      </section>
+      <section>
+        <h2>License</h2>
+        <p>A paid Clibo license grants you a personal, non-transferable right to use the Pro features of Clibo on the number of Macs shown at purchase and enforced by the license system. You may not resell, share, sublicense, or publicly distribute your license key.</p>
+      </section>
+      <section>
+        <h2>Payments and Updates</h2>
+        <p>Payments are processed by Dodo Payments as Merchant of Record. Clibo is downloadable desktop software and may receive updates, fixes, and compatibility improvements over time.</p>
+      </section>
+      <section>
+        <h2>Acceptable Use and AI Features</h2>
+        <p>You are responsible for how you use Clibo and for the content you copy, store, preview, transform, or paste. AI features are optional and use a Bring Your Own Key model. Clips you choose to process are sent to your selected provider under that provider's terms and privacy policy.</p>
+      </section>
+      <section>
+        <h2>Warranty, Liability, and Contact</h2>
+        <p>Clibo is provided as is and as available. Questions about these terms can be sent to <a href="mailto:ilikexff@gmail.com">ilikexff@gmail.com</a>.</p>
+      </section>
+    </main>`;
+  }
+
+  if (seo.path === "/refund") {
+    return `<main data-seo-snapshot>
+      <h1>Refund Policy</h1>
+      <p>Last updated: May 29, 2026</p>
+      <section>
+        <h2>Try Before Buying</h2>
+        <p>Clibo offers a free trial so you can test the app before purchasing. We recommend confirming that Clibo works for your workflow, macOS version, and security settings before buying a license.</p>
+      </section>
+      <section>
+        <h2>Refund Eligibility</h2>
+        <p>Because Clibo is delivered digitally with an issued license key, paid purchases are generally final after the license is delivered. We will still review refund requests in good faith for duplicate purchases, accidental purchases, or technical problems that prevent Clibo from working and cannot be resolved.</p>
+        <ul>
+          <li>Refund requests should be made within 14 days of purchase.</li>
+          <li>Approved refunds revoke or disable the related license key.</li>
+          <li>This policy does not limit any mandatory consumer rights that apply in your country or region.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>How to Request a Refund</h2>
+        <p>Email <a href="mailto:ilikexff@gmail.com">ilikexff@gmail.com</a> with your payment ID, purchase email, and a short explanation of the issue. Payment details can be found on the purchase success page when available or in your Dodo Payments receipt email.</p>
+      </section>
+      <section>
+        <h2>Payment Processor</h2>
+        <p>Purchases are processed by Dodo Payments as Merchant of Record. Dodo Payments may handle refund processing, receipts, tax adjustments, and payment disputes according to its buyer terms and applicable law.</p>
       </section>
     </main>`;
   }
