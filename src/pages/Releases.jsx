@@ -43,6 +43,62 @@ function renderMarkdownLinks(text) {
 
 const RELEASES = [
   {
+    version: "1.2.7",
+    date: "2026-06-19",
+    title: {
+      en: "Native right-click menu, dedicated Appearance settings, and new theme packs",
+      zh: "原生右键菜单、独立 Appearance 设置与新主题包",
+      ja: "ネイティブの右クリックメニュー、専用の Appearance 設定、新しいテーマパック",
+      ko: "네이티브 오른쪽 클릭 메뉴, 전용 Appearance 설정 및 새 테마 팩",
+      fr: "Menu clic droit natif, réglages Appearance dédiés et nouveaux packs de thèmes",
+      de: "Natives Rechtsklick-Menü, dedizierte Appearance-Einstellungen und neue Themenpakete",
+      it: "Menu clic destro nativo, impostazioni Appearance dedicate e nuovi pacchetti tema",
+      es: "Menú de clic derecho nativo, ajustes Appearance dedicados y nuevos paquetes de temas",
+    },
+    notes: [
+      {
+        en: "Fixed the secondary menu in the Dashboard record right-click menu repeatedly flickering and failing to stay open; the Dashboard right-click menu now uses a native AppKit menu to avoid SwiftUI rebuilding the submenu repeatedly within the current view structure.",
+        zh: "修复 Dashboard 记录右键菜单中的二级菜单反复闪动、无法稳定展开的问题；Dashboard 右键菜单改用原生 AppKit 菜单承载，避免 SwiftUI 二级菜单在当前视图结构中反复重建。",
+        ja: "Dashboard のレコード右クリックメニューにおけるサブメニューが点滅して安定して展開できない問題を修正しました。Dashboard の右クリックメニューはネイティブの AppKit メニューに切り替え、SwiftUI のサブメニューが現在のビュー構造内で繰り返し再構築されるのを防ぎます。",
+        ko: "Dashboard 레코드 오른쪽 클릭 메뉴의 하위 메뉴가 반복 깜빡이고 안정적으로 열리지 않는 문제를 수정했습니다. Dashboard 오른쪽 클릭 메뉴를 네이티브 AppKit 메뉴로 변경해 SwiftUI 하위 메뉴가 현재 뷰 구조 안에서 반복 재구축되는 일을 방지합니다.",
+        fr: "Correction du sous-menu du menu contextuel des enregistrements du Dashboard qui clignotait sans cesse et refusait de rester ouvert ; le menu contextuel du Dashboard utilise désormais un menu AppKit natif afin d’éviter que SwiftUI ne reconstruise le sous-menu à répétition dans la structure de vue actuelle.",
+        de: "Behoben, dass das Untermenü im Rechtsklickmenü der Dashboard-Einträge wiederholt flackerte und nicht geöffnet blieb; das Rechtsklickmenü des Dashboards verwendet jetzt ein natives AppKit-Menü, damit SwiftUI das Untermenü in der aktuellen Ansichtsstruktur nicht fortlaufend neu aufbaut.",
+        it: "Corretto il sottomenu del menu contestuale dei record della Dashboard che lampeggiava ripetutamente e non restava aperto; il menu contestuale della Dashboard ora usa un menu AppKit nativo per evitare che SwiftUI ricostruisca il sottomenu all’interno dell’attuale struttura di vista.",
+        es: "Se corrigió el submenú del menú contextual de los registros del Dashboard que parpadeaba sin cesar y no se mantenía abierto; el menú contextual del Dashboard ahora usa un menú AppKit nativo para evitar que SwiftUI reconstruya el submenú repetidamente en la estructura de vista actual.",
+      },
+      {
+        en: "Fixed a rectangular white background box appearing over the Dashboard right-side scrollbar area, and narrowed the scope affected by the scrollbar transparency setting.",
+        zh: "修复 Dashboard 右侧滚动条区域出现矩形白色背景框的问题，同时收窄滚动条透明配置的影响范围。",
+        ja: "Dashboard 右側のスクロールバー領域に矩形の白い背景ボックスが表示される問題を修正し、スクロールバーの透明設定の影響範囲を狭めました。",
+        ko: "Dashboard 오른쪽 스크롤바 영역에 사각형 흰색 배경 상자가 나타나는 문제를 수정하고, 스크롤바 투명도 설정의 영향 범위를 좁혔습니다.",
+        fr: "Correction d’un rectangle blanc en arrière-plan apparaissant dans la zone de la barre de défilement droite du Dashboard, et réduction de la portée du réglage de transparence de la barre de défilement.",
+        de: "Behoben, dass im rechten Scrollleistenbereich des Dashboards ein rechteckiger weißer Hintergrundkasten erschien; zudem wurde der von der Transparenz-Einstellung der Scrollleiste betroffene Bereich eingeschränkt.",
+        it: "Corretto un riquadro bianco rettangolare visualizzato nell’area della barra di scorrimento destra della Dashboard e ristretta la portata dell’impostazione di trasparenza della barra di scorrimento.",
+        es: "Se corrigió un recuadro blanco rectangular que aparecía en el área de la barra de desplazamiento derecha del Dashboard y se redujo el alcance afectado por el ajuste de transparencia de la barra de desplazamiento.",
+      },
+      {
+        en: "Added a dedicated Appearance page in Settings that centralizes tinted theme packs, the current theme preview, and unlock progress; the General page returns to holding general settings.",
+        zh: "设置中新增独立 Appearance 页面，集中管理浸染主题包、当前主题预览和解锁进度；General 页面回归通用设置。",
+        ja: "設定に専用の Appearance ページを追加しました。浸染テーマパック、現在のテーマプレビュー、解除進捗を一元管理します。General ページは一般設定に戻ります。",
+        ko: "설정에 전용 Appearance 페이지를 추가했습니다. 틴트 테마 팩, 현재 테마 미리보기, 해제 진행을 한곳에서 관리하며 General 페이지는 일반 설정으로 돌아갑니다.",
+        fr: "Ajout d’une page Appearance dédiée dans les Réglages, qui regroupe les packs de thèmes teintés, l’aperçu du thème courant et la progression du déblocage ; la page General revient aux réglages généraux.",
+        de: "Eine dedizierte Appearance-Seite wurde in den Einstellungen hinzugefügt, die getönte Themenpakete, die aktuelle Theme-Vorschau und den Freischaltfortschritt bündelt; die General-Seite übernimmt wieder die allgemeinen Einstellungen.",
+        it: "Aggiunta una pagina Appearance dedicata nelle Impostazioni che raccoglie i pacchetti tema con tinta, l’anteprima del tema corrente e l’avanzamento dello sblocco; la pagina General torna a ospitare le impostazioni generali.",
+        es: "Se añadió una página Appearance dedicada en Ajustes que centraliza los paquetes de temas tintados, la vista previa del tema actual y el progreso de desbloqueo; la página General vuelve a alojar los ajustes generales.",
+      },
+      {
+        en: "Added three tinted theme packs: Lagoon Glow, Berry Slate, and Ember Moss.",
+        zh: "新增 Lagoon Glow、Berry Slate、Ember Moss 三个浸染主题包。",
+        ja: "Lagoon Glow、Berry Slate、Ember Moss の浸染テーマパックを 3 種追加しました。",
+        ko: "Lagoon Glow, Berry Slate, Ember Moss 세 가지 틴트 테마 팩을 추가했습니다.",
+        fr: "Ajout de trois packs de thèmes teintés : Lagoon Glow, Berry Slate et Ember Moss.",
+        de: "Drei neue getönte Themenpakete hinzugefügt: Lagoon Glow, Berry Slate und Ember Moss.",
+        it: "Aggiunti tre pacchetti tema con tinta: Lagoon Glow, Berry Slate ed Ember Moss.",
+        es: "Se añadieron tres paquetes de temas tintados: Lagoon Glow, Berry Slate y Ember Moss.",
+      },
+    ],
+  },
+  {
     version: "1.2.6",
     date: "2026-06-18",
     title: {

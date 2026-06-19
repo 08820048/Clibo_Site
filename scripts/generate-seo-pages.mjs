@@ -124,7 +124,7 @@ function buildSnapshot(seo) {
         <h2>Pricing</h2>
         <p>Early Bird: $9 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
         <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $9</a></p>
-        <p><a href="https://releases.clibo.us/Clibo-1.1.7-20.dmg">or download free trial</a></p>
+        <p><a href="https://releases.clibo.us/Clibo-1.2.7-31.dmg">or download free trial</a></p>
       </section>
     </main>`;
   }
@@ -302,6 +302,15 @@ function buildSnapshot(seo) {
     return `<main data-seo-snapshot>
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
+      <section>
+        <h2>v1.2.7</h2>
+        <ul>
+          <li>Fixed the secondary menu in the Dashboard record right-click menu flickering and failing to stay open; the Dashboard right-click menu now uses a native AppKit menu to avoid SwiftUI rebuilding the submenu repeatedly within the current view structure.</li>
+          <li>Fixed a rectangular white background box appearing over the Dashboard right-side scrollbar area, and narrowed the scope affected by the scrollbar transparency setting.</li>
+          <li>Added a dedicated Appearance page in Settings that centralizes tinted theme packs, the current theme preview, and unlock progress; the General page returns to holding general settings.</li>
+          <li>Added three tinted theme packs: Lagoon Glow, Berry Slate, and Ember Moss.</li>
+        </ul>
+      </section>
       <section>
         <h2>v1.2.6</h2>
         <ul>
