@@ -124,7 +124,7 @@ function buildSnapshot(seo) {
         <h2>Pricing</h2>
         <p>Early Bird: $9 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
         <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $9</a></p>
-        <p><a href="https://releases.clibo.us/Clibo-1.2.7-31.dmg">or download free trial</a></p>
+        <p><a href="https://releases.clibo.us/Clibo-1.2.8-32.dmg">or download free trial</a></p>
       </section>
     </main>`;
   }
@@ -302,6 +302,16 @@ function buildSnapshot(seo) {
     return `<main data-seo-snapshot>
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
+      <section>
+        <h2>v1.2.8</h2>
+        <ul>
+          <li>Added an Image Hosting settings page; the first image hosting provider supports Cloudflare R2, with the R2 Access Key ID and Secret Access Key stored in Keychain.</li>
+          <li>Configure the R2 Account ID, Bucket, public Base URL, and object prefix, with a test upload entry available.</li>
+          <li>Support automatically uploading images copied to the clipboard: the image history is retained as usual, and after a successful upload the public image URL is written back to the clipboard as plain text.</li>
+          <li>The image right-click menu in the Dashboard and quick panel now includes Upload Image, letting you manually upload historical images and copy the returned URL.</li>
+          <li>Fixed an issue where the hover preview popover could block the drag release when dragging content from the quick panel to other apps; previews are temporarily disabled during a drag and resume normal hover selection and preview after release.</li>
+        </ul>
+      </section>
       <section>
         <h2>v1.2.7</h2>
         <ul>
