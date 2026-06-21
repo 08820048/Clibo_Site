@@ -17,7 +17,17 @@
       "Bash(git push *)",
       "Bash(npx wrangler *)",
       "Bash(npm ls *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git -C /Users/xuyi/Documents/CliboSite log --oneline --all --graph)",
+      "Bash(git -C /Users/xuyi/Documents/CliboSite tag:*)",
+      "Bash(git -C /Users/xuyi/Documents/CliboSite status)",
+      "Bash(git -C /Users/xuyi/Documents/CliboSite diff:*)",
+      "Bash(git -C /Users/xuyi/Documents/CliboSite log --oneline -5)",
+      "Bash(git -C:*)",
+      "Bash(echo:*)",
+      "Skill(commit)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
