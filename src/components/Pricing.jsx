@@ -144,9 +144,10 @@ export default function Pricing() {
             }}
           />
         </span>
-        <p className="price" aria-label="$9">
+        <p className="price" aria-label="$7.66">
           <span aria-hidden="true" style={{ "--digit-delay": "80ms" }}>$</span>
-          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>9</span>
+          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>7</span>
+          <span className="price-cents" aria-hidden="true" style={{ "--digit-delay": "240ms" }}>.66</span>
         </p>
         <a
           className="button button-primary pricing-buy"
@@ -154,14 +155,14 @@ export default function Pricing() {
         >
           <I18nText
             t={{
-              en: "Buy Clibo for $9",
-              zh: "以 $9 购买 Clibo",
-              ja: "Cliboを$9で購入",
-              ko: "$9에 Clibo 구매",
-              fr: "Acheter Clibo pour 9 $",
-              de: "Clibo für 9 $ kaufen",
-              it: "Acquista Clibo per 9 $",
-              es: "Comprar Clibo por 9 $",
+              en: "Buy Clibo for $7.66",
+              zh: "以 $7.66 购买 Clibo",
+              ja: "Cliboを$7.66で購入",
+              ko: "$7.66에 Clibo 구매",
+              fr: "Acheter Clibo pour 7,66 $",
+              de: "Clibo für 7,66 $ kaufen",
+              it: "Acquista Clibo per 7,66 $",
+              es: "Comprar Clibo por 7,66 $",
             }}
           />
         </a>
@@ -170,14 +171,14 @@ export default function Pricing() {
             delay={0.1}
             stagger={0.016}
             t={{
-              en: "Early Bird: $9 one-time · Regular price $15 · Valid until July 1, 2026",
-              zh: "早鸟价：$9 一次买断 · 正价 $15 · 2026年7月1日前有效",
-              ja: "早期価格：$9買い切り · 通常価格$15 · 2026年7月1日まで有効",
-              ko: "얼리버드: $9 일회 결제 · 정상가 $15 · 2026년 7월 1일까지 유효",
-              fr: "Early Bird : 9 $ en une fois · Prix normal 15 $ · Valable jusqu'au 1 juillet 2026",
-              de: "Early Bird: 9 $ einmalig · Regulärer Preis 15 $ · Gültig bis 1. Juli 2026",
-              it: "Early Bird: 9 $ una tantum · Prezzo regolare 15 $ · Valido fino al 1 luglio 2026",
-              es: "Early Bird: 9 $ pago único · Precio regular 15 $ · Válido hasta el 1 de julio de 2026",
+              en: "Early Bird: $7.66 one-time · Regular price $14 · Valid until July 1, 2026",
+              zh: "早鸟价：$7.66 一次买断 · 正价 $14 · 2026年7月1日前有效",
+              ja: "早期価格：$7.66買い切り · 通常価格$14 · 2026年7月1日まで有効",
+              ko: "얼리버드: $7.66 일회 결제 · 정상가 $14 · 2026년 7월 1일까지 유효",
+              fr: "Early Bird : 7,66 $ en une fois · Prix normal 14 $ · Valable jusqu'au 1 juillet 2026",
+              de: "Early Bird: 7,66 $ einmalig · Regulärer Preis 14 $ · Gültig bis 1. Juli 2026",
+              it: "Early Bird: 7,66 $ una tantum · Prezzo regolare 14 $ · Valido fino al 1 luglio 2026",
+              es: "Early Bird: 7,66 $ pago único · Precio regular 14 $ · Válido hasta el 1 de julio de 2026",
             }}
           />
         </p>

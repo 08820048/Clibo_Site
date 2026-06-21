@@ -263,14 +263,14 @@ export default function Hero() {
             >
               <I18nText
                 t={{
-                  en: "Buy - $9",
-                  zh: "购买 - $9",
-                  ja: "購入 - $9",
-                  ko: "구매 - $9",
-                  fr: "Acheter - $9",
-                  de: "Kaufen - $9",
-                  it: "Acquista - $9",
-                  es: "Comprar - $9",
+                  en: "Buy - $7.66",
+                  zh: "购买 - $7.66",
+                  ja: "購入 - $7.66",
+                  ko: "구매 - $7.66",
+                  fr: "Acheter - 7,66 $",
+                  de: "Kaufen - 7,66 $",
+                  it: "Acquista - 7,66 $",
+                  es: "Comprar - 7,66 $",
                 }}
               />
             </a>
@@ -278,14 +278,14 @@ export default function Hero() {
           <p className="price-note reveal" style={{ "--delay": "400ms" }}>
             <I18nText
               t={{
-                en: "Early Bird: $9 one-time · Regular price $15 · Valid until July 1, 2026",
-                zh: "早鸟价：$9 一次买断 · 原价 $15 · 2026年7月1日前有效",
-                ja: "早期購入: $9 一回払い · 通常価格 $15 · 2026年7月1日まで有効",
-                ko: "얼리버드: $9 일회결제 · 정가 $15 · 2026년 7월 1일까지 유효",
-                fr: "Early Bird : $9 unique · Prix normal $15 · Valable jusqu'au 1 juillet 2026",
-                de: "Frühbucher: $9 einmalig · Regulärer Preis $15 · Gültig bis 1. Juli 2026",
-                it: "Early Bird: $9 una tantum · Prezzo regolare $15 · Valido fino al 1 luglio 2026",
-                es: "Early Bird: $9 único · Precio regular $15 · Válido hasta el 1 de julio de 2026",
+                en: "Early Bird: $7.66 one-time · Regular price $14 · Valid until July 1, 2026",
+                zh: "早鸟价：$7.66 一次买断 · 原价 $14 · 2026年7月1日前有效",
+                ja: "早期購入: $7.66 一回払い · 通常価格 $14 · 2026年7月1日まで有効",
+                ko: "얼리버드: $7.66 일회결제 · 정가 $14 · 2026년 7월 1일까지 유효",
+                fr: "Early Bird : 7,66 $ unique · Prix normal $14 · Valable jusqu'au 1 juillet 2026",
+                de: "Frühbucher: 7,66 $ einmalig · Regulärer Preis $14 · Gültig bis 1. Juli 2026",
+                it: "Early Bird: 7,66 $ una tantum · Prezzo regolare $14 · Valido fino al 1 luglio 2026",
+                es: "Early Bird: 7,66 $ único · Precio regular $14 · Válido hasta el 1 de julio de 2026",
               }}
             />
           </p>
