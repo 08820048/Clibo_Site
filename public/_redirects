@@ -6,6 +6,12 @@ https://www.clibo.us/* https://clibo.us/:splat 301
 /support/ /support 301
 /success/ /success 301
 /docs/ /docs 301
+/mac-clipboard-history/ /mac-clipboard-history 301
+/maccy-alternative/ /maccy-alternative 301
+/maccy-import/ /maccy-import 301
+/local-clipboard-manager-mac/ /local-clipboard-manager-mac 301
+/clipboard-manager-privacy/ /clipboard-manager-privacy 301
+/clipboard-snippets-mac/ /clipboard-snippets-mac 301
 /yushenga/privacy /yushenga/privacy/ 302
 /yushenga/privacy.html /yushenga/privacy/ 302
 /changelog /releases 301

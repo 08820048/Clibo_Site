@@ -1,10 +1,21 @@
+import { SEO_LANDING_PAGES } from "./landingPages.js";
+
 export const SITE_URL = "https://clibo.us";
 export const SITE_NAME = "Clibo";
 export const DEFAULT_IMAGE = `${SITE_URL}/assets/hero-dashboard.png`;
 export const DEFAULT_LOCALE = "en_US";
 export const TWITTER_HANDLE = "@shizouffa";
 
-export const PUBLIC_ROUTES = ["/", "/privacy", "/terms", "/refund", "/releases", "/docs", "/support"];
+export const PUBLIC_ROUTES = [
+  "/",
+  "/privacy",
+  "/terms",
+  "/refund",
+  "/releases",
+  "/docs",
+  "/support",
+  ...SEO_LANDING_PAGES.map((page) => page.path),
+];
 
 export const SEO_ROUTES = {
   "/": {
@@ -106,6 +117,21 @@ export const SEO_ROUTES = {
     robots: "noindex, nofollow",
     schema: [],
   },
+  ...Object.fromEntries(
+    SEO_LANDING_PAGES.map((page) => [
+      page.path,
+      {
+        title: page.seoTitle,
+        description: page.seoDescription,
+        path: page.path,
+        type: "article",
+        image: DEFAULT_IMAGE,
+        robots: "index, follow",
+        breadcrumbName: page.title,
+        schema: ["breadcrumb"],
+      },
+    ])
+  ),
 };
 
 export function getRouteSeo(pathname) {
@@ -204,7 +230,7 @@ export function getStructuredData(seo) {
         {
           "@type": "ListItem",
           position: 2,
-          name: seo.title.replace(` - ${SITE_NAME}`, ""),
+          name: seo.breadcrumbName || seo.title.replace(` - ${SITE_NAME}`, ""),
           item: absoluteUrl(seo.path),
         },
       ],

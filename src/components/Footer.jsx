@@ -111,6 +111,20 @@ export default function Footer() {
             }}
           />
         </Link>
+        <Link to="/mac-clipboard-history">
+          <I18nText
+            t={{
+              en: "Guides",
+              zh: "指南",
+              ja: "ガイド",
+              ko: "가이드",
+              fr: "Guides",
+              de: "Guides",
+              it: "Guide",
+              es: "Guías",
+            }}
+          />
+        </Link>
         <Link to="/support">
           <I18nText
             t={{

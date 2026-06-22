@@ -10,9 +10,10 @@ import {
   absoluteUrl,
   getStructuredData,
 } from "../src/seo/metadata.js";
+import { getLandingPage } from "../src/seo/landingPages.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-06-18";
+const LAST_MODIFIED = "2026-06-22";
 
 function escapeHtml(value) {
   return String(value)
@@ -96,6 +97,12 @@ function injectSeo(html, seo) {
 }
 
 function buildSnapshot(seo) {
+  const landingPage = getLandingPage(seo.path);
+
+  if (landingPage) {
+    return buildLandingSnapshot(landingPage);
+  }
+
   if (seo.robots.startsWith("noindex")) {
     return `<main data-seo-snapshot><h1>${escapeHtml(seo.title)}</h1><p>${escapeHtml(seo.description)}</p></main>`;
   }
@@ -575,6 +582,49 @@ function buildSnapshot(seo) {
     <p>${escapeHtml(seo.description)}</p>
     <p><a href="https://clibo.us/">Clibo home</a></p>
   </main>`;
+}
+
+function buildLandingSnapshot(page) {
+  const sections = page.sections.map((section) => {
+    const bullets = section.bullets
+      ? `
+      <ul>
+        ${section.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("\n        ")}
+      </ul>`
+      : "";
+
+    return `
+      <section>
+        <h2>${escapeHtml(section.heading)}</h2>
+        <p>${escapeHtml(section.body)}</p>${bullets}
+      </section>`;
+  }).join("");
+
+  const related = page.related.map((path) => {
+    const relatedSeo = SEO_ROUTES[path];
+    return `<li><a href="${escapeAttr(path)}">${escapeHtml(relatedSeo?.title || path)}</a></li>`;
+  }).join("\n          ");
+
+  return `<main data-seo-snapshot>
+      <p>${escapeHtml(page.eyebrow)}</p>
+      <h1>${escapeHtml(page.title)}</h1>
+      <p>${escapeHtml(page.lede)}</p>
+      ${sections}
+      <section>
+        <h2>${escapeHtml(page.ctaHeading)}</h2>
+        <p>${escapeHtml(page.ctaBody)}</p>
+        <p><a href="https://releases.clibo.us/Clibo-1.2.8-32.dmg">Download Free Trial</a></p>
+        <p><a href="https://clibo.us/docs">Read Clibo documentation</a></p>
+      </section>
+      <nav aria-label="Related Clibo guides">
+        <h2>Related guides</h2>
+        <ul>
+          ${related}
+          <li><a href="/docs">Clibo Documentation</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+      </nav>
+    </main>`;
 }
 
 async function writeRouteHtml(route, html) {

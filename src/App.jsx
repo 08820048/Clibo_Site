@@ -9,8 +9,10 @@ import Support from "./pages/Support.jsx";
 import Success from "./pages/Success.jsx";
 import Docs from "./pages/Docs.jsx";
 import YushengaPrivacy from "./pages/YushengaPrivacy.jsx";
+import SeoLanding from "./pages/SeoLanding.jsx";
 import Seo from "./seo/Seo.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import { SEO_LANDING_PAGES } from "./seo/landingPages.js";
 
 export default function App() {
   return (
@@ -27,6 +29,9 @@ export default function App() {
         <Route path="/docs" element={<Docs />} />
         <Route path="/yushenga/privacy" element={<YushengaPrivacy />} />
         <Route path="/yushenga/privacy/" element={<YushengaPrivacy />} />
+        {SEO_LANDING_PAGES.map((page) => (
+          <Route key={page.path} path={page.path} element={<SeoLanding />} />
+        ))}
         <Route path="/changelog" element={<Navigate to="/releases" replace />} />
         <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
         <Route path="*" element={<NotFound />} />

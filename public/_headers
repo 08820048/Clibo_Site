@@ -29,6 +29,24 @@
 /docs
   Content-Type: text/html; charset=utf-8
 
+/mac-clipboard-history
+  Content-Type: text/html; charset=utf-8
+
+/maccy-alternative
+  Content-Type: text/html; charset=utf-8
+
+/maccy-import
+  Content-Type: text/html; charset=utf-8
+
+/local-clipboard-manager-mac
+  Content-Type: text/html; charset=utf-8
+
+/clipboard-manager-privacy
+  Content-Type: text/html; charset=utf-8
+
+/clipboard-snippets-mac
+  Content-Type: text/html; charset=utf-8
+
 /yushenga/privacy/
   Content-Type: text/html; charset=utf-8
 
