@@ -43,6 +43,96 @@ function renderMarkdownLinks(text) {
 
 const RELEASES = [
   {
+    version: "1.2.11",
+    date: "2026-06-23",
+    title: {
+      en: "Cloudflare R2 Endpoint URL setup and quick panel shortcut toggle",
+      zh: "Cloudflare R2 Endpoint URL 配置与快捷面板快捷键关闭行为",
+    },
+    notes: [
+      {
+        en: "Image Hosting's Cloudflare R2 configuration now uses the full Endpoint URL instead of exposing Account ID separately. Existing Account ID settings are migrated automatically to `https://<account-id>.r2.cloudflarestorage.com`.",
+        zh: "Image Hosting 的 Cloudflare R2 配置改为填写完整 Endpoint URL，不再单独暴露 Account ID；旧版 Account ID 配置会自动迁移为 `https://<account-id>.r2.cloudflarestorage.com`。",
+      },
+      {
+        en: "Added R2 Endpoint URL validation requiring an HTTPS upload endpoint without a bucket name or object path.",
+        zh: "补充 R2 Endpoint URL 配置校验，要求使用 HTTPS 上传端点，且不能包含 bucket 或对象路径。",
+      },
+      {
+        en: "Fixed a SwiftUI warning that could appear when switching the upload link write-back format in Image Hosting during a view update.",
+        zh: "修复 Image Hosting 中切换上传链接写回格式时，SwiftUI 可能提示在视图更新过程中发布状态变更的问题。",
+      },
+      {
+        en: "Adjusted the global quick panel shortcut behavior: when the panel is already open, pressing the shortcut again now closes it instead of moving to the next record.",
+        zh: "调整快捷面板全局快捷键行为：面板已打开时再次按下快捷键会关闭面板，不再切换到下一条记录。",
+      },
+    ],
+  },
+  {
+    version: "1.2.10",
+    date: "2026-06-22",
+    title: {
+      en: "Image Hosting public URL validation, write-back formats, and localization",
+      zh: "Image Hosting 公开链接校验、写回格式与多语言本地化",
+    },
+    notes: [
+      {
+        en: "Fixed an Image Hosting configuration issue where a Cloudflare R2 S3 API endpoint could be entered as the Public Base URL. Upload endpoints such as `r2.cloudflarestorage.com` are now blocked so uploaded images do not copy browser-inaccessible links.",
+        zh: "修复 Image Hosting 配置中可误将 Cloudflare R2 S3 API endpoint 当作 Public Base URL 的问题；现在会明确拦截 `r2.cloudflarestorage.com` 这类上传端点，避免上传成功后复制出无法在浏览器公开访问的图片链接。",
+      },
+      {
+        en: "Updated the Image Hosting Public Base URL example to use an R2 public bucket URL, guiding users toward a custom public domain or an `r2.dev` public access URL.",
+        zh: "Image Hosting 的 Public Base URL 示例改为 R2 public bucket URL 形式，引导用户填写自定义公开域名或 `r2.dev` 公共访问地址。",
+      },
+      {
+        en: "Image Hosting now lets you choose the clipboard write-back format after a successful upload: plain URL or Markdown image syntax.",
+        zh: "Image Hosting 新增上传成功后写回剪贴板的格式选择，支持纯 URL 和 Markdown 图片语法。",
+      },
+      {
+        en: "Improved the image upload success notification to clearly indicate that the link has been copied to the clipboard and can be pasted directly.",
+        zh: "优化图片上传成功通知文案，明确提示链接已复制到剪切板并可直接粘贴使用。",
+      },
+      {
+        en: "Added missing localization for Image Hosting settings and the Upload Image context menu. In Chinese, the action now appears as “上传图片”.",
+        zh: "补齐 Image Hosting 设置项和 Upload Image 右键菜单的多语言本地化，中文环境下显示为“上传图片”。",
+      },
+      {
+        en: "Added Image Hosting configuration validation tests covering R2 S3 endpoint blocking and allowing `r2.dev` public URLs.",
+        zh: "补充 Image Hosting 配置校验测试，覆盖 R2 S3 endpoint 拦截和 `r2.dev` 公开地址放行。",
+      },
+    ],
+  },
+  {
+    version: "1.2.9",
+    date: "2026-06-22",
+    title: {
+      en: "Archive calendar overview and broader Image Hosting file upload support",
+      zh: "归档日历概览与更完整的 Image Hosting 图片文件上传支持",
+    },
+    notes: [
+      {
+        en: "Added a right-side calendar overview to the Dashboard archive view. When every date timeline is collapsed, the calendar shows daily copy counts for the month; clicking a date with content expands and scrolls to that day's records.",
+        zh: "Dashboard 归档视图新增右侧日历概览；当日期时间线全部收起时显示当月每日复制数量，点击有内容的日期会展开对应时间线并定位到该日期记录。",
+      },
+      {
+        en: "Refined the archive view's two-column layout so the calendar stays tightly aligned with collapsed timelines, and automatically hides after expanding a date.",
+        zh: "优化归档视图的左右布局，日历区域与收起态时间线保持紧凑对齐，并在展开日期后自动收起日历。",
+      },
+      {
+        en: "Removed the clips and pinned counts from the bottom-left of the Dashboard, keeping a lighter bottom status area.",
+        zh: "移除 Dashboard 底部左侧的 clips 和 pinned 数量显示，保留更轻量的底部状态区域。",
+      },
+      {
+        en: "Enhanced Image Hosting so copied image files such as PNG, JPG, JPEG, GIF, WebP, HEIC, HEIF, TIFF, SVG, and BMP can also be uploaded automatically to Cloudflare R2.",
+        zh: "增强 Image Hosting：复制 PNG、JPG、JPEG、GIF、WebP、HEIC、HEIF、TIFF、SVG、BMP 等图片文件时，也支持自动上传到 Cloudflare R2。",
+      },
+      {
+        en: "Added Upload Image to the context menu for image-type files in the Dashboard and quick panel. Uploads preserve the original image file data, extension, and MIME Type.",
+        zh: "Dashboard 和快捷面板中，图片类型文件的右键菜单新增 Upload Image；上传时保留原始图片文件数据、扩展名和 MIME Type。",
+      },
+    ],
+  },
+  {
     version: "1.2.8",
     date: "2026-06-20",
     title: {

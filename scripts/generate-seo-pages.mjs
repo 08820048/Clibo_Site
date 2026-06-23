@@ -13,7 +13,7 @@ import {
 import { getLandingPage } from "../src/seo/landingPages.js";
 
 const DIST_DIR = "dist";
-const LAST_MODIFIED = "2026-06-22";
+const LAST_MODIFIED = "2026-06-23";
 
 function escapeHtml(value) {
   return String(value)
@@ -131,7 +131,7 @@ function buildSnapshot(seo) {
         <h2>Pricing</h2>
         <p>Early Bird: $7.66 one-time purchase, valid until July 1, 2026. Includes a 7-day free trial and 2 Mac activations.</p>
         <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $7.66</a></p>
-        <p><a href="https://releases.clibo.us/Clibo-1.2.8-32.dmg">or download free trial</a></p>
+        <p><a href="https://releases.clibo.us/Clibo-1.2.11-35.dmg">or download free trial</a></p>
       </section>
     </main>`;
   }
@@ -309,6 +309,30 @@ function buildSnapshot(seo) {
     return `<main data-seo-snapshot>
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
+      <section>
+        <h2>v1.2.11</h2>
+        <ul>
+          <li>Image Hosting now configures Cloudflare R2 with a full Endpoint URL, and existing Account ID settings migrate automatically.</li>
+          <li>R2 Endpoint URL validation now requires an HTTPS upload endpoint without bucket or object paths.</li>
+          <li>The quick panel global shortcut now closes the panel when it is already open instead of selecting the next record.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.2.10</h2>
+        <ul>
+          <li>Image Hosting now blocks Cloudflare R2 S3 API endpoints from being used as Public Base URLs.</li>
+          <li>Public Base URL examples now point users toward custom public domains or R2 public bucket URLs.</li>
+          <li>Uploaded image links can now be written back as plain URLs or Markdown image syntax, with clearer success notifications and improved localization.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>v1.2.9</h2>
+        <ul>
+          <li>The Dashboard archive view now includes a right-side calendar overview for collapsed timelines.</li>
+          <li>Image Hosting now supports automatic uploads for copied image files including PNG, JPG, GIF, WebP, HEIC, HEIF, TIFF, SVG, and BMP.</li>
+          <li>Dashboard and quick panel context menus now include Upload Image for image-type files while preserving original file data, extension, and MIME type.</li>
+        </ul>
+      </section>
       <section>
         <h2>v1.2.8</h2>
         <ul>
@@ -613,7 +637,7 @@ function buildLandingSnapshot(page) {
       <section>
         <h2>${escapeHtml(page.ctaHeading)}</h2>
         <p>${escapeHtml(page.ctaBody)}</p>
-        <p><a href="https://releases.clibo.us/Clibo-1.2.8-32.dmg">Download Free Trial</a></p>
+        <p><a href="https://releases.clibo.us/Clibo-1.2.11-35.dmg">Download Free Trial</a></p>
         <p><a href="https://clibo.us/docs">Read Clibo documentation</a></p>
       </section>
       <nav aria-label="Related Clibo guides">

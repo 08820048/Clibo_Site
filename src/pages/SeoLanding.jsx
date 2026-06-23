@@ -28,7 +28,7 @@ export default function SeoLanding() {
           <h1>{page.title}</h1>
           <p className="seo-landing-lede">{page.lede}</p>
           <div className="seo-landing-actions">
-            <a className="button button-primary" href="https://releases.clibo.us/Clibo-1.2.8-32.dmg">
+            <a className="button button-primary" href="https://releases.clibo.us/Clibo-1.2.11-35.dmg">
               Download Free Trial
             </a>
             <a
@@ -60,7 +60,7 @@ export default function SeoLanding() {
               <h2>{page.ctaHeading}</h2>
               <p>{page.ctaBody}</p>
               <div className="seo-landing-actions">
-                <a className="button button-primary" href="https://releases.clibo.us/Clibo-1.2.8-32.dmg">
+                <a className="button button-primary" href="https://releases.clibo.us/Clibo-1.2.11-35.dmg">
                   Download Free Trial
                 </a>
                 <Link className="button button-primary button-teal" to="/docs">
