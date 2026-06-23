@@ -48,7 +48,7 @@ export default function Header() {
     <header className="site-nav" data-nav>
       <div className="nav-shell">
         <Link className="brand" to="/" aria-label="Clibo home">
-          <img className="logo-mark" src="/assets/clibo-icon.png" alt="" />
+          <img className="logo-mark" src="/assets/clibo-icon-64.webp" alt="" width="32" height="32" />
           <span>Clibo</span>
         </Link>
 

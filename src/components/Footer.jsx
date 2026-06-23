@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-left">
         <div className="footer-copy">
           <span className="footer-brand">
-            <img className="logo-mark" src="/assets/clibo-icon.png" alt="" />
+            <img className="logo-mark" src="/assets/clibo-icon-64.webp" alt="" width="32" height="32" />
             <span>Clibo</span>
           </span>
           <span>

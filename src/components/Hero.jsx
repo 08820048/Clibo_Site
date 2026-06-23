@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLang } from "../context/LangContext.jsx";
 import I18nText from "./I18nText.jsx";
 import AnimatedI18nText from "./AnimatedI18nText.jsx";
@@ -40,7 +40,9 @@ const HERO_TITLE = {
 
 const HERO_SHOTS = [
   {
-    src: "/assets/快捷面板.png",
+    src: "/assets/hero-quick-panel.webp",
+    width: 980,
+    height: 771,
     rounded: true,
     label: {
       en: "Quick Panel",
@@ -64,7 +66,9 @@ const HERO_SHOTS = [
     },
   },
   {
-    src: "/assets/归档.png",
+    src: "/assets/hero-archive.webp",
+    width: 894,
+    height: 767,
     label: {
       en: "Archive",
       zh: "归档",
@@ -87,7 +91,9 @@ const HERO_SHOTS = [
     },
   },
   {
-    src: "/assets/统计面板.png",
+    src: "/assets/hero-stats.webp",
+    width: 894,
+    height: 767,
     label: {
       en: "Stats",
       zh: "统计面板",
@@ -110,7 +116,9 @@ const HERO_SHOTS = [
     },
   },
   {
-    src: "/assets/隐私设置.png",
+    src: "/assets/hero-privacy.webp",
+    width: 1135,
+    height: 928,
     label: {
       en: "Privacy",
       zh: "隐私设置",
@@ -133,7 +141,9 @@ const HERO_SHOTS = [
     },
   },
   {
-    src: "/assets/偏好设置.png",
+    src: "/assets/hero-preferences.webp",
+    width: 894,
+    height: 767,
     label: {
       en: "Preferences",
       zh: "偏好设置",
@@ -189,20 +199,10 @@ function AnimatedHeroTitle() {
 export default function Hero() {
   const { lang } = useLang();
   const [activeShot, setActiveShot] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const currentShot = HERO_SHOTS[activeShot] || HERO_SHOTS[0];
+  const currentLabel = currentShot.label[lang] || currentShot.label.en;
   const currentDescription =
     currentShot.description[lang] || currentShot.description.en;
-
-  useEffect(() => {
-    if (isPaused) return undefined;
-
-    const timer = window.setInterval(() => {
-      setActiveShot((current) => (current + 1) % HERO_SHOTS.length);
-    }, 5200);
-
-    return () => window.clearInterval(timer);
-  }, [isPaused]);
 
   return (
     <section className="hero" aria-labelledby="hero-title">
@@ -241,21 +241,13 @@ export default function Hero() {
           </p>
           <div className="hero-actions reveal" style={{ "--delay": "310ms" }}>
             <a
-              className="button button-primary"
+              className="hero-download"
               href="https://releases.clibo.us/Clibo-1.2.11-35.dmg"
             >
-              <I18nText
-                t={{
-                  en: "Download Free Trial",
-                  zh: "下载试用",
-                  ja: "無料トライアルをダウンロード",
-                  ko: "묣료 체험판 다운로드",
-                  fr: "Télécharger l'essai gratuit",
-                  de: "Kostenlose Testversion herunterladen",
-                  it: "Scarica la prova gratuita",
-                  es: "Descargar prueba gratuita",
-                }}
-              />
+              <svg aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" focusable="false">
+                <path d="M11.52 8.43c-.02-1.84 1.5-2.72 1.57-2.77-.86-1.25-2.18-1.42-2.65-1.44-1.12-.11-2.2.66-2.77.66-.58 0-1.45-.64-2.39-.62-1.22.02-2.35.72-2.98 1.82-1.29 2.24-.33 5.54.91 7.35.62.88 1.34 1.86 2.28 1.82.91-.04 1.25-.58 2.36-.58 1.1 0 1.41.58 2.37.56.98-.02 1.6-.89 2.19-1.78.71-1.01.99-2.01 1-2.06-.02-.01-1.87-.72-1.89-2.96ZM9.71 3.03c.5-.62.84-1.45.75-2.29-.72.03-1.62.49-2.13 1.09-.46.53-.87 1.4-.77 2.22.82.06 1.65-.41 2.15-1.02Z" />
+              </svg>
+              <span>Download for macOS</span>
             </a>
           </div>
         </div>
@@ -263,29 +255,33 @@ export default function Hero() {
         <figure
           className="hero-screenshot-frame hero-carousel reveal reveal-right"
           style={{ "--delay": "490ms" }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
         >
           <div className="hero-carousel-stage" aria-live="polite">
-            {HERO_SHOTS.map((shot, index) => {
-              const label = shot.label[lang] || shot.label.en;
-
-              return (
-                <div
-                  key={shot.src}
-                  className={`hero-carousel-slide ${
-                    index === activeShot ? "is-active" : ""
-                  } ${shot.rounded ? "has-rounded-frame" : ""}`}
-                  aria-hidden={index === activeShot ? "false" : "true"}
-                >
-                  <img
-                    className="hero-carousel-image"
-                    src={shot.src}
-                    alt={`Clibo ${label}`}
+            <div
+              className={`hero-carousel-slide is-active ${
+                currentShot.rounded ? "has-rounded-frame" : ""
+              }`}
+            >
+              <picture>
+                {activeShot === 0 && (
+                  <source
+                    media="(max-width: 820px)"
+                    srcSet="/assets/hero-quick-panel-mobile.webp"
+                    width="672"
+                    height="529"
                   />
-                </div>
-              );
-            })}
+                )}
+                <img
+                  className="hero-carousel-image"
+                  src={currentShot.src}
+                  alt={`Clibo ${currentLabel}`}
+                  width={currentShot.width}
+                  height={currentShot.height}
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
           </div>
           <div className="hero-carousel-controls" aria-label="Hero screenshots">
             <div className="hero-carousel-tabs">
@@ -300,8 +296,6 @@ export default function Hero() {
                     }`}
                     type="button"
                     onClick={() => setActiveShot(index)}
-                    onFocus={() => setIsPaused(true)}
-                    onBlur={() => setIsPaused(false)}
                     aria-label={label}
                     aria-pressed={index === activeShot}
                   >

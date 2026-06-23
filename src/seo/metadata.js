@@ -170,7 +170,7 @@ export function getStructuredData(seo) {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: `${SITE_URL}/`,
-      logo: `${SITE_URL}/assets/clibo-icon.png`,
+      logo: `${SITE_URL}/assets/clibo-icon-180.png`,
       sameAs: [
         "https://www.producthunt.com/products/clibo",
       ],
