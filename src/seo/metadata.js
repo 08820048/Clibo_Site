@@ -61,7 +61,7 @@ export const SEO_ROUTES = {
   "/releases": {
     title: "Release Notes - Clibo",
     description:
-      "See the latest Clibo 1.2.12 release notes, product changes, feature updates, fixes, and localization improvements.",
+      "See the latest Clibo 1.2.13 release notes, product changes, quick panel improvements, diagnostics, and performance updates.",
     path: "/releases",
     type: "article",
     image: DEFAULT_IMAGE,

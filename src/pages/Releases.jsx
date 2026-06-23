@@ -43,6 +43,40 @@ function renderMarkdownLinks(text) {
 
 const RELEASES = [
   {
+    version: "1.2.13",
+    date: "2026-06-24",
+    title: {
+      en: "Quick panel filtering, clipboard recovery, and lightweight diagnostics",
+      zh: "快捷面板筛选、剪切板恢复与轻量诊断",
+    },
+    notes: [
+      {
+        en: "Added source app filtering to the quick panel. Use the control below the search field to quickly switch to history copied from a single app.",
+        zh: "快捷面板新增来源 App 过滤，可在搜索框下方快速切换只查看某个应用复制的历史记录。",
+      },
+      {
+        en: "Added a Restore Previous Copy command to the quick panel, so you can quickly write the previous history item back to the clipboard after an accidental copy.",
+        zh: "快捷面板新增“恢复上一条复制”命令，用于误复制后快速把上一条历史重新写回剪切板。",
+      },
+      {
+        en: "The quick panel footer now includes current Clibo process CPU and memory status graphs, with values on either side of the version number and lightweight sparkline trends.",
+        zh: "快捷面板底部新增当前 Clibo 进程的 CPU 和内存状态图，版本号左右两侧分别显示数值和轻量折线趋势。",
+      },
+      {
+        en: "Added an App Load section to the quick statistics hover panel, centralizing current process CPU and memory usage for performance troubleshooting.",
+        zh: "快捷统计 hover 面板新增 App Load 区块，集中显示当前进程 CPU 与内存占用，便于排查性能问题。",
+      },
+      {
+        en: "Data settings now include diagnostic export. It generates a local diagnostic report without clipboard bodies, making it safer to share performance and database status details when requesting support.",
+        zh: "Data 设置页新增诊断导出，可生成不包含剪贴板正文的本地诊断报告，便于反馈性能和数据库状态问题。",
+      },
+      {
+        en: "Performance sampling now starts only while the quick panel or quick statistics panel is visible and refreshes at a low frequency, avoiding additional persistent monitoring overhead.",
+        zh: "性能采样仅在快捷面板或快捷统计面板显示时启动，并以低频刷新，避免监控本身增加额外常驻开销。",
+      },
+    ],
+  },
+  {
     version: "1.2.12",
     date: "2026-06-23",
     title: {

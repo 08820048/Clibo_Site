@@ -310,6 +310,14 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
+        <h2>v1.2.13</h2>
+        <ul>
+          <li>The quick panel now filters clipboard history by source app and includes a Restore Previous Copy command.</li>
+          <li>Quick panel and quick statistics views now show Clibo CPU and memory load with lightweight trend graphs.</li>
+          <li>Data settings can export a local diagnostic report without clipboard bodies; performance sampling runs only while relevant panels are visible.</li>
+        </ul>
+      </section>
+      <section>
         <h2>v1.2.12</h2>
         <ul>
           <li>Settings capsule switches now use a regular control size and right-aligned row layout closer to macOS Settings.</li>

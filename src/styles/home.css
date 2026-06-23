@@ -116,17 +116,18 @@
 
       .nav-shell {
         width: min(1040px, 100%);
-        min-height: 54px;
+        min-height: 50px;
         display: grid;
         grid-template-columns: auto minmax(0, 1fr) auto;
         align-items: center;
         gap: clamp(18px, 3vw, 34px);
-        padding: 8px 10px 8px 10px;
+        padding: 6px 10px;
         pointer-events: auto;
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62)),
           var(--glass);
-        border-radius: 16px;
+        /* A true capsule: the browser caps this at half of the shell height. */
+        border-radius: 999px;
         box-shadow:
           0 1px 0 rgba(255, 255, 255, 0.96) inset,
           0 -1px 0 rgba(255, 255, 255, 0.42) inset,
@@ -255,7 +256,7 @@
         padding: 0 14px;
         color: #fff;
         background: #000;
-        border-radius: 8px;
+        border-radius: 999px;
         box-shadow:
           0 1px 0 rgba(255, 255, 255, 0.18) inset,
           0 10px 20px rgba(0, 0, 0, 0.18);
@@ -1986,9 +1987,9 @@
           grid-template-columns: auto auto;
           justify-content: space-between;
           gap: 12px;
-          min-height: 52px;
-          padding: 7px 8px;
-          border-radius: 15px;
+          min-height: 50px;
+          padding: 6px 8px;
+          border-radius: 999px;
         }
 
         .nav-actions {
