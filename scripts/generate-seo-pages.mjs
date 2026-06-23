@@ -310,6 +310,14 @@ function buildSnapshot(seo) {
       <h1>Release Notes - Clibo</h1>
       <p>Latest Clibo releases and product changes.</p>
       <section>
+        <h2>v1.2.12</h2>
+        <ul>
+          <li>Settings capsule switches now use a regular control size and right-aligned row layout closer to macOS Settings.</li>
+          <li>Appearance adds the default Cloud White and Polished Black themes, with contrast-aware text in tinted panels.</li>
+          <li>Appearance and Image Hosting settings received additional localization coverage, and the v1.2.10 release note title typo was corrected.</li>
+        </ul>
+      </section>
+      <section>
         <h2>v1.2.11</h2>
         <ul>
           <li>Image Hosting now configures Cloudflare R2 with a full Endpoint URL, and existing Account ID settings migrate automatically.</li>

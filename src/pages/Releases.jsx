@@ -43,6 +43,32 @@ function renderMarkdownLinks(text) {
 
 const RELEASES = [
   {
+    version: "1.2.12",
+    date: "2026-06-23",
+    title: {
+      en: "Settings layout polish, new Appearance themes, and localization updates",
+      zh: "设置界面布局优化、新增 Appearance 主题与本地化补齐",
+    },
+    notes: [
+      {
+        en: "Unified the capsule switch layout and sizing in Settings. Switches now use the regular control size and keep a right-aligned row layout closer to macOS Settings pages.",
+        zh: "统一设置界面中的胶囊开关布局和尺寸，使开关使用 regular 控件尺寸并保持更接近 macOS 设置页的右侧对齐行布局。",
+      },
+      {
+        en: "Appearance now includes two default available themes: Cloud White and Polished Black. The dark polished theme uses a dark-text scheme in tinted panels to maintain text contrast.",
+        zh: "Appearance 新增默认可用的白色系主题 Cloud White 和亮黑主题 Polished Black；亮黑主题会在浸染面板中使用深色文字方案，确保文本对比度。",
+      },
+      {
+        en: "Added missing localization for Appearance and Image Hosting settings pages, including setting names, section titles, theme names, theme descriptions, buttons, and status text.",
+        zh: "补齐 Appearance 和 Image Hosting 设置页的多语言本地化，包含设置项名称、分区标题、主题名称、主题说明、按钮和状态文本。",
+      },
+      {
+        en: "Fixed a release note title typo where v1.2.10 was incorrectly written as v1.2.10.",
+        zh: "修正 v1.2.10 变更记录标题误写为 v1.2.10 的问题。",
+      },
+    ],
+  },
+  {
     version: "1.2.11",
     date: "2026-06-23",
     title: {
