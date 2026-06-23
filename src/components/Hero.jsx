@@ -5,8 +5,8 @@ import AnimatedI18nText from "./AnimatedI18nText.jsx";
 
 const HERO_TITLE = {
   en: [
-    [{ text: "Your" }, { text: "clipboard," }],
-    [{ text: "finally" }, { text: "organized.", emphasis: true }],
+    [{ text: "Your" }, { text: "clipboard," }, { text: "finally" }],
+    [{ text: "organized.", emphasis: true }],
   ],
   zh: [
     [{ text: "剪贴板，" }],
@@ -257,38 +257,7 @@ export default function Hero() {
                 }}
               />
             </a>
-            <a
-              className="button button-primary button-teal"
-              href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess"
-            >
-              <I18nText
-                t={{
-                  en: "Buy - $7.66",
-                  zh: "购买 - $7.66",
-                  ja: "購入 - $7.66",
-                  ko: "구매 - $7.66",
-                  fr: "Acheter - 7,66 $",
-                  de: "Kaufen - 7,66 $",
-                  it: "Acquista - 7,66 $",
-                  es: "Comprar - 7,66 $",
-                }}
-              />
-            </a>
           </div>
-          <p className="price-note reveal" style={{ "--delay": "400ms" }}>
-            <I18nText
-              t={{
-                en: "Early Bird: $7.66 one-time · Regular price $14 · Valid until July 1, 2026",
-                zh: "早鸟价：$7.66 一次买断 · 原价 $14 · 2026年7月1日前有效",
-                ja: "早期購入: $7.66 一回払い · 通常価格 $14 · 2026年7月1日まで有効",
-                ko: "얼리버드: $7.66 일회결제 · 정가 $14 · 2026년 7월 1일까지 유효",
-                fr: "Early Bird : 7,66 $ unique · Prix normal $14 · Valable jusqu'au 1 juillet 2026",
-                de: "Frühbucher: 7,66 $ einmalig · Regulärer Preis $14 · Gültig bis 1. Juli 2026",
-                it: "Early Bird: 7,66 $ una tantum · Prezzo regolare $14 · Valido fino al 1 luglio 2026",
-                es: "Early Bird: 7,66 $ único · Precio regular $14 · Válido hasta el 1 de julio de 2026",
-              }}
-            />
-          </p>
         </div>
 
         <figure
