@@ -7,7 +7,7 @@ const COMPARISON = [
     label: { en: "Price", zh: "价格", ja: "価格", ko: "가격", fr: "Prix", de: "Preis", it: "Prezzo", es: "Precio" },
     maccy: { en: "Free / $9.99 App Store", zh: "免费 / App Store $9.99", ja: "無料 / App Store $9.99", ko: "무료 / App Store $9.99", fr: "Gratuit / App Store 9,99 $", de: "Kostenlos / App Store 9,99 $", it: "Gratis / App Store 9,99 $", es: "Gratis / App Store 9,99 $" },
     copyclip: { en: "$7.99", zh: "$7.99", ja: "$7.99", ko: "$7.99", fr: "7,99 $", de: "7,99 $", it: "7,99 $", es: "7,99 $" },
-    clibo: { en: "$7.66 early bird", zh: "$7.66 早鸟价", ja: "$7.66 早期価格", ko: "$7.66 얼리버드", fr: "7,66 $ Early Bird", de: "7,66 $ Early Bird", it: "7,66 $ Early Bird", es: "7,66 $ Early Bird" },
+    clibo: { en: "$14.99", zh: "$14.99", ja: "$14.99", ko: "$14.99", fr: "14,99 $", de: "14,99 $", it: "14,99 $", es: "14,99 $" },
     paste: { en: "$29.99/yr", zh: "$29.99/年", ja: "$29.99/年", ko: "$29.99/년", fr: "29,99 $/an", de: "29,99 $/Jahr", it: "29,99 $/anno", es: "29,99 $/año" },
   },
   {
@@ -199,30 +199,16 @@ export default function Comparison() {
       </div>
 
       <div className="comparison-footer reveal reveal-soft">
-        <p className="comparison-footnote">
-          <I18nText
-            t={{
-              en: "Prices checked Jun 2026. App Store and regional pricing may vary.",
-              zh: "价格核对于 2026 年 6 月。App Store 与地区价格可能有所不同。",
-              ja: "価格は2026年6月確認。App Storeや地域により異なる場合があります。",
-              ko: "가격은 2026년 6월 기준입니다. App Store 및 지역별 가격은 다를 수 있습니다.",
-              fr: "Prix verifies en juin 2026. Les prix App Store et regionaux peuvent varier.",
-              de: "Preise geprüft im Juni 2026. App Store- und regionale Preise können abweichen.",
-              it: "Prezzi verificati a giugno 2026. App Store e prezzi regionali possono variare.",
-              es: "Precios comprobados en junio de 2026. App Store y precios regionales pueden variar.",
-            }}
-          />
-        </p>
         <a
           className="button button-primary comparison-cta"
           href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess"
         >
           <I18nText
             t={{
-              en: "Get Clibo for $7.66",
-              zh: "以 $7.66 获取 Clibo",
-              ja: "$7.66でCliboを入手",
-              ko: "$7.66에 Clibo 받기",
+              en: "Get Clibo for $14.99",
+              zh: "以 $14.99 获取 Clibo",
+              ja: "$14.99でCliboを入手",
+              ko: "$14.99에 Clibo 받기",
               fr: "Obtenir Clibo pour 7,66 $",
               de: "Clibo für 7,66 $ holen",
               it: "Ottieni Clibo per 7,66 $",

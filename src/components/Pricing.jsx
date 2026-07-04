@@ -144,10 +144,10 @@ export default function Pricing() {
             }}
           />
         </span>
-        <p className="price" aria-label="$7.66">
+        <p className="price" aria-label="$14.99">
           <span aria-hidden="true" style={{ "--digit-delay": "80ms" }}>$</span>
-          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>7</span>
-          <span className="price-cents" aria-hidden="true" style={{ "--digit-delay": "240ms" }}>.66</span>
+          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>14</span>
+          <span className="price-cents" aria-hidden="true" style={{ "--digit-delay": "240ms" }}>.99</span>
         </p>
         <a
           className="button button-primary pricing-buy"
@@ -155,10 +155,10 @@ export default function Pricing() {
         >
           <I18nText
             t={{
-              en: "Buy Clibo for $7.66",
-              zh: "以 $7.66 购买 Clibo",
-              ja: "Cliboを$7.66で購入",
-              ko: "$7.66에 Clibo 구매",
+              en: "Buy Clibo for $14.99",
+              zh: "以 $14.99 购买 Clibo",
+              ja: "Cliboを$14.99で購入",
+              ko: "$14.99에 Clibo 구매",
               fr: "Acheter Clibo pour 7,66 $",
               de: "Clibo für 7,66 $ kaufen",
               it: "Acquista Clibo per 7,66 $",

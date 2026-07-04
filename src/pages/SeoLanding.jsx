@@ -35,7 +35,7 @@ export default function SeoLanding() {
               className="button button-primary button-teal"
               href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess"
             >
-              Buy - $7.66
+              Buy - $14.99
             </a>
           </div>
         </div>
