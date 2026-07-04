@@ -91,7 +91,7 @@ const COMPARISON = [
     label: { en: "Sync", zh: "同步", ja: "同期", ko: "동기화", fr: "Synchronisation", de: "Sync", it: "Sync", es: "Sync" },
     maccy: { en: "No built-in sync", zh: "无内置同步", ja: "内蔵同期なし", ko: "내장 동기화 없음", fr: "Pas de sync integree", de: "Kein integrierter Sync", it: "Nessuna sync integrata", es: "Sin sync integrada" },
     copyclip: { en: "No built-in sync", zh: "无内置同步", ja: "内蔵同期なし", ko: "내장 동기화 없음", fr: "Pas de sync integree", de: "Kein integrierter Sync", it: "Nessuna sync integrata", es: "Sin sync integrada" },
-    clibo: { en: "iCloud / private sync", zh: "iCloud / 私有同步", ja: "iCloud / プライベート同期", ko: "iCloud / 비공개 동기화", fr: "iCloud / sync privee", de: "iCloud / privater Sync", it: "iCloud / sync privata", es: "iCloud / sync privada" },
+    clibo: { en: "iCloud", zh: "iCloud", ja: "iCloud", ko: "iCloud", fr: "iCloud", de: "iCloud", it: "iCloud", es: "iCloud" },
     paste: { en: "Cloud sync", zh: "云同步", ja: "クラウド同期", ko: "클라우드 동기화", fr: "Sync cloud", de: "Cloud-Sync", it: "Sync cloud", es: "Sync cloud" },
   },
 ];
