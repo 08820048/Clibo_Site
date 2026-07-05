@@ -13,7 +13,7 @@ The macOS app already supports Dodo license activation, validation, and deactiva
 
 ## Current Launch Flow
 
-1. User clicks `Buy Clibo for $8` on the website.
+1. User clicks `Buy Clibo` on the website.
 2. The link opens Dodo hosted checkout.
 3. User completes payment.
 4. Dodo redirects to `/success` with return URL parameters.
@@ -44,7 +44,7 @@ That is acceptable for the first launch.
 Configure these in Dodo before sending real traffic:
 
 - Product: one-time purchase for Clibo.
-- Price: `$14.99` one-time.
+- Price: `$8` one-time.
 - Entitlement: License Key entitlement attached to the product.
 - Activation limit: `3` Macs per license.
 - Return URL: `https://clibo.us/success`.

@@ -129,8 +129,8 @@ function buildSnapshot(seo) {
       </section>
       <section>
         <h2>Pricing</h2>
-        <p>$14.99 one-time purchase. Includes a 7-day free trial and 2 Mac activations.</p>
-        <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo for $14.99</a></p>
+        <p>$8 one-time purchase. Includes a 7-day free trial and 2 Mac activations.</p>
+        <p><a href="https://checkout.dodopayments.com/buy/pdt_0NfjSslAaILXA11xz0qCX?quantity=1&redirect_url=https%3A%2F%2Fclibo.us%2Fsuccess">Buy Clibo</a></p>
         <p><a href="https://releases.clibo.us/Clibo-1.2.11-35.dmg">or download free trial</a></p>
       </section>
     </main>`;

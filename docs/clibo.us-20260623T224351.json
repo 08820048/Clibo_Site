@@ -3172,8 +3172,8 @@
                 "width": 647,
                 "height": 93
               },
-              "snippet": "<p class=\"price\" aria-label=\"$14.99\">",
-              "nodeLabel": "$14.99",
+              "snippet": "<p class=\"price\" aria-label=\"$8\">",
+              "nodeLabel": "$8",
               "explanation": "Fix all of the following:\n  aria-label attribute cannot be used on a p with no valid role attribute."
             }
           }
