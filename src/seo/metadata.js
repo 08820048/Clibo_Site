@@ -21,7 +21,7 @@ export const SEO_ROUTES = {
   "/": {
     title: "Clibo — Private Clipboard Manager with AI Search for Mac",
     description:
-      "Clibo is a native macOS clipboard manager with AI semantic search, one-click Maccy import, rich previews, iCloud sync, and BYOK AI actions. All data stays local. $8 one-time, no subscription.",
+      "Clibo is a native macOS clipboard manager with AI semantic search, one-click Maccy import, rich previews, iCloud sync, and BYOK AI actions. All data stays local. $14.99 one-time, no subscription.",
     path: "/",
     type: "website",
     image: DEFAULT_IMAGE,
@@ -196,7 +196,7 @@ export function getStructuredData(seo) {
       },
       offers: {
         "@type": "Offer",
-        price: "8",
+        price: "14.99",
         priceCurrency: "USD",
         priceValidUntil: "2026-07-01",
         availability: "https://schema.org/InStock",

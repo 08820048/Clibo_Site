@@ -144,9 +144,10 @@ export default function Pricing() {
             }}
           />
         </span>
-        <p className="price" aria-label="$8">
+        <p className="price" aria-label="$14.99">
           <span aria-hidden="true" style={{ "--digit-delay": "80ms" }}>$</span>
-          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>8</span>
+          <span aria-hidden="true" style={{ "--digit-delay": "160ms" }}>14</span>
+          <span className="price-cents" aria-hidden="true" style={{ "--digit-delay": "220ms" }}>.99</span>
         </p>
         <a
           className="button button-primary pricing-buy"

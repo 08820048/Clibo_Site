@@ -29,7 +29,18 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(npm run build)",
-      "Bash(npx wrangler pages deploy:*)"
+      "Bash(npx wrangler pages deploy:*)",
+      "Bash(grep -r -i -n \"price\\\\|价格\\\\|¥\\\\|\\\\$\" --include=\"*.md\" --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.js\" --include=\"*.jsx\" --include=\"*.json\" --include=\"*.yaml\" --include=\"*.yml\" --include=\"*.html\" --include=\"*.css\" --include=\"*.astro\" .)",
+      "Bash(grep -o '\\\\$14\\\\.99\\\\|\"price\": \"14\\\\.99\"\\\\|7\\\\.66')",
+      "Bash(grep -r -n -i \"early.bird\\\\|早鸟\\\\|早期価格\\\\|early bird\\\\|Early Bird\\\\|7\\\\.66\\\\|\\\\$9[^.]\" --include=\"*.html\" --include=\"*.jsx\" --include=\"*.tsx\" --include=\"*.js\" --include=\"*.ts\" --include=\"*.json\" --include=\"*.css\" --include=\"*.md\" .)",
+      "Bash(grep -v \"1\\\\.52\\\\|\\\\$9\\\\.99\\\\|M9\\\\.71\")",
+      "Bash(node -e \"process.stdin.resume\\(\\); let d=''; process.stdin.on\\('data',c=>d+=c\\); process.stdin.on\\('end',\\(\\)=>{const p=JSON.parse\\(d\\); console.log\\('scripts:'\\); Object.entries\\(p.scripts||{}\\).forEach\\(\\([k,v]\\)=>console.log\\(' ',k,'->',v\\)\\); if\\(p.deploy\\) console.log\\('deploy:',JSON.stringify\\(p.deploy,null,2\\)\\); }\\)\")",
+      "Bash(curl -s https://clibo.us/)",
+      "Bash(grep -o '\\\\$14\\\\.99')",
+      "Bash(grep *)",
+      "Bash(awk '/meta name=.description/{p=NR} p && NR<=p+3' dist/index.html)",
+      "Bash(git stash *)",
+      "Bash(git checkout *)"
     ]
   }
 }

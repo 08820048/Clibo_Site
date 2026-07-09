@@ -44,7 +44,7 @@ That is acceptable for the first launch.
 Configure these in Dodo before sending real traffic:
 
 - Product: one-time purchase for Clibo.
-- Price: `$8` one-time.
+- Price: `$14.99` one-time.
 - Entitlement: License Key entitlement attached to the product.
 - Activation limit: `3` Macs per license.
 - Return URL: `https://clibo.us/success`.
