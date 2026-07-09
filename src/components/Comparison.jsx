@@ -7,7 +7,7 @@ const COMPARISON = [
     label: { en: "Price", zh: "价格", ja: "価格", ko: "가격", fr: "Prix", de: "Preis", it: "Prezzo", es: "Precio" },
     maccy: { en: "Free / $9.99 App Store", zh: "免费 / App Store $9.99", ja: "無料 / App Store $9.99", ko: "무료 / App Store $9.99", fr: "Gratuit / App Store 9,99 $", de: "Kostenlos / App Store 9,99 $", it: "Gratis / App Store 9,99 $", es: "Gratis / App Store 9,99 $" },
     copyclip: { en: "$7.99", zh: "$7.99", ja: "$7.99", ko: "$7.99", fr: "7,99 $", de: "7,99 $", it: "7,99 $", es: "7,99 $" },
-    clibo: { en: "$8", zh: "$8", ja: "$8", ko: "$8", fr: "8 $", de: "8 $", it: "8 $", es: "8 $" },
+    clibo: { en: "$14.99", zh: "$14.99", ja: "$14.99", ko: "$14.99", fr: "14,99 $", de: "14,99 $", it: "14,99 $", es: "14,99 $" },
     paste: { en: "$29.99/yr", zh: "$29.99/年", ja: "$29.99/年", ko: "$29.99/년", fr: "29,99 $/an", de: "29,99 $/Jahr", it: "29,99 $/anno", es: "29,99 $/año" },
   },
   {
@@ -205,14 +205,14 @@ export default function Comparison() {
         >
           <I18nText
             t={{
-              en: "Get Clibo for $8",
-              zh: "以 $8 获取 Clibo",
-              ja: "$8でCliboを入手",
-              ko: "$8에 Clibo 받기",
-              fr: "Obtenir Clibo pour 8 $",
-              de: "Clibo für 8 $ holen",
-              it: "Ottieni Clibo per 8 $",
-              es: "Obtener Clibo por 8 $",
+              en: "Get Clibo for $14.99",
+              zh: "以 $14.99 获取 Clibo",
+              ja: "$14.99でCliboを入手",
+              ko: "$14.99에 Clibo 받기",
+              fr: "Obtenir Clibo pour 14,99 $",
+              de: "Clibo für 14,99 $ holen",
+              it: "Ottieni Clibo per 14,99 $",
+              es: "Obtener Clibo por 14,99 $",
             }}
           />
         </a>
